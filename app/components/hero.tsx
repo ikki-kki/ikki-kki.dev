@@ -7,18 +7,18 @@ import Balancer from 'react-wrap-balancer'
 const Hero = () => {
   return (
     <div>
-      <div className="flex items-center gap-8 mt-40">
+      <div className="flex items-center gap-4 md:gap-8 mt-32 md:mt-40">
         <Image
           src="/assets/avatar.jpeg"
           alt="Avatar"
           width={600}
           height={600}
-          className="rounded-full h-24 w-24"
+          className="rounded-full h-16 w-16 md:h-24 md:w-24"
         />
-        <h1 className="text-3xl">你好 👋</h1>
+        <h1 className="text-2xl md:text-3xl">你好 👋</h1>
       </div>
 
-      <h2 className="mt-16 text-2xl">Yi Wei Here!</h2>
+      <h2 className="mt-8 md:mt-16 text-2xl">Yi Wei Here!</h2>
 
       <div className="mt-10 text-foreground max-w-[900px]">
         <Balancer>

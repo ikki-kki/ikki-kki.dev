@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
       >
-        <div className="container mx-auto font-[family-name:var(--font-geist-mono)]">
+        <div className="container mx-auto font-[family-name:var(--font-geist-mono)] px-6">
           {children}
         </div>
         <Analytics />
