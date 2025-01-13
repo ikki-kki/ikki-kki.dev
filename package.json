@@ -11,9 +11,12 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.5",
+    "cobe": "^0.6.3",
     "next": "15.1.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-wrap-balancer": "^1.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
