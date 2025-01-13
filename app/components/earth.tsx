@@ -39,9 +39,10 @@ const Earth = () => {
       mapSamples: 16000,
       mapBrightness: 1.2,
       baseColor: [1, 1, 1],
-      markerColor: [251 / 255, 100 / 255, 21 / 255],
+      markerColor: [1, 1, 1],
       glowColor: [1.2, 1.2, 1.2],
       markers: [{ location: [24.23321, 120.9417], size: 0.1 }],
+      opacity: 0.8,
       onRender: (state) => {
         state.phi = r.get()
         state.width = width * 2
