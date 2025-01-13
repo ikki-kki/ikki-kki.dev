@@ -1,3 +1,4 @@
+import LightRay from './components/light-ray'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
       >
+        <LightRay />
         <div className="container mx-auto font-[family-name:var(--font-geist-mono)] px-6">
           {children}
         </div>
