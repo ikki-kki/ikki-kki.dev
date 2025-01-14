@@ -22,8 +22,8 @@ const Hero = () => {
 
       <div className="mt-10 max-w-[900px]">
         <Balancer>
-          I am currently a backend engineer at Microprogram, where we have
-          developed a world-class public bike-sharing system in Taiwan. I have a
+          I am currently a backend developer at Microprogram, where we have
+          built a world-class public bike-sharing system in Taiwan. I have a
           passion for exploring new front-end and back-end technologies, and I
           am deeply inspired by beautiful and innovative designs.
         </Balancer>
