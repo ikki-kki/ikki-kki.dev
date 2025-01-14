@@ -18,7 +18,7 @@ const Hero = () => {
         <h1 className="text-2xl md:text-3xl text-black">你好 👋</h1>
       </div>
 
-      <h2 className="mt-8 md:mt-16 text-2xl text-black">Yi Wei Here!</h2>
+      <h2 className="mt-8 md:mt-16 text-2xl text-black">Yiwei Here!</h2>
 
       <div className="mt-10 max-w-[900px]">
         <Balancer>
