@@ -10,11 +10,11 @@ const ProjectItem = ({ title, description, url, category }: Project) => {
       <div className="flex gap-2 items-center">
         <h3 className="text-black">{title}</h3>
         {category === 'raycast-extension' ? (
-          <Raycast className="grayscale opacity-50 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" />
+          <Raycast className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
         ) : category === 'next-js' ? (
-          <Next className="grayscale opacity-50 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" />
+          <Next className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
         ) : (
-          <NPM className="grayscale opacity-50 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" />
+          <NPM className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
         )}
       </div>
       <p className="mt-2 text-sm">{description}</p>
