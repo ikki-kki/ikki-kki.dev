@@ -44,7 +44,7 @@ const Earth = () => {
       markers: [{ location: [24.23321, 120.9417], size: 0.1 }],
       opacity: 0.8,
       onRender: (state) => {
-        state.phi = r.get()
+        state.phi = r.get() + 2.6
         state.width = width * 2
         state.height = width * 2
       },
