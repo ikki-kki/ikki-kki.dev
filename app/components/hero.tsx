@@ -30,16 +30,21 @@ const Hero = () => {
       </div>
 
       <div className="mt-8 flex gap-8 items-center">
-        <Link href="https://x.com/1weiho" className="flex items-center gap-2">
-          <X />
+        <Link
+          href="https://x.com/1weiho"
+          target="_blank"
+          className="flex items-center gap-2 hover:text-black duration-300 group"
+        >
+          <X className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           Twitter
         </Link>
 
         <Link
           href="https://github.com/1weiho"
-          className="flex items-center gap-2"
+          target="_blank"
+          className="flex items-center gap-2 hover:text-black duration-300 group"
         >
-          <Github />
+          <Github className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           GitHub
         </Link>
       </div>
