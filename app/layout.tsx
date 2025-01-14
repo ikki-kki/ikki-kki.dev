@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LightRay />
         <div className="container mx-auto font-[family-name:var(--font-geist-mono)] px-6">

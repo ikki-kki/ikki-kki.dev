@@ -3,7 +3,7 @@ const Footer = () => {
 
   return (
     <div className="flex justify-center py-8">
-      <p className="text-foreground">1wei.dev - {currentYear}</p>
+      <p>1wei.dev - {currentYear}</p>
     </div>
   )
 }

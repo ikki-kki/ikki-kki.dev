@@ -15,12 +15,12 @@ const Hero = () => {
           height={600}
           className="rounded-full h-16 w-16 md:h-24 md:w-24"
         />
-        <h1 className="text-2xl md:text-3xl">你好 👋</h1>
+        <h1 className="text-2xl md:text-3xl text-black">你好 👋</h1>
       </div>
 
-      <h2 className="mt-8 md:mt-16 text-2xl">Yi Wei Here!</h2>
+      <h2 className="mt-8 md:mt-16 text-2xl text-black">Yi Wei Here!</h2>
 
-      <div className="mt-10 text-foreground max-w-[900px]">
+      <div className="mt-10 max-w-[900px]">
         <Balancer>
           I am currently a backend engineer at Microprogram, where we have
           developed a world-class public bike-sharing system in Taiwan. I have a
@@ -30,17 +30,14 @@ const Hero = () => {
       </div>
 
       <div className="mt-8 flex gap-8 items-center">
-        <Link
-          href="https://x.com/1weiho"
-          className="text-foreground flex items-center gap-2"
-        >
+        <Link href="https://x.com/1weiho" className="flex items-center gap-2">
           <X />
           Twitter
         </Link>
 
         <Link
           href="https://github.com/1weiho"
-          className="text-foreground flex items-center gap-2"
+          className="flex items-center gap-2"
         >
           <Github />
           GitHub

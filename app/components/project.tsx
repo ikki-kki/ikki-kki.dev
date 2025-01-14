@@ -16,7 +16,7 @@ const ProjectItem = ({ title, description, category }: Project) => {
           <NPM />
         )}
       </div>
-      <p className="text-foreground mt-2 text-sm">{description}</p>
+      <p className="mt-2 text-sm">{description}</p>
     </div>
   )
 }
