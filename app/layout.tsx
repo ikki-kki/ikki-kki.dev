@@ -18,6 +18,22 @@ export const metadata: Metadata = {
   title: 'Yiwei Ho',
   description:
     'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
+  openGraph: {
+    title: 'Yiwei Ho',
+    description:
+      'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
+    url: 'https://1wei.dev',
+    siteName: 'Yiwei Ho',
+    images: [
+      { url: 'https://1wei.dev/api/og?title=1wei.dev', alt: '1wei.dev' },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@1weiho',
+    creator: '@1weiho',
+  },
+  metadataBase: new URL('https://1wei.dev'),
 }
 
 export default function RootLayout({
