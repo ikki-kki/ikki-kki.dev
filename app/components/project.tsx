@@ -17,7 +17,7 @@ const ProjectItem = ({ title, description, url, category }: Project) => {
           <NPM className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
         )}
       </div>
-      <p className="mt-2 text-sm">{description}</p>
+      <p className="mt-2 text-xs md:text-sm">{description}</p>
     </Link>
   )
 }

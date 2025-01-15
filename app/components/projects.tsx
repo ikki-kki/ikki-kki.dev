@@ -33,7 +33,7 @@ const Projects = () => {
     <div className="md:mt-40 mt-20">
       <h2 className="mt-16 text-2xl text-black">Projects</h2>
 
-      <div className="mt-8 md:mt-16 space-y-6 md:space-y-12">
+      <div className="mt-8 md:mt-16 space-y-8 md:space-y-12">
         {projects.map((project, index) => (
           <ProjectItem key={index} {...project} />
         ))}

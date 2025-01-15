@@ -20,7 +20,7 @@ const Hero = () => {
 
       <h2 className="mt-8 md:mt-16 text-2xl text-black">Yiwei Here!</h2>
 
-      <div className="mt-10 max-w-[900px]">
+      <div className="mt-10 max-w-[900px] text-sm md:text-base">
         <Balancer>
           I am currently a backend developer at Microprogram, where we have
           built a world-class public bike-sharing system in Taiwan. I have a
@@ -33,7 +33,7 @@ const Hero = () => {
         <Link
           href="https://x.com/1weiho"
           target="_blank"
-          className="flex items-center gap-2 hover:text-black duration-300 group"
+          className="flex items-center gap-2 hover:text-black duration-300 group text-sm md:text-base"
         >
           <X className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           Twitter
@@ -42,7 +42,7 @@ const Hero = () => {
         <Link
           href="https://github.com/1weiho"
           target="_blank"
-          className="flex items-center gap-2 hover:text-black duration-300 group"
+          className="flex items-center gap-2 hover:text-black duration-300 group text-sm md:text-base"
         >
           <Github className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           GitHub
