@@ -1,0 +1,54 @@
+import VideoPlayer from '@/components/video-player'
+
+# Render Sonner toast with Inertia
+
+This article showcases how to use Laravel Inertia with React along with Sonner and an automatic hook.
+It enables automatic rendering of flash messages, allowing you to easily return `->with()` messages in the controller.
+
+## Demo
+
+<VideoPlayer src="https://github.com/user-attachments/assets/ea74ed93-4be3-48c0-a8fd-8dbbcff88957" />
+
+## Inertia Share
+
+First, update `HandleInertiaRequests.php` with the following code to share flash messages with the frontend via Inertia:
+
+```php
+'flash' => [
+    'success' => fn () => $request->session()->get('success'),
+    'error' => fn () => $request->session()->get('error'),
+],
+```
+
+## Hook
+
+Next, define a hook to listen for flash messages returned by Inertia Share. When the message is updated, it will automatically render a toast using Sonner:
+
+```tsx
+const useFlashToast = () => {
+  const { flash } = usePage<PageProps>().props
+
+  useEffect(() => {
+    if (flash?.success) {
+      toast.success(flash.success)
+    }
+    if (flash?.error) {
+      toast.error(flash.error)
+    }
+  }, [flash])
+}
+```
+
+## Usage
+
+Finally, if you want to send a redirect response from the controller and render a toast on the redirected page, you can easily do so with this method:
+
+```php
+return to_route('index')->with('success', 'Create todo successfully.');
+```
+
+## Repo
+
+This is the repository for this example, feel free to clone it and play around.
+
+[1weiho/flash-sonner](https://github.com/1weiho/flash-sonner)

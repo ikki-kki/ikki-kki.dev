@@ -7,7 +7,7 @@ import Balancer from 'react-wrap-balancer'
 const Hero = () => {
   return (
     <div>
-      <div className="flex items-center gap-4 md:gap-8 mt-32 md:mt-40">
+      <div className="flex items-center gap-4 md:gap-8 mt-32 md:mt-28">
         <Image
           src="/assets/avatar.jpeg"
           alt="Avatar"

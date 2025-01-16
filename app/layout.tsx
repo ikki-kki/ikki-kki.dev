@@ -1,4 +1,5 @@
 import LightRay from './components/light-ray'
+import Navbar from './components/navbar'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         <LightRay />
         <div className="container mx-auto font-[family-name:var(--font-geist-mono)] px-6">
+          <Navbar />
           {children}
         </div>
         <Analytics />
