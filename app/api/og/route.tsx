@@ -22,9 +22,9 @@ export async function GET(request: NextRequest) {
           style={{
             marginLeft: 100,
             marginRight: 205,
-            marginBottom: 205,
+            marginBottom: 120,
             display: 'flex',
-            fontSize: 105,
+            fontSize: 80,
             letterSpacing: '-0.025em',
             fontStyle: 'normal',
             color: '#4F4F4F',
