@@ -1,3 +1,4 @@
+import TailwindcssTypography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 import TailwindcssAnimate from 'tailwindcss-animate'
 
@@ -7,6 +8,7 @@ export default {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './mdx-components.tsx',
   ],
   theme: {
     extend: {
@@ -59,5 +61,5 @@ export default {
       },
     },
   },
-  plugins: [TailwindcssAnimate],
+  plugins: [TailwindcssAnimate, TailwindcssTypography],
 } satisfies Config
