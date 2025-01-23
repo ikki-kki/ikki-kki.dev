@@ -1,4 +1,4 @@
-import { Post } from './type'
+import { Post } from '@/lib/type'
 
 const posts = [
   {

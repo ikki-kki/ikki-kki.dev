@@ -1,7 +1,7 @@
-import { Project } from './type'
 import Next from '@/components/svg/next'
 import NPM from '@/components/svg/npm'
 import Raycast from '@/components/svg/raycast'
+import { Project } from '@/lib/type'
 import Link from 'next/link'
 
 const ProjectItem = ({ title, description, url, category }: Project) => {

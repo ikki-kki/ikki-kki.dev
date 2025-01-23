@@ -1,5 +1,5 @@
-import Post from './components/post'
 import { posts } from './posts'
+import Post from '@/components/post'
 import { generateOgImageUrl } from '@/lib/utils'
 import { Metadata } from 'next'
 

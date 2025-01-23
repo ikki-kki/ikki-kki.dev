@@ -1,6 +1,6 @@
-import LightRay from './components/light-ray'
-import Navbar from './components/navbar'
 import './globals.css'
+import LightRay from '@/components/light-ray'
+import Navbar from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'

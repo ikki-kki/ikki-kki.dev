@@ -4,3 +4,10 @@ export interface Project {
   url: string
   category: 'raycast-extension' | 'next-js' | 'npm-package'
 }
+
+export interface Post {
+  slug: string
+  title: string
+  date: string
+  tags?: string[]
+}

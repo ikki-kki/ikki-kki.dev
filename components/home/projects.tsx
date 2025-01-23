@@ -1,5 +1,5 @@
 import ProjectItem from './project'
-import { Project } from './type'
+import { Project } from '@/lib/type'
 
 const projects: Project[] = [
   {
