@@ -13,6 +13,10 @@ const links = [
     path: '/blog',
     title: 'Blog',
   },
+  {
+    path: '/photo',
+    title: 'Photo',
+  },
 ]
 
 const Navbar = () => {
