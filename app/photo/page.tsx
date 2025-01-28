@@ -1,7 +1,19 @@
 import images from './images.json'
 import GoogleMapUrl from '@/components/google-map-url'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { generateOgImageUrl } from '@/lib/utils'
+import { Metadata } from 'next'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Photo | Yiwei Ho',
+  description: 'Some memories I want to cherish.',
+  openGraph: {
+    title: 'Photo | Yiwei Ho',
+    description: 'Some memories I want to cherish.',
+    images: [{ url: generateOgImageUrl('Photo'), alt: '1wei.dev' }],
+  },
+}
 
 const PhotoPage = () => {
   return (
