@@ -1,4 +1,5 @@
 import images from './images.json'
+import GoogleMapUrl from '@/components/google-map-url'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import Image from 'next/image'
 
@@ -26,9 +27,10 @@ const PhotoPage = () => {
             <div className="flex justify-between text-xs text-gray-500 mt-1">
               <p>{image.date}</p>
               {image.latitude && image.longitude && (
-                <p>
-                  {image.latitude},{image.longitude}
-                </p>
+                <GoogleMapUrl
+                  latitude={image.latitude}
+                  longitude={image.longitude}
+                />
               )}
             </div>
           </div>
