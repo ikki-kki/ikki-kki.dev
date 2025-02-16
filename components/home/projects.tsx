@@ -21,6 +21,13 @@ const projects: Project[] = [
     category: 'raycast-extension',
   },
   {
+    title: 'Next Sandbox',
+    description:
+      'A lightweight tool for testing and monitoring server actions in Next.js.',
+    url: 'https://www.npmjs.com/package/next-sandbox',
+    category: 'npm-package',
+  },
+  {
     title: 'rwdot',
     description: 'Shows your window’s Tailwind size for easier RWD.',
     url: 'https://www.npmjs.com/package/rwdot',
