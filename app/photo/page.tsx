@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 
 const PhotoPage = () => {
   return (
-    <div className="mt-32 md:mt-28 pb-20">
+    <div className="mt-20 md:mt-32 pb-20">
       <h1 className="text-2xl text-black">Photo</h1>
       <h2 className="mt-1 text-gray-500 text-sm">
         Some memories I want to cherish.
       </h2>
 
-      <div className="mt-20 grid md:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
+      <div className="mt-12 md:mt-20 grid md:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
         {images.map((image, index) => (
           <div key={index}>
             <AspectRatio ratio={3 / 4}>

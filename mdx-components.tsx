@@ -5,7 +5,7 @@ import { unstable_ViewTransition as ViewTransition } from 'react'
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     wrapper: ({ children }) => (
-      <article className="prose mx-auto my-28">
+      <article className="prose mx-auto my-20 md:my-28">
         <ViewTransition name="avatar">
           <Image
             src="/assets/avatar.jpeg"
