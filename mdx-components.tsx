@@ -4,7 +4,7 @@ import Image from 'next/image'
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     wrapper: ({ children }) => (
-      <article className="prose mx-auto">
+      <article className="prose mx-auto my-28">
         <Image
           src="/assets/avatar.jpeg"
           alt="Avatar"

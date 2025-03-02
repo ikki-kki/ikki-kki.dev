@@ -15,10 +15,13 @@ export const metadata: Metadata = {
 
 const Blog = () => {
   return (
-    <div>
+    <div className="mt-32 md:mt-28 pb-20">
       <h1 className="text-2xl text-black">Blog</h1>
+      <h2 className="mt-1 text-gray-500 text-sm">
+        Try to develop the habit of writing articles.
+      </h2>
 
-      <div className="mt-12">
+      <div className="mt-12 grid lg:grid-cols-2 2xl:grid-cols-3 gap-4">
         {posts.map((post) => (
           <Post key={post.slug} {...post} />
         ))}
