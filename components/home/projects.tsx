@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: 'Next Sandbox',
     description:
       'A lightweight tool for testing and monitoring server actions in Next.js.',
-    url: 'https://www.npmjs.com/package/next-sandbox',
+    url: 'https://next-sandbox.1wei.dev/',
     category: 'npm-package',
   },
   {
