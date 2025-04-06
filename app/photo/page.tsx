@@ -24,7 +24,7 @@ const PhotoPage = () => {
       </h2>
 
       <div className="mt-12 md:mt-20 grid md:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
-        {images.map((image, index) => (
+        {[...images].reverse().map((image, index) => (
           <div key={index}>
             <AspectRatio ratio={3 / 4}>
               <Image
