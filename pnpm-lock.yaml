@@ -19,8 +19,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(@types/react@19.0.10)(react@19.0.0)
       '@next/mdx':
-        specifier: 15.2.4
-        version: 15.2.4(@mdx-js/loader@3.1.0(acorn@8.14.0))(@mdx-js/react@3.1.0(@types/react@19.0.10)(react@19.0.0))
+        specifier: 15.3.2
+        version: 15.3.2(@mdx-js/loader@3.1.0(acorn@8.14.0))(@mdx-js/react@3.1.0(@types/react@19.0.10)(react@19.0.0))
       '@radix-ui/react-aspect-ratio':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -349,8 +349,8 @@ packages:
   '@next/eslint-plugin-next@15.2.0':
     resolution: {integrity: sha512-jHFUG2OwmAuOASqq253RAEG/5BYcPHn27p1NoWZDCf4OdvdK0yRYWX92YKkL+Mk2s+GyJrmd/GATlL5b2IySpw==}
 
-  '@next/mdx@15.2.4':
-    resolution: {integrity: sha512-/T4iJYAbryNW9v5+8UHecSH524wUMgxl5ZHHklt9oXdtbb+tIW6LsRYtiderr4mK9GUDSNFrxN+UNlGJysNhxg==}
+  '@next/mdx@15.3.2':
+    resolution: {integrity: sha512-D6lSSbVzn1EiPwrBKG5QzXClcgdqiNCL8a3/6oROinzgZnYSxbVmnfs0UrqygtGSOmgW7sdJJSEOy555DoAwvw==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '>=0.15.0'
@@ -2528,7 +2528,7 @@ snapshots:
     dependencies:
       fast-glob: 3.3.1
 
-  '@next/mdx@15.2.4(@mdx-js/loader@3.1.0(acorn@8.14.0))(@mdx-js/react@3.1.0(@types/react@19.0.10)(react@19.0.0))':
+  '@next/mdx@15.3.2(@mdx-js/loader@3.1.0(acorn@8.14.0))(@mdx-js/react@3.1.0(@types/react@19.0.10)(react@19.0.0))':
     dependencies:
       source-map: 0.7.4
     optionalDependencies:
