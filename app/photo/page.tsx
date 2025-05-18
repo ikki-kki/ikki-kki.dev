@@ -6,19 +6,19 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Photo | Yiwei Ho',
+  title: 'Photo | ikki-kki',
   description: 'Some memories I want to cherish.',
   openGraph: {
-    title: 'Photo | Yiwei Ho',
+    title: 'Photo | ikki-kki',
     description: 'Some memories I want to cherish.',
-    images: [{ url: generateOgImageUrl('Photo'), alt: '1wei.dev' }],
+    images: [{ url: generateOgImageUrl('Photo'), alt: 'ikki-kki.dev' }],
   },
 }
 
 const PhotoPage = () => {
   return (
     <div className="mt-20 md:mt-32 pb-20">
-      <h1 className="text-2xl text-black">Photo</h1>
+      <h1 className="text-2xl text-contents-000">Photo</h1>
       <h2 className="mt-1 text-gray-500 text-sm">
         Some memories I want to cherish.
       </h2>

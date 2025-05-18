@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: 'url(https://1wei.dev/assets/og-bg.png)',
+          backgroundImage: 'url(https://ikki-kki.dev/assets/og-bg.png)',
         }}
       >
         <div

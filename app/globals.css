@@ -43,6 +43,9 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --color-contents-000: rgba(var(--contents-000));
+  --color-primary-100: rgba(var(--green-primary));
 }
 
 /*
@@ -54,6 +57,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -65,7 +69,6 @@
 
 @layer base {
   :root {
-    --background: 48.8 100% 96.9%;
 
     --foreground: 0 0% 31%;
 
@@ -114,7 +117,24 @@
     --chart-5: 27 87% 67%;
 
     --radius: 0.5rem;
+
+    --background: 252, 246, 235;
+
+    --green-accent-1: 229, 240, 176;
+
+    --green-accent-2: 203, 217, 98;
+
+    --green-accent-3: 139, 180, 85;
+
+    --green-accent-4: 73, 132, 40;
+
+    --green-accent-5: 51, 100, 41;
+
+    --green-primary: 170, 221, 102;
+
+    --contents-000: 3, 36, 37;
   }
+
   .dark {
     --background: 240 10% 3.9%;
 
@@ -163,6 +183,17 @@
     --chart-4: 280 65% 60%;
 
     --chart-5: 340 75% 55%;
+
+    --color-bg1: rgb(27, 27, 30);
+    --color-bg2: rgba(27, 27, 30, 0.3);
+    --green-accent-1: 76, 91, 175;
+    --green-accent-2: 54, 65, 140;
+    --green-accent-3: 38, 47, 103;
+    --green-accent-4: 25, 31, 78;
+    --green-accent-5: 19, 24, 63;
+    --green-primary: 56, 89, 157;
+    --dark-green: 73, 132, 40;
+    --contents-000: 3, 36, 37;
   }
 }
 
@@ -170,6 +201,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

@@ -16,25 +16,28 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Yiwei Ho',
+  title: 'ikki-kki',
   description:
     'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
   openGraph: {
-    title: 'Yiwei Ho',
+    title: 'ikki-kki',
     description:
       'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
-    url: 'https://1wei.dev',
-    siteName: 'Yiwei Ho',
+    url: 'https://ikki-kki.dev',
+    siteName: 'ikki-kki',
     images: [
-      { url: 'https://1wei.dev/api/og?title=1wei.dev', alt: '1wei.dev' },
+      {
+        url: 'https://ikki-kki.dev/api/og?title=ikki-kki.dev',
+        alt: 'ikki-kki.dev',
+      },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@1weiho',
-    creator: '@1weiho',
+    site: '@ikki-kki',
+    creator: '@ikki-kki',
   },
-  metadataBase: new URL('https://1wei.dev'),
+  metadataBase: new URL('https://ikki-kki.dev'),
 }
 
 export default function RootLayout({
@@ -45,10 +48,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <LightRay />
-        <div className="container mx-auto font-[family-name:var(--font-geist-mono)] px-6">
+        <div className="fixed inset-0 z-0">
+          <LightRay />
+        </div>
+        <div className="container mx-auto font-mono px-6 relative z-10">
           <Navbar />
           {children}
         </div>

@@ -1,6 +1,7 @@
+import HelloBubble from './helloBubble'
+import Ikkikki from './ikkikki'
 import Github from '@/components/svg/github'
-import X from '@/components/svg/x'
-import Image from 'next/image'
+import LinkedIn from '@/components/svg/linkedIn'
 import Link from 'next/link'
 import { unstable_ViewTransition as ViewTransition } from 'react'
 import Balancer from 'react-wrap-balancer'
@@ -8,48 +9,43 @@ import Balancer from 'react-wrap-balancer'
 const Hero = () => {
   return (
     <div>
-      <div className="flex items-center gap-4 md:gap-8 mt-20 md:mt-32">
+      <div className="flex items-center gap-4 mt-20 md:gap-8 md:mt-32">
         <ViewTransition name="avatar">
-          <Image
-            src="/assets/avatar.jpeg"
-            alt="Avatar"
-            width={600}
-            height={600}
-            className="rounded-full h-16 w-16 md:h-24 md:w-24"
-          />
+          <Ikkikki />
         </ViewTransition>
-        <h1 className="text-2xl md:text-3xl text-black">你好 👋</h1>
+        <HelloBubble />
       </div>
-
-      <h2 className="mt-8 md:mt-16 text-xl md:text-2xl text-black">
-        Yiwei Here!
+      <h2 className="mt-8 text-xl md:mt-18 md:text-2xl text-contents-000">
+        Welcome to my blog!
       </h2>
-
-      <div className="mt-6 md:mt-10 max-w-[900px] text-sm md:text-base">
+      <div className="mt-6 md:mt-10 max-w-[800px] text-sm md:text-base text-contents-000 opacity-80">
         <Balancer>
-          I am currently a backend developer at Microprogram, where we have
-          built a world-class public bike-sharing system in Taiwan. I have a
-          passion for exploring new front-end and back-end technologies, and I
-          am deeply inspired by beautiful and innovative designs.
+          My name is Jeongmin Sung, a Frontend Engineer based in Seoul, Korea.
+          <br />
+          <br />
+          I’m at my best when collaborating with others, performing well in team
+          projects where I can share my skills and ideas.
+          <br />I love creating beautiful, user-friendly designs and building
+          smooth UX with React and TypeScript.
         </Balancer>
       </div>
 
-      <div className="mt-8 flex gap-8 items-center">
+      <div className="flex items-center gap-8 mt-8">
         <Link
-          href="https://x.com/1weiho"
+          href="https://www.linkedin.com/in/jeongmin-sung-629a0120a/"
           target="_blank"
-          className="flex items-center gap-2 hover:text-black duration-300 group text-sm md:text-base"
+          className="flex items-center gap-2 text-sm duration-300 hover:text-contents-000 group md:text-base"
         >
-          <X className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
-          Twitter
+          <LinkedIn className="transition-all duration-300 opacity-100 grayscale-0 md:grayscale md:opacity-50 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
+          LinkedIn
         </Link>
 
         <Link
-          href="https://github.com/1weiho"
+          href="https://github.com/ikki-kki"
           target="_blank"
-          className="flex items-center gap-2 hover:text-black duration-300 group text-sm md:text-base"
+          className="flex items-center gap-2 text-sm duration-300 hover:text-contents-000 group md:text-base"
         >
-          <Github className="grayscale-0 md:grayscale opacity-100 md:opacity-50 transition-all duration-300 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
+          <Github className="transition-all duration-300 opacity-100 grayscale-0 md:grayscale md:opacity-50 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           GitHub
         </Link>
       </div>

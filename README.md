@@ -14,9 +14,9 @@ Feel free to visit my website to learn more about me!
 If you'd like to explore this project, you can clone the repository and run it locally:
 
 ```bash
-git clone https://github.com/1weiho/1wei.dev.git
+git clone https://github.com/ikki-kki/ikki-kki.dev.git
 
-cd 1wei.dev
+cd ikki-kki.dev
 
 pnpm i
 

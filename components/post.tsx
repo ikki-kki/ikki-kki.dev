@@ -8,9 +8,9 @@ const PostItem = ({ slug, title, description, date, tags }: Post) => {
   return (
     <Link
       href={`/blog/${slug}`}
-      className="border block px-6 py-4 rounded-2xl bg-white/20 hover:bg-white/60 duration-150"
+      className="border block px-6 py-4 rounded-2xl bg-white/50 hover:bg-white/80 duration-150"
     >
-      <h3 className="text-black font-semibold">{title}</h3>
+      <h3 className="text-contents-000 font-semibold">{title}</h3>
       <p className="text-sm text-gray-500">{description}</p>
 
       <div className="flex justify-between items-center mt-3">
