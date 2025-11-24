@@ -130,14 +130,14 @@ const LightRay = () => {
           className="w-full h-full"
           style={{ filter: 'url(#goo) blur(40px)' }}
         >
-          <div className="g1 absolute opacity-100 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(var(--green-accent-1),0.8)_0,rgba(var(--green-accent-1),0)_50%)] bg-no-repeat mix-blend-hard-light" />
-          <div className="g2 absolute opacity-100 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(var(--green-accent-2),0.8)_0,rgba(var(--green-accent-2),0)_50%)] bg-no-repeat mix-blend-hard-light" />
-          <div className="g3 absolute opacity-100 w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 translate-y-32 -translate-x-64 bg-[radial-gradient(circle_at_center,rgba(var(--green-accent-3),0.8)_0,rgba(var(--green-accent-3),0)_50%)] bg-no-repeat mix-blend-hard-light" />
-          <div className="g4 absolute opacity-70 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(var(--green-accent-4),0.8)_0,rgba(var(--green-accent-4),0)_50%)] bg-no-repeat mix-blend-hard-light" />
-          <div className="g5 absolute opacity-100 w-full h-full scale-150 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(var(--green-accent-5),0.8)_0,rgba(var(--green-accent-5),0)_50%)] bg-no-repeat mix-blend-hard-light" />
+          <div className="g1 absolute opacity-100 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,#f0f9e8cc_0,#f0f9e800_50%)] bg-no-repeat mix-blend-hard-light" />
+          <div className="g2 absolute opacity-100 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,#e5f0b0cc_0,#e5f0b000_50%)] bg-no-repeat mix-blend-hard-light" />
+          <div className="g3 absolute opacity-100 w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 translate-y-32 -translate-x-64 bg-[radial-gradient(circle_at_center,#cbdd62cc_0,#cbdd6200_50%)] bg-no-repeat mix-blend-hard-light" />
+          <div className="g4 absolute opacity-70 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,#8bb455cc_0,#8bb45500_50%)] bg-no-repeat mix-blend-hard-light" />
+          <div className="g5 absolute opacity-100 w-full h-full scale-150 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,#498428cc_0,#49842800_50%)] bg-no-repeat mix-blend-hard-light" />
           <div
             ref={interactiveRef}
-            className="absolute opacity-70 w-full h-full -top-1/2 -left-1/2 bg-[radial-gradient(circle_at_center,rgba(var(--green-primary),0.8)_0,rgba(var(--green-primary),0)_50%)] bg-no-repeat mix-blend-hard-light"
+            className="absolute opacity-70 w-full h-full -top-1/2 -left-1/2 bg-[radial-gradient(circle_at_center,#aedd66cc_0,#aedd6600_50%)] bg-no-repeat mix-blend-hard-light"
           />
         </div>
       </div>

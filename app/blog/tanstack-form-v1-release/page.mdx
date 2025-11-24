@@ -1,0 +1,475 @@
+import VideoPlayer from '@/components/video-player'
+import { generateOgImageUrl } from '@/lib/utils'
+import Image from 'next/image'
+
+export const metadata = {
+  title: 'TanStack Form v1 출시 기념 둘러보기',
+  description: '이세계에서 폼 라이브러리로 전생했더니 너무 강했다',
+  openGraph: {
+    title: 'TanStack Form v1 출시 기념 둘러보기',
+    description: '이세계에서 폼 라이브러리로 전생했더니 너무 강했다',
+    images: [
+      {
+        url: generateOgImageUrl('TanStack Form v1 출시 기념 둘러보기'),
+        alt: '이세계에서 폼 라이브러리로 전생했더니 너무 강했다',
+      },
+    ],
+  },
+}
+
+<Image src="/images/14.png" alt="" width={927} height={496} />
+
+React에서 폼을 다루는 건 늘 어려운 과제였다. React Hook Form(RHF)이라는 훌륭한 도구가 있었지만, 여전히 현대적인 개발 환경의 요구사항을 완전히 충족시키지는 못했다. tanstack query를 쓰기 위해 문서를 들어다 보다가 얼핏 인지만 했던 TanStack Form이 드디어 V1 출시를 했고, 이 라이브러리가 진짜 React에서 폼 개발을 즐겁게 만들어줄 수 있는지 가볍게 살펴봤다.
+
+## 1. React에서 폼이 왜 이렇게 어려울까?
+
+form을 다루는 일은 언제나 까다롭다. 생으로 form 로직을 짜는 일은 거의 고문에 가까울 정도로 까다롭기 때문에 React가 인기를 얻어갈 무렵 Formik 라이브러리가 정설이 되었지만, React 16.8에서 Hooks가 도입된 이후, 컴포넌트 기반 접근 방식에서 훅 기반 접근 방식으로의 전환이 일어났고, React Hook Form은 이러한 패러다임에 더 잘 맞았다. 이후 React Hook Form이 새로운 강자로 떠오르고 오랫동안 개발자들의 사랑을 받았다. 하지만 영원한 강자가 존재할 수는 없는법, 클라이언트-서버 상호작용, 타입 안전성, 유효성 검증 등 웹 개발의 핵심 영역에서 개선이 필요하는 목소리가 지속적으로 나왔고. [Tanner Linsley](https://github.com/tannerlinsley)와 [Corbin Crutchley](https://github.com/crutchcorn)를 주축으로 한 팀이 2년간의 개발 끝에 마침내 TanStack Form V1을 선보였다. 이제 이 라이브러리를 좀 자세히 살펴보자.
+
+## 2. 왜 또 새로운 폼 라이브러리가 필요한 거지?
+
+TypeScript가 어떻게 발전해 왔는지 생각해보자. 처음엔 그냥 `.d.ts` 파일로 타입 정의를 추가하는 정도였다. 그 다음엔 라이브러리 자체가 TypeScript로 작성되기 시작했고. 그런데 이제는? 타입 추론과 타입 안전성이 아예 다른 차원으로 발전했다.
+
+TanStack Form은 바로 이런 "심화된 TypeScript 시대"에 맞춰 설계됐다. 기존 라이브러리들이 TypeScript를 지원한다고는 하지만, 대부분은 예전 방식에 머물러 있다.
+
+좀 더 구체적으로 말하자면:
+
+1단계: DefinitelyTyped로 JavaScript 라이브러리에 타입을 후처리로 붙이던 시대
+2단계: 라이브러리가 자체적으로 TypeScript로 작성되는 시대
+3단계: 타입 추론이 강력해져서 개발할 때 실시간으로 모든 걸 체크해주는 시대
+
+React Hook Form도 TypeScript를 지원하지만, TanStack Form은 이 3단계의 기능을 완전히 활용하도록 처음부터 설계됐다. 이건 그냥 "TypeScript 지원합니다~"가 아니라, TypeScript의 가장 강력한 기능들을 폼 라이브러리의 핵심 설계에 녹여낸 거다.
+
+예를 들어 필드 이름에 오타를 내면 바로 빨간 줄이 그어지고, 값 타입과 유효성 검사 함수가 서로 맞지 않으면 즉시 알려준다. 그것도 우리가 특별히 타입을 지정하지 않아도 말이다.
+
+이런 것들이 새로운 폼 라이브러리가 필요했던 이유다. 기존 라이브러리에 TypeScript 지원을 덧붙이는 게 아니라, TypeScript의 최신 기능을 처음부터 고려해 설계한 라이브러리가 필요했던 거다.
+
+다른 인기 있는 폼 라이브러리와 비교해보면 이런 차이가 더 명확해진다:
+
+| 기능                  | TanStack Form                   | Formik     | Redux Form | React Hook Form | Final Form                             |
+| :-------------------- | :------------------------------ | :--------- | :--------- | :-------------- | :------------------------------------- |
+| Github 저장소 / 별점  | ⭐ 4.7k                         | ⭐ 34k     | ⭐ 13k     | ⭐ 43k          | ⭐ 3k                                  |
+| 지원되는 프레임워크   | React, Vue, Angular, Solid, Lit | React      | React      | React           | React, Vue, Angular, Solid, Vanilla JS |
+| 번들 크기             | 📦 8.8 KB                       | 📦 13.2 KB | 📦 26.6 KB | 📦 10.5 KB      | 📦 5.6 KB                              |
+| 일급 TypeScript 지원  | ✅                              | ❓         | ❓         | ✅              | ✅                                     |
+| 완전 추론 TypeScript  | ✅                              | ❓         | ❓         | ✅              | 🔴                                     |
+| 헤드리스 UI 컴포넌트  | ✅                              | ❓         | ❓         | ✅              | ❓                                     |
+| 프레임워크 독립적     | ✅                              | ❓         | ❓         | 🔴              | ✅                                     |
+| 세분화된 반응성       | ✅                              | ❓         | ❓         | ❓              | ✅                                     |
+| 중첩된 객체/배열 필드 | ✅                              | ✅         | ❓         | ✅+(1)          | ✅                                     |
+| 비동기 유효성 검사    | ✅                              | ✅         | ❓         | ✅              | ✅                                     |
+| 비동기 검사 디바운스  | ✅                              | ❓         | ❓         | ❓              | ❓                                     |
+| 스키마 기반 검증      | ✅                              | ✅         | ❓         | ✅              | ❓                                     |
+| 자체 개발자 도구      | 🔴+(2)                          | 🔴         | ✅+(3)     | ✅              | ❓                                     |
+| SSR 통합              | ✅                              | 🔴         | 🔴         | 🔴              | 🔴                                     |
+| React 컴파일러 지원   | ✅                              | ❓         | ❓         | 🔴              | ❓                                     |
+
+TanStack Form은 특히 프레임워크 독립성, 비동기 유효성 검사 디바운스, SSR 통합에서 두각을 나타내고 있다.
+
+놀라운 건 Github 별점이 RHF나 Formik에 비해서는 아직 적다는 거다. 하지만 이미 4.7k라는 건 엄청난 속도로 성장하고 있다는 의미일 수도 있다. 앞으로 어떻게 될지 궁금하다.
+
+## 3. 뭐가 다른 거야?
+
+> "헤드리스, 성능 최적화, 타입 안전한 폼 상태 관리 라이브러리 - TypeScript와 JavaScript는 물론, React, Vue, Angular, Solid, Lit 같은 프레임워크를 위한 솔루션"
+
+TanStack Form은 UI와 로직을 완전히 분리한 '헤드리스' 접근 방식을 취해 어떤 디자인 시스템과도 자유롭게 통합할 수 있다. 핵심 로직이 프레임워크에 의존하지 않아 React, Vue, Angular 등 다양한 환경에서 일관된 코드로 작업할 수 있는 것이 큰 장점이다.
+
+'성능 최적화' 부분도 주목할 만하다. TanStack Form은 '세밀한 반응성(granular reactivity)'을 제공한다. 쉽게 말해, 폼의 특정 부분이 변경될 때 전체 폼이 아닌 해당 부분만 리렌더링된다. 대규모 폼에서 이는 상당한 성능 향상을 가져온다. 50개 필드가 있는 폼에서 하나의 필드를 수정했을 때 그 필드만 업데이트되고 나머지는 그대로라면 사용자 경험이 향상된다.
+
+TypeScript 지원도 강력해서 필드 이름 오타나 타입 불일치 같은 오류를 코드 작성 단계에서 바로 잡아낼 수 있다.
+
+## 4. 철학 파헤치기
+
+### 4-1. 통합 API 업그레이드
+
+> "API에는 장단점이 있습니다. 따라서 사용자가 각기 다른 API를 통해 각각의 절충안을 사용할 수 있도록 하고 싶을 수 있습니다. 하지만 이렇게 하면 API가 파편화되어 학습하고 사용하기가 더 어려워질 수 있습니다."
+
+이 부분은 RHF의 `register`와 `controller` 같은 서로 다른 API가 공존하는 상황을 염두에 둔 것으로 보인다. TanStack Form은 하나의 일관된 API 세트를 제공하여 개발자들이 "내부적으로 어떤 API를 사용할지 고민하거나 API 간에 전환할 때 인지적 오버헤드"를 줄이려 한다.
+
+RHF 사용하면서 이런 혼란을 겪은 적 있는 사람이라면 공감이 갈 거다. 처음 RHF 배울 때 제일 헷갈렸던 부분이 이거였다. 언제 `register`를 써야 하고 언제 `controller`를 써야 하는지...
+
+### 4-2. 폼에는 유연성이 필요합니다
+
+TanStack Form은 다양한 유효성 검사 전략을 지원한다:
+
+- 타이밍 사용자 정의 (blur, change, submit, mount)
+- 다양한 유효성 검사 범위 (개별 필드, 전체 폼, 필드 하위 집합)
+- 사용자 정의 유효성 검사 로직 (자체 로직 또는 Zod, Valibot 등 활용)
+- 비동기 유효성 검사 (디바운싱 및 취소 기능 내장)
+
+나는 특히 이 부분이 인상적이었는데, RHF을 사용하면서 비동기 유효성 검사에 관련된 불편함을 자주 경험했다. 예를 들어, 회원가입 과정에서 사용자가 이메일 필드에 텍스트를 입력할 때 이미 존재하는 ID인지 중복 검사를 해야 하는 경우가 있다.
+
+이런 상황에서 RHF의 기본 유틸리티만으로는 검사가 불가능했다. 결국 `register`에서 제공하는 기본 `onChange` 대신 커스텀 `onChange` 핸들러를 구현해야 했고, 이 과정이 상당히 번거로웠다.
+
+RHF의 대안이 없는 상황에서 이런 케이스들을 처리하기는 매우 어려웠다. 소소하긴 하지만 `blur` 이벤트 발생 시 유효성 검사를 중단하는 기능도 직접 구현해야 했다. 이런 기능들이 내장되어 있다는 점이 큰 장점이라 생각된다.
+
+### 4-3. 제어 방식의 장점
+
+TanStack Form은 명확하게 제어 입력 방식을 선택했다.
+
+- 예측 가능성: 언제든지 폼의 상태를 예측할 수 있음
+- 테스트 용이성: 값을 전달하고 출력을 검증하여 쉽게 테스트 가능
+- 비-DOM 환경 지원: React Native, Three.js 등에서도 사용 가능
+- 향상된 조건부 로직: 폼 상태에 따라 필드를 쉽게 조건부 표시/숨김 가능
+- 디버깅 용이성: 폼 상태를 콘솔에 기록하여 문제 해결이 쉬움
+
+React Hook Form이 비제어 방식을 선호한 반면, TanStack Form은 제어 방식을 선택했다. 이로 인해 React뿐만 아니라 Vue, Angular, Solid, Lit 등 다양한 프레임워크에서 동작한다. 또한 다양한 런타임 환경에서도 원활하게 작동한다고 하는데, 모바일 애플리케이션 개발을 위한 React Native와 NativeScript를 지원하며, 서버 사이드 렌더링(SSR) 관련 작업을 위한 Next.js 및 TanStack Start와의 통합도 제공한다.
+
+엄청 야심찬 계획인데, 과연 잘 될지는 써봐야 알 것 같다. 다른 프레임워크와 통합이 실제로 얼마나 잘 되는지는 시간이 지나봐야 알 수 있을 듯.
+
+### 4-4. 제네릭 없는 타입 안전성
+
+```jsx
+// 이렇게 하지 않아도 되고
+useForm<MyForm>()
+
+// 이렇게도 가능
+useForm({
+  defaultValues: {
+    name: 'Bill Luo',
+    age: 24,
+  } as MyForm,
+})
+
+```
+
+타입스크립트에서 폼 타입을 정의하는 두 가지 방식의 핵심적인 차이는 "타입 정보를 어디서, 어떻게 제공하느냐"에 있다.
+
+### 제네릭 타입 파라미터 방식
+
+```tsx
+interface MyForm {
+  name: string
+  age: number
+  email?: string // 선택적 필드
+}
+
+// 제네릭 타입 파라미터 사용
+const form = useForm<MyForm>()
+```
+
+RHF에서 익숙하던 제네릭 타입 패턴이다.
+
+- 제네릭 타입 파라미터는 컴파일 타임에만 존재하고, 런타임에서는 타입 정보가 소거된다
+- 타입 시스템에 "이 폼은 MyForm 구조를 가질 것"이라고 선언적으로 알려준다
+- `defaultValues`가 제공되지 않으면, 선택적 필드인 `email`은 `undefined`로 초기화된다
+- 실제 폼 상태와 선언된 타입 사이의 일치를 개발자가 보장해야 한다
+
+### 값 기반 타입 추론 방식
+
+```tsx
+// 런타임 값에서 타입 추론
+const form = useForm({
+  defaultValues: {
+    name: 'Bill Luo',
+    age: 24,
+  } as MyForm,
+})
+```
+
+- 실제 런타임 객체의 구조(`defaultValues`)에서 타입을 추론한다
+- 타입 단언(`as MyForm`)은 추론된 타입이 `MyForm`과 호환됨을 알려준다
+- 타입과 값이 단일 위치에서 정의되어 자연스럽게 동기화된다
+- 타입 시스템과 실행 코드 간의 불일치를 방지한다
+
+## 두 방식의 안전성 차이
+
+제네릭 방식에서 타입 시스템은 런타임 값의 존재를 보장하지 않는다:
+
+```tsx
+interface MyForm {
+  name: string
+  age: number
+  email?: string // 선택적 필드
+}
+
+// 타입은 올바르지만 런타임 값은 누락됨
+const form = useForm<MyForm>()
+// email이 undefined로 초기화되지만 TypeScript는 오류를 발생시키지 않음
+```
+
+특히 선택적 필드(`email?`)가 문제가 될 수 있다. TypeScript는 타입 정의를 만족하지만, 실제 런타임 값은 존재하지 않을 수 있다.
+
+## `as` 타입 단언의 안전성
+
+일반적인 타입 단언은 위험할 수 있다:
+
+```tsx
+// 위험한 타입 단언 예시
+const someValue: any = getSomeData()
+const definitelyString = someValue as string // 실제로는 숫자일 수 있음
+definitelyString.toLowerCase() // 런타임 오류 가능성!
+```
+
+그러나 TanStack Form에서의 타입 단언은 다르다:
+
+```tsx
+// TanStack Form의 안전한 타입 단언
+useForm({
+  defaultValues: {
+    name: 'Bill Luo',
+    age: 24,
+  } as MyForm,
+})
+```
+
+이 경우 TypeScript는:
+
+1. `defaultValues` 객체가 `MyForm` 타입과 구조적으로 호환되는지 여전히 검사한다
+2. 구체적인 값에서 더 넓은 타입으로의 업캐스팅(upcasting) 형태이므로, 일반적인 다운캐스팅(downcasting)보다 안전하다
+3. 객체가 `MyForm`의 모든 필수 속성을 가지지 않는다면 여전히 오류를 발생시킨다
+
+이 부분은 좀 어려울 수 있는데, 기본적으로 TanStack Form이 TypeScript를 더 안전하게 사용하고 있다는 내용이다. 타입과 값이 함께 정의되기 때문에 불일치 가능성이 줄어든다고 보면 된다.
+
+### 4-5. 컴포넌트 재사용성
+
+```jsx
+// 자체 라이브러리에서 내보내는 코드
+export const { useAppForm, withForm } = createFormHook(/* options */)
+```
+
+TanStack Form은 자체 컴포넌트 시스템이나 디자인 시스템으로 래핑하는 것을 주요 목표로 삼고 있다. 이를 통해 앱에 보일러 플레이트 코드를 줄이고 폼의 일관성과 사용자 친화성을 향상시킬 수 있다.
+
+## 5. 실제 사용 예시 (코드 많음 주의!)
+
+TanStack Form을 사용하는 기본적인 방법을 살펴보자
+
+```jsx
+import { createFormHook, createFormHookContexts } from '@tanstack/react-form'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+// Valibot, ArkType 및 다른 표준 스키마 라이브러리도 지원합니다
+import { z } from 'zod'
+// 폼 훅에서 이벤트를 미리 바인딩하는 폼 컴포넌트
+import { TextField, NumberField, SubmitButton } from '~our-app/ui-library'
+
+const { fieldContext, formContext } = createFormHookContexts()
+// 타입 안전성을 유지하면서 프로덕션 상용구를 줄이기 위해 컴포넌트를 폼에 바인딩
+const { useAppForm } = createFormHook({
+  fieldComponents: {
+    TextField,
+    NumberField,
+  },
+  formComponents: {
+    SubmitButton,
+  },
+  fieldContext,
+  formContext,
+})
+
+const PeoplePage = () => {
+  const form = useAppForm({
+    defaultValues: {
+      username: '',
+      age: 0,
+    },
+    validators: {
+      // 스키마나 함수를 전달하여 유효성 검사 수행
+      onChange: z.object({
+        username: z.string(),
+        age: z.number().min(13),
+      }),
+    },
+    onSubmit: ({ value }) => {
+      // 폼 데이터로 작업 수행
+      alert(JSON.stringify(value, null, 2))
+    },
+  })
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        form.handleSubmit()
+      }}
+    >
+      <h1>Personal Information</h1>
+      {/* 컴포넌트는 극도의 타입 안전성을 보장하기 위해 `form`과 `field`에 바인딩됩니다 */}
+      <form.AppField
+        name="username"
+        children={(field) => <field.TextField label="Full Name" />}
+      />
+      {/* "name" 속성에 오타가 있으면 TypeScript 오류가 발생합니다 */}
+      <form.AppField
+        name="age"
+        children={(field) => <field.NumberField label="Age" />}
+      />
+      {/* `form.AppForm` 내부의 컴포넌트는 폼 컨텍스트에 접근할 수 있습니다 */}
+      <form.AppForm>
+        <form.SubmitButton />
+      </form.AppForm>
+    </form>
+  )
+}
+```
+
+더 간단한 방식으로도 사용할 수 있다
+
+```jsx
+import { useForm } from '@tanstack/react-form'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+const PeoplePage = () => {
+  const form = useForm({
+    defaultValues: {
+      username: '',
+      age: 0,
+    },
+    onSubmit: ({ value }) => {
+      // 폼 데이터로 작업 수행
+      alert(JSON.stringify(value, null, 2))
+    },
+  })
+
+  return (
+    <form.Field
+      name="age"
+      validators={{
+        // 폼 전체 유효성 검사기와 필드별 유효성 검사기 중에서 선택할 수 있습니다
+        onChange: ({ value }) =>
+          value > 13 ? undefined : 'Must be 13 or older',
+      }}
+      children={(field) => (
+        <>
+          <input
+            name={field.name}
+            value={field.state.value}
+            onBlur={field.handleBlur}
+            type="number"
+            onChange={(e) => field.handleChange(e.target.valueAsNumber)}
+          />
+          {field.state.meta.errors.length ? (
+            <em>{field.state.meta.errors.join(',')}</em>
+          ) : null}
+        </>
+      )}
+    />
+  )
+}
+```
+
+API가 RHF보다 훨씬 간결하고 일관성이 있어 보인다. 특히 두 번째 예제처럼 간단하게 사용할 수도 있다는 점이 마음에 든다.
+
+## 6. 특별한 기능들
+
+### 6-1. 대규모 폼 관리는 어떻게?
+
+TanStack Form의 매력적인 특징 중 하나는 큰 폼을 효과적으로 관리하는 방법을 제공한다는 점이다. 수백, 수천 줄짜리 코드로 구성된 폼을 관리하는 것은 실제 개발 환경에서 매우 어려운 과제다.
+
+TanStack Form은 이 문제를 `withForm` HOC로 해결한다:
+
+```jsx
+const { useAppForm, withForm } = createFormHook({
+  fieldComponents: {
+    TextField,
+  },
+  formComponents: {
+    SubscribeButton,
+  },
+  fieldContext,
+  formContext,
+})
+
+const ChildForm = withForm({
+  // 이 값들은 타입 검증에만 사용되며, 런타임에서는 사용되지 않습니다.
+  // 이를 통해 `formOptions`에서 `...formOpts`를 재정의할 필요 없이 사용할 수 있습니다.
+  defaultValues: {
+    firstName: 'John',
+    lastName: 'Doe',
+  },
+  // 선택 사항이지만, 추가적으로 `render` 함수에 props를 추가합니다.
+  props: {
+    // 이 props는 `render` 함수의 기본 값으로 설정됩니다.
+    title: 'Child Form',
+  },
+  render: function Render({ form, title }) {
+    return (
+      <div>
+        <p>{title}</p>
+        <form.AppField
+          name="firstName"
+          children={(field) => <field.TextField label="First Name" />}
+        />
+        <form.AppForm>
+          <form.SubscribeButton label="제출" />
+        </form.AppForm>
+      </div>
+    )
+  },
+})
+
+function App() {
+  const form = useAppForm({
+    defaultValues: {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+  })
+
+  return <ChildForm form={form} title={'테스트'} />
+}
+```
+
+또한 큰 코드베이스를 고려한 트리 쉐이킹과 지연 로딩도 지원한다:
+
+```jsx
+const TextFieldLazy = React.lazy(() => import('./TextFieldComponent'))
+```
+
+큰 폼을 다룰 때 분리해서 관리할 수 있다는 건 정말 좋은 기능이다. 실무에서 복잡한 폼을 다루다 보면 한 파일에 수백 라인이 넘어가는 경우가 많은데, 이런 기능이 있으면 정말 편할 것 같다.
+
+### 6-2. 서버 통합, 이건 좀 특별할지도...
+
+TanStack Form은 서버 통합을 제대로 지원한다. 문서를 보니 TanStack Start, Next.js, Remix와 같은 주요 React 메타 프레임워크들과의 통합 방법을 자세하게 설명하고 있더라.
+
+가장 눈에 띄는 건 각 프레임워크에 맞춘 전용 임포트 경로가 있다는 점이다:
+
+```jsx
+// Next.js용
+import { formOptions, createServerValidate } from "@tanstack/react-form/nextjs";
+
+// Remix용
+import { formOptions, createServerValidate } from "@tanstack/react-form/remix";
+
+// TanStack Start용
+import { formOptions } from "@tanstack/react-form/start";
+```
+
+어떤 프레임워크를 쓰든, 기본적인 흐름은 비슷하다:
+
+1. 먼저 `formOptions`로 폼의 구조를 정의해서 클라이언트와 서버 간에 공유한다.
+2. 서버 측에서는 `createServerValidate`를 사용해 유효성 검사 로직을 설정한다.
+3. 클라이언트에서는 서버 상태와 폼 상태를 병합하기 위해 `mergeForm`과 `useTransform`을 사용한다.
+
+특히 Next.js의 App Router와 서버 액션을 활용한 통합이 인상적이다. JavaScript가 로드되지 않은 상황에서도 폼이 작동할 수 있도록 보장해준다는 점이 정말 큰 장점이다.
+
+```jsx
+// 클라이언트 컴포넌트에서
+const [state, action] = useActionState(someAction, initialFormState)
+
+const form = useForm({
+  ...formOpts,
+  transform: useTransform((baseForm) => mergeForm(baseForm, state!), [state]),
+})
+
+```
+
+진보적 향상(progressive enhancement)을 고려한 설계라고 볼 수 있는데, RHF와 같은 기존 라이브러리들이 서버 통합 부분에서 약점을 보였던 것과 달리, TanStack Form은 이 부분을 핵심 기능으로 만들었다는 느낌이다.
+
+이런 서버 통합 기능은 특히 대규모 애플리케이션에서 폼 상태와 유효성 검사를 클라이언트와 서버 사이에서 일관되게 유지하는 데 큰 도움이 될 것 같다. 생각해보면, 이런 기능이 없어서 얼마나 많은 코드를 추가로 작성해야 했는지...
+
+## 7. 솔직한 소감
+
+TanStack Form을 살펴본 후, 몇 가지 인상적인 특징들이 눈에 띈다.
+
+**타입 안전성**이 정말 잘 구현됐다. RHF를 사용해봤다면 알겠지만, 폼 필드와 타입을 정의할 때 항상 좀 어색한 부분이 있었다. TanStack Form은 제네릭을 직접 쓰지 않고도 타입 추론이 자연스럽게 작동해서 개발 경험이 훨씬 편해졌다.
+
+**비동기 유효성 검사**도 큰 장점이다. 회원가입 페이지에서 이메일 중복 체크 같은 기능을 구현해본 사람이라면 이게 얼마나 귀찮은 작업인지 알 것이다. TanStack Form은 디바운싱과 비동기 검사를 기본으로 제공하니 더 이상 복잡한 핸들러를 만들지 않아도 된다.
+
+**컴포넌트 구성** 방식도 실용적이다. `withForm` 같은 도구로 복잡한 폼을 논리적인 부분으로 나눌 수 있어서 대규모 폼도 관리하기 쉬워질 것 같다.
+
+**프레임워크 독립성**은 흥미로운 접근법이다. React뿐 아니라 Vue, Angular 등 다양한 프레임워크를 지원한다는 건 좋지만, 한편으로는 '너무 많은 걸 하려다 어느 것도 완벽하게 못하는' 상황이 올 수도 있어서 약간 걱정되기도 한다.
+
+**서버 통합** 기능은 현대 웹 개발에 꼭 필요한 부분이었는데, 이 부분을 잘 해결한 것 같다. 클라이언트와 서버 간의 유효성 검사 로직을 일관되게 유지하는 건 항상 까다로웠으니까.
+
+솔직히 말해서, 보통 폼 개발은 지루하고 반복적인 작업인데, TanStack Form은 이런 인식을 바꿀 잠재력이 있다. 물론 실제 프로젝트에 적용해봐야 진가를 알겠지만, 지금까지 본 것만으로도 꽤 기대된다.

@@ -4,7 +4,7 @@ const HelloBubble = () => {
   return (
     <div className="relative">
       <div className="absolute rounded-full top-1/2 left-1/2 w-28 h-28" />
-      <div className="relative z-10 text-sm whitespace-pre md:text-base text-contents-000">
+      <div className="relative z-10 text-sm whitespace-pre md:text-base text-dark">
         {`   
        ⎛                ⎞
    o (     `}

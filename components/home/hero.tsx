@@ -15,10 +15,10 @@ const Hero = () => {
         </ViewTransition>
         <HelloBubble />
       </div>
-      <h2 className="mt-8 text-xl md:mt-18 md:text-2xl text-contents-000">
+      <h2 className="mt-8 text-xl md:mt-18 md:text-2xl text-dark">
         Welcome to my blog!
       </h2>
-      <div className="mt-6 md:mt-10 max-w-[800px] text-sm md:text-base text-contents-000 opacity-80">
+      <div className="mt-6 md:mt-10 max-w-[800px] text-sm md:text-base text-dark opacity-80">
         <Balancer>
           My name is Jeongmin Sung, a Frontend Engineer based in Seoul, Korea.
           <br />
@@ -34,7 +34,7 @@ const Hero = () => {
         <Link
           href="https://www.linkedin.com/in/jeongmin-sung-629a0120a/"
           target="_blank"
-          className="flex items-center gap-2 text-sm duration-300 hover:text-contents-000 group md:text-base"
+          className="flex items-center gap-2 text-sm duration-300 hover:text-dark group md:text-base"
         >
           <LinkedIn className="transition-all duration-300 opacity-100 grayscale-0 md:grayscale md:opacity-50 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           LinkedIn
@@ -43,7 +43,7 @@ const Hero = () => {
         <Link
           href="https://github.com/ikki-kki"
           target="_blank"
-          className="flex items-center gap-2 text-sm duration-300 hover:text-contents-000 group md:text-base"
+          className="flex items-center gap-2 text-sm duration-300 hover:text-dark group md:text-base"
         >
           <Github className="transition-all duration-300 opacity-100 grayscale-0 md:grayscale md:opacity-50 md:group-hover:grayscale-0 md:group-hover:opacity-100" />
           GitHub

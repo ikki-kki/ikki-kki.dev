@@ -28,7 +28,7 @@ const Navbar = () => {
         <Link
           key={link.path}
           href={link.path}
-          className={cn(link.path === currentPathname && 'text-contents-000')}
+          className={cn(link.path === currentPathname && 'text-dark')}
         >
           {link.title}
         </Link>

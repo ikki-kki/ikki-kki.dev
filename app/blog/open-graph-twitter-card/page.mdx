@@ -1,0 +1,174 @@
+import VideoPlayer from '@/components/video-player'
+import { generateOgImageUrl } from '@/lib/utils'
+import Image from 'next/image'
+
+export const metadata = {
+  title: '오픈그래프(Open Grape) 태그와 트위터 카드(Twitter Card)',
+  description: 'OG 이미지 그게 뭔데',
+  openGraph: {
+    title: '오픈그래프(Open Grape) 태그와 트위터 카드(Twitter Card)',
+    description: 'OG 이미지 그게 뭔데',
+    images: [
+      {
+        url: generateOgImageUrl(
+          '오픈그래프(Open Grape) 태그와 트위터 카드(Twitter Card)',
+        ),
+        alt: 'OG 이미지 그게 뭔데',
+      },
+    ],
+  },
+}
+
+<Image src="/images/2.png" alt="" width={600} height={380} />
+때는 바야흐로 대 매스 마케팅 시대…
+
+손님맞이로 한참 분주하던 중, 사이트의 얼굴인 미리보기 이미지가 커리어에서만 대문짝만하게 나타나는 것을 확인 한 저는 “왜 웹마다 미리보기 이미지 사이즈가 다르지?" 하며 의문을 가지게 되었습니다.
+
+당시 저는 `<meta property="og:image" content="..." />` 태그로 단순히 웹사이트 미리보기 이미지를 설정할 줄 만 알았지, 이미지 사이즈 설정을 위한 옵션이 있을 거라곤 생각하지 못하고 ~~cra와 next.js 설정이 다른가?..~~하는 이상한 생각까지 하게 됩니다.
+
+<Image src="/images/3.png" alt="" width={600} height={380} />
+이후 Next.js 기반의 웹은 커리어 웹에는 적용되어있지 않는 독특한 옵션을 사용하고
+있다는 것을 발견하게 되며 본격적으로 Open Graph와 Twitter Card에 대해 살펴보게
+되었습니다.
+
+# 첫인상이 반이다
+
+<Image src="/images/4.png" alt="" width={600} height={380} />위 사진에서 왼쪽과
+오른쪽 둘 중 어떤 링크가 더 매력적인가요?
+
+아마 왼쪽이 더 매력적으로 느껴지실 겁니다.
+
+링크를 입력 했을 때 나오는 제목, 부제목, 썸네일은 웹사이트의 첫인상을 결정하는 중요한 요소입니다.
+
+전 세계의 웹사이트 수가 얼마나 될까요? [여기](https://www.internetlivestats.com/)서 한 번 확인 해봅시다.
+
+Open Graph Protocol과 Twitter Card를 사용하면 웹페이지가 SNS에서 공유/표현될 때 미리보기에 더욱 풍성한 정보를 포함할 수 있으므로 사용자 참여도를 높이는 효과를 거둘 수 있습니다. 단순히 URL만 나열되는 것보다는 더 나은 클릭을 유도하게 되겠죠. 그렇기 때문에 일부에서는 어떻게 더 많은 클릭을 유도할 수 있을까를 고민하기도 하고 별도의 SNS 전용 이미지를 삽입하여 흥미를 유발하기도 합니다.
+
+검색엔진은 웹페이지의 내용만이 아니라 이 meta tag의 내용 또한 참고하여 검색엔진에 반영하기도 하며, 콘텐츠를 추천하기도 합니다.
+
+구글에서는 공식적으로 얼마나 반영하고 있다고 밝히지는 않지만, 페이스북과 트위터를 통한 공유가 SEO에 반영된다고 밝혔으며, 그 링크를 통한 트래픽 또한 SEO에 영향을 준다고 합니다.
+
+# 오픈 그래프 프로토콜(**Open Graph Protocol)**
+
+Open Graph Protocol은 페이스북에서 정의하고 만들어 공개/표준화한 Meta Tag Protocol입니다.
+기본적으로는 URL이 페이스북에 공유될 때 표시될 콘텐츠를 정의하는 것을 목적으로 만들어졌습니다. 이미 표준을 오픈소스로 공개하여 현재는 아주 다양한 곳에서 이 표준안을 활용하여 서비스하고 있습니다. 
+[The Open Graph protocol](https://ogp.me/) 을 방문하시면 표준안 전체를 보실 수 있습니다.
+웹만이 아닌 다양한 미디어를 공유하기 위한 표준이기에 꽤 많은 종류가 존재합니다.
+
+## 작동 방식
+
+우리가 미리보기를 통해 보는 제목, 설명, 이미지는 이렇게 HTML 문서의 head에 표기된 오픈 그래프 프로토콜에 의해서 나타나고 있으며, 구체적인 작동 원리는 다음과 같습니다.
+
+1. 사용자가 링크를 입력창에 입력합니다.
+2. 페이스북, 네이버 블로그, 카카오톡은 정규 표현식을 통해 입력창의 문자열이 "링크"라는 것을 파악합니다.
+3. 링크라는 것이 파악되면 페이스북, 네이버 블로그, 카카오톡 등의 크롤러는 미리 그 웹사이트를 방문해서 HTML head의 오픈 그래프 메타 데이터를 긁어옵니다.
+4. 이 중에서도 각각 제목, 설명, 이미지의 정보를 나타내는 og:title, og:description, og:image를 가져옵니다.
+5. 그리고 그 정보를 바탕으로 미리보기 화면을 생성해주게 됩니다.
+
+미리보기를 그려줄 때 딜레이가 생기는 원인이 여기에 있습니다.
+
+<Image src="/images/5.png" alt="" width={600} height={380} />
+
+출처 : [https://blog.ab180.co/posts/open-graph-as-a-website-preview#:~:text=오픈그래프는 어떤 HTML,방법을 참조하여 만들어](https://blog.ab180.co/posts/open-graph-as-a-website-preview#:~:text=%EC%98%A4%ED%94%88%EA%B7%B8%EB%9E%98%ED%94%84%EB%8A%94%20%EC%96%B4%EB%96%A4%20HTML,%EB%B0%A9%EB%B2%95%EC%9D%84%20%EC%B0%B8%EC%A1%B0%ED%95%98%EC%97%AC%20%EB%A7%8C%EB%93%A4%EC%96%B4)
+
+여기서 말하는 메타 데이터란 쉽게 말하면 해당 웹페이지를 구성하는 여러 구조화된 정보들 예컨대 제목, 설명, 이미지 등을 아예 명시적으로 웹페이지 쪽에서 직접 정해서 표기해준 것을 말합니다.
+
+왜 이렇게 직접 표기해줘야 하는지 궁금한데… 🤔
+
+크롤러도 하나의 소프트웨어 프로그램인지라 HTML 문서를 보면 자동으로 무엇이 제목인지, 무엇이 내용에 대한 3줄 요약인지, 무엇이 대표 이미지인지 **100% 자동으로 판별하기 어렵습니다.** 따라서 웹사이트가 직접 저렇게 적어서 알려줘야 하는 것입니다. 아무리 머신러닝, 딥러닝, 자연어처리 기술이 발전해도 웹문서와 같이 비정형적인 정보에 대한 100% 정확도의 의미 인식은 불가합니다.
+
+그리고 이런 메타 데이터를 표기하는 방법에 대한 기본 방법, 예를 들어 HTML5 title, description 태그 등을 제외한 제 3의 방법 중 비교적 통일되고 인정된 방법으로서 페이스북의 오픈 그래프 프로토콜이 있고, 이것이 우리가 보는 미리보기 화면의 실체를 구성하는 메타 데이터 표기 방법입니다.
+
+## 메타 데이터
+
+오픈 그래프 프로토콜은 어떤 HTML 문서의 메타정보를 쉽게 표시하기 위해서 메타정보에 해당하는 제목, 설명, 문서의 타입, 대표 URL 등 다양한 요소들에 대해서 사람들이 통일해서 쓸 수 있도록 정의해놓은 프로토콜이며,
+페이스북에 의하여 기존의 다양한 메타 데이터 표기 방법을 참조하여 만들어졌습니다.
+
+간편하기 때문에 현재는 그 창시자인 페이스북은 물론이고, 네이버 블로그, 카카오톡 등에서도 널리 사용하고 있습니다.
+
+![출처 : https://ogp.me/](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2769e399-b2ae-4e92-bfe8-b561c61f86b9/Untitled.png)
+
+출처 : https://ogp.me/
+
+위에서 보듯이 기본적인 메타 데이터로는 제목(title), 설명(description), 대표 이미지(image), 표준 링크(url) 등이 있습니다.
+
+```html
+<meta property="og:title" content="..." /> -> 콘텐츠 제목
+<meta property="og:url" content="..." /> -> 웹페이지 URL
+<meta property="og:type" content="..." /> -> 웹페이지 타입(video, website 등)
+<meta property="og:image" content="..." /> -> 썸네일 이미지
+<meta property="og:site_name" content="..." /> -> 웹사이트 이름(URL과 다름)
+<meta property="og:description" content="..." /> -> 웹페이지 설명(제목 아래에
+표시)
+```
+
+[내 웹사이트를 슬랙에서 돋보이게 해줄 메타 태그 8가지 - 재그지그의 개발 블로그](https://wormwlrm.github.io/2022/05/30/8-Meta-tags-for-unfurling-links-well-on-Slack.html)
+
+[Open Graph Generator](https://freecodetools.org/ogp/)
+
+# Twitter Card
+
+Twitter은 Open Graph Protocol을 확장하여 보다 더 디테일하게 정보를 보여 줄 수 있도록 자체 프로토콜을 만들었습니다. 이것을 Twitter Card라고 합니다.
+
+트위터가 자체 프로토콜을 개발한 이유에 대해 몇 가지 카더라 썰이 있는데, 그중 가장 설득력 있는 건 트위터가 140자의 텍스트라는 제약이 있으므로 부가적인 텍스트 추가 없이도 정보를 더 잘 보여줘야 했기 때문이라는 썰 때문이라는게 가장 유력합니다.
+
+Twitter는 페이지당 하나의 카드 유형만 지원됩니다. 여기서 카드란 미리보기의 레이아웃을 뜻합니다. 모든 트위터 메타 태그에는 하나의 기본 속성을 반드시 설정 해야합니다. 바로 카드 유형 값입니다.
+
+`twitter:card` 속성으로 미리보기의 이미지 크기나 레이아웃을 미리 정의 할 수 있다는 점에서 오픈 그래프 프로토콜과 차이가 있습니다.
+
+| 카드 속성    | 설명                                                               |
+| ------------ | ------------------------------------------------------------------ |
+| twitter:card | "summary", "summary_large_image", "app" 또는 "player" 중 하나 택 1 |
+
+[트위터 개발자 사이트](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary)에서 card 속성별로 레이아웃이 어떻게 달라지는지를 확인할 수 있습니다.
+
+[Twitter Card Generator](https://freecodetools.org/twitter-card-generator/)
+
+# 오픈그래프와 트위터 카드
+
+<Image src="/images/6.png" alt="" width={600} height={380} />
+트위터 카드 태그는 오픈 그래프 태그와 유사하게 보입니다.
+
+실제로 둘은 동일한 프로토콜과 동일한 규칙을 기반으로 동작합니다.
+
+오픈 그래프 프로토콜을 사용하여 페이지의 메타 데이터를 작성할 때, 태그와 데이터를 동일하게 복제하지 않고도 트위터 카드를 쉽게 생성할 수 있습니다.
+
+트위터 카드 프로세서는 페이지에서 태그를 찾을 때 먼저 트위터 관련 속성을 확인하고, 없으면 오픈 그래프 속성으로 대체합니다.
+
+따라서 둘을 섞어 써도 동일한 정보로 태그를 재작성할 필요가 없으며, 중복 마크업의 양을 최소화할 수 있습니다.
+
+# 캐시
+
+현재 대다수 웹서비스 혹은 앱들은 대다수 캐싱 시스템이 구축되어 있습니다.
+
+일반적으로 이런 캐싱에는 TTL(Time-to-Live)라는 소멸시효가 걸려있는데, 이 소멸시효가 지나지 않은 경우엔 이미 캐싱된 데이터를 참조해서 불러올 수 있습니다.
+
+따라서 실제로 서버에서 내려주는 HTML 웹 문서 상의 오픈 그래프는 바뀌었을지라도, 이미 캐시된 웹문서가 내려지고 있는 상황일 수 있으며,  TTL이 만료되기 전까지는 아무리 새로 배포해도, 미리보기가 바뀌지 않는 상황이 발생할 수 있습니다.
+
+아래의 사이트에서 캐시를 revalidate 할 수 있습니다 👏
+
+---
+
+**페이스북**
+
+- [Sharing Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
+
+**카카오톡**
+
+- [카카오계정 로그인](https://developers.kakao.com/tool/clear/og) (소유권이 있는 웹이 아닌 다른 웹사이트의 캐시도 revalidate 할 수 있습니다🤨 )
+
+**(구)트위터 (현)X**
+
+- https://cards-dev.twitter.com/validator
+
+**링크드인**
+
+- https://www.linkedin.com/post-inspector/
+
+---
+
+# etc
+
+메타 데이터 생성기 (추천)
+
+[Meta Tags - Preview, Edit and Generate](https://metatags.io/)

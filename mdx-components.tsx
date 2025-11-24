@@ -1,23 +1,34 @@
+import PostFooter from './components/blog/post-footer'
+import TableOfContents from './components/blog/table-of-contents'
+import PostHeader from './components/post-header'
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+} from './components/ui/table'
 import type { MDXComponents } from 'mdx/types'
-import Image from 'next/image'
-import { unstable_ViewTransition as ViewTransition } from 'react'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     wrapper: ({ children }) => (
-      <article className="prose mx-auto my-20 md:my-28">
-        <ViewTransition name="avatar">
-          <Image
-            src="/assets/avatar.jpeg"
-            alt="Avatar"
-            width={260}
-            height={260}
-            className="rounded-full h-12 w-12 md:h-16 md:w-16"
-          />
-        </ViewTransition>
-        {children}
-      </article>
+      <>
+        <article className="prose break-keep max-w-4xl mx-auto my-20 md:my-28 px-20 py-12 rounded-xl backdrop-blur-md bg-white/85 shadow-lg">
+          <PostHeader />
+          {children}
+          <PostFooter />
+        </article>
+        <TableOfContents />
+      </>
     ),
+    table: Table,
+    thead: TableHeader,
+    tbody: TableBody,
+    tr: TableRow,
+    th: TableHead,
+    td: TableCell,
     ...components,
   }
 }
