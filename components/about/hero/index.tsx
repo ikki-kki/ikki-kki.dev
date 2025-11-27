@@ -1,6 +1,6 @@
-import * as styles from './index.css'
 import HelloBubble from '../helloBubble'
 import Ikkikki from '../ikkikki'
+import * as styles from './index.css'
 import Github from '@/components/svg/github'
 import LinkedIn from '@/components/svg/linkedIn'
 import Link from 'next/link'
@@ -16,9 +16,7 @@ const Hero = () => {
         </ViewTransition>
         <HelloBubble />
       </div>
-      <h2 className={styles.heading}>
-        Welcome to my blog!
-      </h2>
+      <h2 className={styles.heading}>Welcome to my blog!</h2>
       <div className={styles.description}>
         <Balancer>
           My name is Jeongmin Sung, a Frontend Engineer based in Seoul, Korea.

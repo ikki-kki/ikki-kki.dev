@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css'
 import { vars, media } from '@/lib/theme.css'
+import { style } from '@vanilla-extract/css'
 
 export const container = style({
   marginTop: vars.space[16],
@@ -9,14 +9,16 @@ export const container = style({
 
 export const actionsSection = style({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
   gap: vars.space[4],
   marginBottom: vars.space[12],
   '@media': {
     [media.sm]: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
     },
   },
 })

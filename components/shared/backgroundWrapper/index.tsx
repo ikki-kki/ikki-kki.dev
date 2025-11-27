@@ -1,9 +1,9 @@
 'use client'
 
+import LightRay from '../lightRay'
 import * as styles from './index.css'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
-import LightRay from '../lightRay'
 import { useEffect, useState } from 'react'
 
 const BackgroundWrapper = () => {
@@ -11,7 +11,8 @@ const BackgroundWrapper = () => {
   const [isBlogDetail, setIsBlogDetail] = useState(false)
 
   useEffect(() => {
-    const isDetail = pathname.startsWith('/blog/') && pathname.split('/').length > 2
+    const isDetail =
+      pathname.startsWith('/blog/') && pathname.split('/').length > 2
     setIsBlogDetail(isDetail)
   }, [pathname])
 
@@ -22,7 +23,12 @@ const BackgroundWrapper = () => {
           <LightRay />
         </div>
       )}
-      <div className={cn(styles.staticBackground, isBlogDetail && styles.staticBackgroundActive)} />
+      <div
+        className={cn(
+          styles.staticBackground,
+          isBlogDetail && styles.staticBackgroundActive,
+        )}
+      />
     </>
   )
 }

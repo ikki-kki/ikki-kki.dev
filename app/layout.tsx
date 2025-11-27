@@ -1,6 +1,6 @@
-import '@/app/globals.css.ts'
-import './prism-theme.css'
 import * as styles from './layout.css'
+import './prism-theme.css'
+import '@/app/globals.css.ts'
 import BackgroundWrapper from '@/components/shared/backgroundWrapper'
 import Navbar from '@/components/shared/navbar'
 import { themeClass } from '@/lib/theme.css'

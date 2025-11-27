@@ -1,5 +1,5 @@
-import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 import createMDX from '@next/mdx'
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 import type { NextConfig } from 'next'
 import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrismPlus from 'rehype-prism-plus'
@@ -25,7 +25,10 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeCodeTitles, [rehypePrismPlus, { showLineNumbers: true }]],
+    rehypePlugins: [
+      rehypeCodeTitles,
+      [rehypePrismPlus, { showLineNumbers: true }],
+    ],
   },
 })
 

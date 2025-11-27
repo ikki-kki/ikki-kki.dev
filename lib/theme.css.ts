@@ -79,14 +79,17 @@ export const [themeClass, vars] = createTheme({
   },
   borderRadius: {
     none: '0',
-    sm: 'calc(0.5rem - 4px)', 
+    sm: 'calc(0.5rem - 4px)',
     base: '0.25rem',
-    md: 'calc(0.5rem - 2px)', 
+    md: 'calc(0.5rem - 2px)',
     lg: '0.5rem',
     xl: '0.75rem',
     '2xl': '1rem',
     '3xl': '1.5rem',
     full: '9999px',
+  },
+  maxWidth: {
+    content: '720px',
   },
 })
 
@@ -99,9 +102,9 @@ export const breakpoints = {
 } as const
 
 export const media = {
-  sm: `screen and (min-width: ${breakpoints.sm})`,
-  md: `screen and (min-width: ${breakpoints.md})`,
-  lg: `screen and (min-width: ${breakpoints.lg})`,
-  xl: `screen and (min-width: ${breakpoints.xl})`,
-  '2xl': `screen and (min-width: ${breakpoints['2xl']})`,
+  sm: `screen and (max-width: ${breakpoints.sm})`,
+  md: `screen and (max-width: ${breakpoints.md})`,
+  lg: `screen and (max-width: ${breakpoints.lg})`,
+  xl: `screen and (max-width: ${breakpoints.xl})`,
+  '2xl': `screen and (max-width: ${breakpoints['2xl']})`,
 } as const

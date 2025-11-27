@@ -1,18 +1,18 @@
-import { style } from '@vanilla-extract/css'
 import { vars, media } from '@/lib/theme.css'
+import { style } from '@vanilla-extract/css'
 
 export const container = style({
-  marginTop: vars.space[20],
+  marginTop: vars.space[32],
   paddingBottom: vars.space[20],
   '@media': {
     [media.md]: {
-      marginTop: vars.space[32],
+      marginTop: vars.space[20],
     },
   },
 })
 
 export const content = style({
-  maxWidth: '720px',
+  maxWidth: vars.maxWidth.content,
   marginLeft: 'auto',
   marginRight: 'auto',
 })

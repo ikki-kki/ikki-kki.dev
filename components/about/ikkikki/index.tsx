@@ -1,5 +1,5 @@
-import React from 'react'
 import * as styles from './index.css'
+import React from 'react'
 
 const Ikkikki = () => {
   return (

@@ -4,10 +4,7 @@ import Link from 'next/link'
 
 const PostItem = ({ slug, title, description, tags, date }: Post) => {
   return (
-    <Link
-      href={`/blog/${slug}`}
-      className={styles.link}
-    >
+    <Link href={`/blog/${slug}`} className={styles.link}>
       <div className={styles.header}>
         <h3 className={styles.title}>{title}</h3>
         <time className={styles.date}>{date}</time>
@@ -15,10 +12,7 @@ const PostItem = ({ slug, title, description, tags, date }: Post) => {
       <p className={styles.description}>{description}</p>
       <div className={styles.tagContainer}>
         {tags?.map((tag) => (
-          <span
-            key={tag}
-            className={styles.tag}
-          >
+          <span key={tag} className={styles.tag}>
             {tag}
           </span>
         ))}

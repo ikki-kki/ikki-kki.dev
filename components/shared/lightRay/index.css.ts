@@ -1,5 +1,5 @@
-import { style, keyframes, globalStyle } from '@vanilla-extract/css'
 import { vars } from '@/lib/theme.css'
+import { style, keyframes, globalStyle } from '@vanilla-extract/css'
 
 // Keyframe animations
 const moveInCircle = keyframes({
@@ -80,7 +80,8 @@ export const g1 = style([
   gradientBase,
   {
     opacity: 1,
-    backgroundImage: 'radial-gradient(circle at center, #f0f9e8cc 0, #f0f9e800 50%)',
+    backgroundImage:
+      'radial-gradient(circle at center, #f0f9e8cc 0, #f0f9e800 50%)',
     animation: `${moveVertical} 30s ease infinite`,
     transformOrigin: '50% 50%',
   },
@@ -99,7 +100,8 @@ export const g2 = style([
   gradientBase,
   {
     opacity: 1,
-    backgroundImage: 'radial-gradient(circle at center, #e5f0b0cc 0, #e5f0b000 50%)',
+    backgroundImage:
+      'radial-gradient(circle at center, #e5f0b0cc 0, #e5f0b000 50%)',
     animation: `${moveInCircle} 20s reverse infinite`,
     transformOrigin: 'calc(50% - 400px) calc(50% + 100px)',
   },
@@ -109,7 +111,8 @@ export const g3 = style([
   gradientBase,
   {
     opacity: 1,
-    backgroundImage: 'radial-gradient(circle at center, #cbdd62cc 0, #cbdd6200 50%)',
+    backgroundImage:
+      'radial-gradient(circle at center, #cbdd62cc 0, #cbdd6200 50%)',
     transform: 'translate(-50%, -50%) translateY(8rem) translateX(-16rem)',
     animation: `${moveVertical} 40s ease infinite`,
     transformOrigin: 'calc(50% - 100px) calc(50% - 50px)',
@@ -120,7 +123,8 @@ export const g4 = style([
   gradientBase,
   {
     opacity: 0.7,
-    backgroundImage: 'radial-gradient(circle at center, #8bb455cc 0, #8bb45500 50%)',
+    backgroundImage:
+      'radial-gradient(circle at center, #8bb455cc 0, #8bb45500 50%)',
     animation: `${moveHorizontal} 40s ease infinite`,
     transformOrigin: '50% 50%',
   },
@@ -130,7 +134,8 @@ export const g5 = style([
   gradientBase,
   {
     opacity: 1,
-    backgroundImage: 'radial-gradient(circle at center, #498428cc 0, #49842800 50%)',
+    backgroundImage:
+      'radial-gradient(circle at center, #498428cc 0, #49842800 50%)',
     transform: 'translate(-50%, -50%) scale(1.5)',
     animation: `${moveInCircle} 20s ease infinite`,
     transformOrigin: 'calc(50% - 800px) calc(50% + 200px)',
@@ -144,7 +149,8 @@ export const interactive = style({
   height: '100%',
   top: '-50%',
   left: '-50%',
-  backgroundImage: 'radial-gradient(circle at center, #aedd66cc 0, #aedd6600 50%)',
+  backgroundImage:
+    'radial-gradient(circle at center, #aedd66cc 0, #aedd6600 50%)',
   backgroundRepeat: 'no-repeat',
   mixBlendMode: 'hard-light',
 })

@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css'
 import { vars, media } from '@/lib/theme.css'
+import { style } from '@vanilla-extract/css'
 
 export const footer = style({
   position: 'fixed',
@@ -12,10 +12,10 @@ export const footer = style({
   paddingTop: vars.space[8],
   paddingBottom: vars.space[4],
   gap: vars.space[4],
-  fontSize: vars.fontSize.sm,
+  fontSize: vars.fontSize.base,
   '@media': {
     [media.md]: {
-      fontSize: vars.fontSize.base,
+      display: 'none',
     },
   },
 })

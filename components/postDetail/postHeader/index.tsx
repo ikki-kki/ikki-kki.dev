@@ -1,9 +1,9 @@
 'use client'
 
+import * as styles from './index.css'
 import { posts } from '@/app/blog/posts'
 import { format } from 'date-fns'
 import { usePathname } from 'next/navigation'
-import * as styles from './index.css'
 
 export default function PostHeader() {
   const pathname = usePathname()

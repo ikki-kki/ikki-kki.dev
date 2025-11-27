@@ -1,18 +1,17 @@
-import { style, styleVariants, globalStyle } from '@vanilla-extract/css'
 import { vars, media } from '@/lib/theme.css'
+import { style, styleVariants, globalStyle } from '@vanilla-extract/css'
 
 export const sidebar = style({
   position: 'fixed',
   left: 'calc(50% + 370px)',
-  top: vars.space[48],
-  height: 'calc(100vh - 8rem)',
+  top: vars.space[32],
   width: '16rem',
-  display: 'none',
+  display: 'flex',
   flexDirection: 'column',
   backgroundColor: 'transparent',
   '@media': {
     [media.xl]: {
-      display: 'flex',
+      display: 'none',
     },
   },
 })
@@ -23,7 +22,6 @@ export const nav = style({
   overflowY: 'auto',
 })
 
-
 globalStyle(`${nav} ul`, {
   listStyle: 'none',
   margin: 0,
@@ -31,7 +29,6 @@ globalStyle(`${nav} ul`, {
   borderLeft: `1px solid ${vars.color.green[100]}`,
   paddingLeft: vars.space[4],
 })
-
 
 export const tocItem = style({})
 
@@ -48,8 +45,8 @@ export const tocButton = style({
   width: '100%',
   textAlign: 'left',
   fontSize: vars.fontSize.xs,
-  paddingTop:vars.space[1],
-  paddingBottom:vars.space[1],
+  paddingTop: vars.space[1],
+  paddingBottom: vars.space[1],
   transition: 'all 200ms',
   textDecoration: 'none',
   ':hover': {
@@ -70,7 +67,7 @@ export const actionButtons = style({
   display: 'flex',
   gap: vars.space[2],
   paddingTop: vars.space[4],
-  paddingLeft: vars.space[10],
+  paddingLeft: vars.space[6],
   flexShrink: 0,
 })
 

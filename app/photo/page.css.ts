@@ -1,12 +1,12 @@
-import { style } from '@vanilla-extract/css'
 import { vars, media } from '@/lib/theme.css'
+import { style } from '@vanilla-extract/css'
 
 export const container = style({
-  marginTop: vars.space[20],
+  marginTop: vars.space[32],
   paddingBottom: vars.space[20],
   '@media': {
     [media.md]: {
-      marginTop: vars.space[32],
+      marginTop: vars.space[20],
     },
   },
 })
@@ -23,23 +23,23 @@ export const subtitle = style({
 })
 
 export const grid = style({
-  marginTop: vars.space[12],
+  marginTop: vars.space[20],
   display: 'grid',
+  gridTemplateColumns: 'repeat(4, 1fr)',
   gap: vars.space[16],
   columnGap: vars.space[8],
   '@media': {
     [media.md]: {
-      marginTop: vars.space[20],
+      marginTop: vars.space[12],
       gridTemplateColumns: 'repeat(3, 1fr)',
     },
     [media.xl]: {
-      gridTemplateColumns: 'repeat(4, 1fr)',
+      gridTemplateColumns: 'repeat(1, 1fr)',
     },
   },
 })
 
-export const imageItem = style({
-})
+export const imageItem = style({})
 
 export const imageWrapper = style({
   objectFit: 'cover',

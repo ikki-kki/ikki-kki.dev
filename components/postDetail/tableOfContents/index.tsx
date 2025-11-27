@@ -1,8 +1,8 @@
 'use client'
 
-import { ChevronUp, MessageCircle } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import * as styles from './index.css'
+import { ChevronUp, Share } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 interface TocItem {
   id: string
@@ -34,7 +34,7 @@ export default function TableOfContents() {
     setToc(tocItems)
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100 
+      const scrollPosition = window.scrollY + 100
 
       let currentActiveId = ''
 
@@ -65,13 +65,27 @@ export default function TableOfContents() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const scrollToComments = () => {
-    const commentsSection =
-      document.querySelector('[data-giscus]') ||
-      document.querySelector('.giscus') ||
-      document.querySelector('#comments')
-    if (commentsSection) {
-      commentsSection.scrollIntoView({ behavior: 'smooth' })
+  const handleShare = async () => {
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : ''
+    const title = document.title
+    const isMobile = 'ontouchstart' in window
+
+    if (isMobile && navigator.share) {
+      try {
+        await navigator.share({
+          title: title,
+          url: currentUrl,
+        })
+      } catch (err) {
+        console.error('Error sharing:', err)
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(currentUrl)
+        alert('링크가 복사되었습니다')
+      } catch (err) {
+        console.error('Failed to copy link:', err)
+      }
     }
   }
 
@@ -110,11 +124,19 @@ export default function TableOfContents() {
           </ul>
         </nav>
         <div className={styles.actionButtons}>
-          <button onClick={scrollToTop} className={styles.actionButton} title="맨 위로">
+          <button
+            onClick={scrollToTop}
+            className={styles.actionButton}
+            title="맨 위로"
+          >
             <ChevronUp size={18} />
           </button>
-          <button onClick={scrollToComments} className={styles.actionButton} title="댓글 보기">
-            <MessageCircle size={18} />
+          <button
+            onClick={handleShare}
+            className={styles.actionButton}
+            title="공유하기"
+          >
+            <Share size={18} />
           </button>
         </div>
       </div>

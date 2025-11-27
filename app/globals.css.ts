@@ -1,5 +1,5 @@
-import { globalStyle } from '@vanilla-extract/css'
 import { vars } from '@/lib/theme.css'
+import { globalStyle } from '@vanilla-extract/css'
 
 // Base styles
 globalStyle('html', {
@@ -12,7 +12,8 @@ globalStyle('body', {
   color: vars.color.green[900],
   margin: 0,
   padding: 0,
-  fontFamily: 'var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace',
+  fontFamily:
+    'var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace',
   lineHeight: 1.7,
   letterSpacing: '-0.01em',
   wordBreak: 'keep-all',

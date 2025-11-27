@@ -1,5 +1,5 @@
-import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
 import { vars } from './theme.css'
+import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -10,9 +10,25 @@ const responsiveProperties = defineProperties({
   },
   defaultCondition: 'mobile',
   properties: {
-    display: ['none', 'flex', 'inline-flex', 'block', 'inline', 'inline-block', 'grid', 'inline-grid'],
+    display: [
+      'none',
+      'flex',
+      'inline-flex',
+      'block',
+      'inline',
+      'inline-block',
+      'grid',
+      'inline-grid',
+    ],
     flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
-    justifyContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly'],
+    justifyContent: [
+      'flex-start',
+      'flex-end',
+      'center',
+      'space-between',
+      'space-around',
+      'space-evenly',
+    ],
     alignItems: ['flex-start', 'flex-end', 'center', 'baseline', 'stretch'],
     gap: vars.space,
     paddingTop: vars.space,
@@ -145,7 +161,8 @@ const unresponsiveProperties = defineProperties({
     transition: {
       none: 'none',
       all: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
-      colors: 'color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+      colors:
+        'color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)',
       opacity: 'opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)',
       transform: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)',
     },
@@ -168,7 +185,7 @@ const unresponsiveProperties = defineProperties({
 export const sprinkles = createSprinkles(
   responsiveProperties,
   colorProperties,
-  unresponsiveProperties
+  unresponsiveProperties,
 )
 
 export type Sprinkles = Parameters<typeof sprinkles>[0]

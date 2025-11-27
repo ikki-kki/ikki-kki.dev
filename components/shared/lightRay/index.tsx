@@ -42,10 +42,7 @@ const LightRay = () => {
   return (
     <div className={styles.container}>
       <div className={styles.background}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={styles.svg}
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg}>
           <defs>
             <filter id="goo">
               <feGaussianBlur
@@ -73,10 +70,7 @@ const LightRay = () => {
           <div className={styles.g3} />
           <div className={styles.g4} />
           <div className={styles.g5} />
-          <div
-            ref={interactiveRef}
-            className={styles.interactive}
-          />
+          <div ref={interactiveRef} className={styles.interactive} />
         </div>
       </div>
     </div>

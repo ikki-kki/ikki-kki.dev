@@ -1,8 +1,8 @@
-import { style } from '@vanilla-extract/css'
 import { vars, media } from '@/lib/theme.css'
+import { style } from '@vanilla-extract/css'
 
 export const container = style({
-  maxWidth: '720px',
+  maxWidth: vars.maxWidth.content,
   marginLeft: 'auto',
   marginRight: 'auto',
 })
@@ -10,38 +10,37 @@ export const container = style({
 export const avatarRow = style({
   display: 'flex',
   alignItems: 'center',
-  gap: vars.space[4],
-  marginTop: vars.space[20],
+  gap: vars.space[8],
+  marginTop: vars.space[16],
   '@media': {
     [media.md]: {
-      gap: vars.space[8],
-      marginTop: vars.space[32],
+      marginTop: vars.space[10],
+      fontSize: vars.fontSize.xl,
     },
   },
 })
 
 export const heading = style({
-  marginTop: vars.space[8],
-  fontSize: vars.fontSize.xl,
+  fontSize: vars.fontSize['2xl'],
   color: vars.color.green[900],
   '@media': {
     [media.md]: {
-      marginTop: '4.5rem', // mt-18
-      fontSize: vars.fontSize['2xl'],
+      marginTop: vars.space[8],
+      fontSize: vars.fontSize.xl,
     },
   },
 })
 
 export const description = style({
-  marginTop: vars.space[6],
+  marginTop: vars.space[10],
   maxWidth: '800px',
-  fontSize: vars.fontSize.sm,
+  fontSize: vars.fontSize.base,
   color: vars.color.green[900],
   opacity: 0.8,
   '@media': {
     [media.md]: {
-      marginTop: vars.space[10],
-      fontSize: vars.fontSize.base,
+      marginTop: vars.space[6],
+      fontSize: vars.fontSize.sm,
     },
   },
 })
@@ -57,7 +56,7 @@ export const socialLink = style({
   display: 'flex',
   alignItems: 'center',
   gap: vars.space[2],
-  fontSize: vars.fontSize.sm,
+  fontSize: vars.fontSize.base,
   transitionDuration: '300ms',
   textDecoration: 'none',
   color: 'inherit',
@@ -66,27 +65,27 @@ export const socialLink = style({
   },
   '@media': {
     [media.md]: {
-      fontSize: vars.fontSize.base,
+      fontSize: vars.fontSize.sm,
     },
   },
 })
 
 export const socialIcon = style({
   transition: 'all 300ms',
-  opacity: 1,
-  filter: 'grayscale(0)',
+  filter: 'grayscale(1)',
+  opacity: 0.5,
   '@media': {
     [media.md]: {
-      filter: 'grayscale(1)',
-      opacity: 0.5,
+      opacity: 1,
+      filter: 'grayscale(0)',
     },
   },
   selectors: {
     [`${socialLink}:hover &`]: {
       '@media': {
         [media.md]: {
-          filter: 'grayscale(0)',
-          opacity: 1,
+          filter: 'grayscale(1)',
+          opacity: 0.5,
         },
       },
     },

@@ -1,10 +1,10 @@
 import images from './images.json'
+import * as styles from './page.css'
 import GoogleMapUrl from '@/components/google-map-url'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { generateOgImageUrl } from '@/lib/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import * as styles from './page.css'
 
 export const metadata: Metadata = {
   title: 'Photo | ikki-kki',
@@ -20,9 +20,7 @@ const PhotoPage = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Photo</h1>
-      <h2 className={styles.subtitle}>
-        Some memories I want to cherish.
-      </h2>
+      <h2 className={styles.subtitle}>Some memories I want to cherish.</h2>
 
       <div className={styles.grid}>
         {[...images].reverse().map((image, index) => (

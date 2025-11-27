@@ -1,7 +1,6 @@
-import * as styles from './mdx-components.css'
 import PostFooter from './components/postDetail/postFooter'
-import TableOfContents from './components/postDetail/tableOfContents'
 import PostHeader from './components/postDetail/postHeader'
+import TableOfContents from './components/postDetail/tableOfContents'
 import {
   Table,
   TableHeader,
@@ -10,6 +9,7 @@ import {
   TableHead,
   TableCell,
 } from './components/ui/table'
+import * as styles from './mdx-components.css'
 import type { MDXComponents } from 'mdx/types'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

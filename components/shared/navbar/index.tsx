@@ -29,7 +29,10 @@ const Navbar = () => {
         <Link
           key={link.path}
           href={link.path}
-          className={cn(styles.link, link.path === currentPathname && styles.activeLink)}
+          className={cn(
+            styles.link,
+            link.path === currentPathname && styles.activeLink,
+          )}
         >
           {link.title}
         </Link>
