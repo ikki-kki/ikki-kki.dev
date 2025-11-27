@@ -43,7 +43,8 @@ export function generateWebsiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'ikki-kki',
-    description: 'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
+    description:
+      'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
     url: 'https://ikki-kki.dev',
     author: {
       '@type': 'Person',

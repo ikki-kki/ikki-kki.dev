@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 const Posts = () => {
   return (
     <div>
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h1 className={styles.title}>Posts</h1>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h1 className={styles.title}>Posts</h1>
 
-        <div className={styles.postList}>
-          {posts.map((post) => (
-            <PostItem key={post.slug} {...post} />
-          ))}
+          <div className={styles.postList}>
+            {posts.map((post) => (
+              <PostItem key={post.slug} {...post} />
+            ))}
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
-        <Footer/>
-          </div>
   )
 }
 

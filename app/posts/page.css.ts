@@ -18,7 +18,7 @@ export const title = style({
 
   '@media': {
     [media.md]: {
-  fontSize: vars.fontSize['2xl'],
+      fontSize: vars.fontSize['2xl'],
     },
   },
 })

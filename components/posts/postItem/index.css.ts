@@ -13,7 +13,7 @@ export const link = style({
     '&:first-child': {
       paddingTop: 0,
     },
-  }
+  },
 })
 
 export const header = style({

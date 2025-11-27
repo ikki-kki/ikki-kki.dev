@@ -16,7 +16,8 @@ export default function PostHeader() {
   return (
     <div className={styles.container}>
       <time dateTime={currentPost.date} className={styles.date}>
-        {format(new Date(currentPost.date), 'MMM d, yyyy')} • {currentPost.readingTime} min read
+        {format(new Date(currentPost.date), 'MMM d, yyyy')} •{' '}
+        {currentPost.readingTime} min read
       </time>
       <h1 className={styles.title}>{currentPost.title}</h1>
     </div>

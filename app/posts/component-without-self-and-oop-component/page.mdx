@@ -287,7 +287,12 @@ const DefaultForm = ({
 Default따위는 존재하지 않는다. 뷰 컴포넌트를 래핑한 컨트롤러 컴포넌트는 반드시 목적별로 카테고라이징 되어야한다. 컴포넌트의 이름을 DefaultForm 따위로 짓게 된다면 이런 사달이 난다.
 복잡도를 잡기 위해선 컨트롤러 컴포넌트는 목적에 맞도록 찢어져야만 한다.
 
-<Image src="/images/component-without-self-and-oop-component/1.png" alt="" width={280} height={120} />
+<Image
+  src="/images/component-without-self-and-oop-component/1.png"
+  alt=""
+  width={280}
+  height={120}
+/>
 
 이게 옳게된 컨트롤러 컴포넌트 설계이다.
 
@@ -318,7 +323,7 @@ Default따위는 존재하지 않는다. 뷰 컴포넌트를 래핑한 컨트롤
 개인적인 생각으로는 컨트롤러 컴포넌트를 여러 개 생성하는 건 아래와 크게 다르지 않은 것 같다.
 
 ```javascript
-const CharacterSelectForm = new Form("CharacterSelect");
-const SignUpSelectForm = new Form("SignUp");
-const EventForm = new Form("EventForm");
+const CharacterSelectForm = new Form('CharacterSelect')
+const SignUpSelectForm = new Form('SignUp')
+const EventForm = new Form('EventForm')
 ```

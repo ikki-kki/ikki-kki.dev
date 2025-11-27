@@ -3,10 +3,9 @@ import './prism-theme.css'
 import '@/app/globals.css.ts'
 import BackgroundWrapper from '@/components/shared/backgroundWrapper'
 import Navbar from '@/components/shared/navbar'
-import Footer from '@/components/shared/footer'
+import { generateWebsiteJsonLd } from '@/lib/structured-data'
 import { themeClass } from '@/lib/theme.css'
 import { Analytics } from '@vercel/analytics/next'
-import { generateWebsiteJsonLd } from '@/lib/structured-data'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
@@ -53,9 +52,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ikki-kki.dev',
     types: {
-      'application/rss+xml': [
-        { url: '/rss.xml', title: 'ikki-kki RSS Feed' },
-      ],
+      'application/rss+xml': [{ url: '/rss.xml', title: 'ikki-kki RSS Feed' }],
     },
   },
   metadataBase: new URL('https://ikki-kki.dev'),

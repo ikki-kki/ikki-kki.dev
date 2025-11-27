@@ -1,11 +1,10 @@
 'use client'
 
-import Footer from '@/components/shared/footer'
 import GiscusComments from '../giscusComments'
 import * as styles from './index.css'
+import Footer from '@/components/shared/footer'
 
 export default function PostFooter() {
-
   return (
     <div className={styles.container}>
       <GiscusComments
@@ -18,7 +17,7 @@ export default function PostFooter() {
         lang="ko"
         loading="lazy"
       />
-<Footer />
+      <Footer />
     </div>
   )
 }

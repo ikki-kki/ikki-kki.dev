@@ -143,13 +143,16 @@ globalStyle('.prose :where(blockquote):not(:where([class~="not-prose"] *))', {
   borderLeft: `4px solid ${vars.color.green[200]}`,
   // borderRadius: vars.borderRadius.lg,
   quotes: '"\\201C""\\201D""\\2018""\\2019"',
-  padding:'1em',
+  padding: '1em',
   margin: 0,
 })
 
-globalStyle('.prose :where(blockquote):not(:where([class~="not-prose"] *)) > p', {
-  margin: 0,
-})
+globalStyle(
+  '.prose :where(blockquote):not(:where([class~="not-prose"] *)) > p',
+  {
+    margin: 0,
+  },
+)
 
 globalStyle('.prose :where(img):not(:where([class~="not-prose"] *))', {
   marginTop: '2em',

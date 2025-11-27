@@ -36,7 +36,12 @@ ESLint는 `ES`와 `Lint`의 합성어입니다. ES는 EcmaScript, 즉 자바스�
 
 어떤 과정으로 ESLint 가 동작하는지 간략하게 표현한 그림입니다.
 
-<Image src="/images/eslint-how-it-works/1.png" alt="" width={600} height={150} />
+<Image
+  src="/images/eslint-how-it-works/1.png"
+  alt=""
+  width={600}
+  height={150}
+/>
 출처: https://tech.kakao.com/2019/12/05/make-better-use-of-eslint/
 
 ESLint의 동작은 크게 두 가지로 나눌 수 있습니다.
@@ -58,7 +63,12 @@ ESLint의 동작은 크게 두 가지로 나눌 수 있습니다.
 
 토큰화 과정에서 코드는 어휘 분석 과정에 의해 문자열로 읽히면서 토큰 목록으로 쪼개집니다.
 
-<Image src="/images/eslint-how-it-works/2.png" alt="" width={600} height={150} />
+<Image
+  src="/images/eslint-how-it-works/2.png"
+  alt=""
+  width={600}
+  height={150}
+/>
 출처: https://itchallenger.tistory.com/709
 
 ### 구문 분석(Pasring)
@@ -87,7 +97,12 @@ ESLint의 동작은 크게 두 가지로 나눌 수 있습니다.
 
 [https://ko.wikipedia.org/wiki/추상*구문*트리](https://ko.wikipedia.org/wiki/%EC%B6%94%EC%83%81_%EA%B5%AC%EB%AC%B8_%ED%8A%B8%EB%A6%AC)
 
-<Image src="/images/eslint-how-it-works/3.png" alt="" width={600} height={380} />
+<Image
+  src="/images/eslint-how-it-works/3.png"
+  alt=""
+  width={600}
+  height={380}
+/>
 
 말로는 이해가 잘 안되니 Javascript 구조에 따른 AST의 구조를 JSON 포맷으로 확인해보겠습니다.
 
@@ -96,12 +111,17 @@ ESLint의 동작은 크게 두 가지로 나눌 수 있습니다.
 [ESLint Parser Demo](https://denar90.github.io/eslint.github.io/parser/)
 
 - 그래서 AST가 뭐라고?
-  <Image src="/images/eslint-how-it-works/4.png" alt="" width={600} height={380} />
-  AST(Abstract Syntax Tree)는 컴파일러에서 널리 사용되는 자료구조로 소스코드의 구조를
-  트리 형태로 표현한 것입니다. AST를 구성하고 있는 노드는 자신이 어떤 노드인지를
-  알려주는 노드 타입, 소스 코드에서 노드의 위치, 하위 자식 노드들에 대한 레퍼런스
-  등을 가지고 있습니다. AST에 대해 더 자세하게 알고 싶다면 [해당 문서](https://itchallenger.tistory.com/709)를
-  참고하시면 좋습니다.
+  <Image
+    src="/images/eslint-how-it-works/4.png"
+    alt=""
+    width={600}
+    height={380}
+  />
+  AST(Abstract Syntax Tree)는 컴파일러에서 널리 사용되는 자료구조로 소스코드의
+  구조를 트리 형태로 표현한 것입니다. AST를 구성하고 있는 노드는 자신이 어떤
+  노드인지를 알려주는 노드 타입, 소스 코드에서 노드의 위치, 하위 자식 노드들에
+  대한 레퍼런스 등을 가지고 있습니다. AST에 대해 더 자세하게 알고 싶다면 [해당
+  문서](https://itchallenger.tistory.com/709)를 참고하시면 좋습니다.
 
 ESLint 뿐만 아니라 실제 프로덕션 코드로 올라가는 것은 아니지만, 개발 과정에서 중요한 역할을 하는 **`devDependencies`**에 의존성이 있는 자바스크립트 트랜스파일링, CSS pre-processor, prettier 기능들은 모두 AST를 기반으로 동작합니다.
 
@@ -122,7 +142,7 @@ ESLint 뿐만 아니라 실제 프로덕션 코드로 올라가는 것은 아니
 [Eslint Parse Demo 페이지](https://denar90.github.io/eslint.github.io/parser/)에서 변수 선언문 트리를 만들면 아래와 같은 AST를 확인할 수 있습니다.
 
 ```jsx
-const h = "hello world";
+const h = 'hello world'
 ```
 
 ```json
@@ -171,20 +191,20 @@ const h = "hello world";
 아래는 규칙을 기반으로 만들어본 eslint의 Rule입니다.
 
 ```jsx
-const REPLACE_NAME = "바보";
+const REPLACE_NAME = '바보'
 
 module.exports = {
   meta: {
     // ...
     // eslint가 자동으로 수정할 수 있도록 허용하는 옵션
-    fixable: true
+    fixable: true,
   },
 
   create(context) {
     return {
       // 1. 노드 타입이 VariableDeclarator일떄
       VariableDeclarator(node) {
-        const { name } = node.id;
+        const { name } = node.id
         // 2. 노드의 이름(node.id.name)이 1글자라면
         if (name.length < 2) {
           // 3. 린트 에러를 발생시키고, 새로운 변수명으로 수정한다.
@@ -192,13 +212,13 @@ module.exports = {
             node,
             data: { outOfRuleName: name },
             message: `'{{outOfRuleName}}()' 는 한 글자 변수명이라 사용할 수  없습니다.`,
-            fix: (fixer) => fixer.replaceText(name, REPLACE_NAME)
-          });
+            fix: (fixer) => fixer.replaceText(name, REPLACE_NAME),
+          })
         }
-      }
-    };
-  }
-};
+      },
+    }
+  },
+}
 ```
 
 예제 코드를 보면 **`meta`** 객체에 **`fixable`** 속성이 true로 설정되어 있어, eslint가 자동으로 수정할 수 있는 규칙을 가지고 있습니다. **`fixable`** 속성이 true로 설정되면, 린트가 발견한 문제를 자동으로 수정할 수 있는 패치(patch)를 제공합니다.
@@ -219,8 +239,8 @@ context.report({
   node,
   data: { outOfRuleName: name },
   message: `'{{outOfRuleName}}()' 는 한 글자 변수명이라 사용할 수  없습니다.`,
-  fix: (fixer) => fixer.replaceText(name, REPLACE_NAME)
-});
+  fix: (fixer) => fixer.replaceText(name, REPLACE_NAME),
+})
 ```
 
 **`context.report()`**함수는 메시지(**`message`**와 노드(**`node`**)정보를 전달하여 문제를 발견하면 보고하는 역할을 담당합니다. 메시지는 출력될 에러 텍스트 정보가 포함되어 있으며, 노드는 실제 소스코드에서 해당 코드의 위치가 어디지인지 알고 있디 때문에 규칙을 어긴 코드의 위치도 알 수 있습니다.
