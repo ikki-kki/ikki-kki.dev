@@ -4,7 +4,7 @@ export const [themeClass, vars] = createTheme({
   color: {
     background: '#fdfff9ff',
     green: {
-      50: '#f0f9e8',
+      50: '#f7fdecff',
       100: '#e5f0b0',
       200: '#cbdd62',
       300: '#aedd66',
@@ -13,7 +13,7 @@ export const [themeClass, vars] = createTheme({
       600: '#336429',
       700: '#2a5222',
       800: '#1f3c1a',
-      900: '#032425',
+      900: '#011102ff',
     },
     gray: {
       50: '#f9fafb',

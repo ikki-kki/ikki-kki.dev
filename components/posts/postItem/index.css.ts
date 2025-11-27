@@ -44,11 +44,8 @@ export const tagContainer = style({
 
 export const tag = style({
   fontSize: vars.fontSize.xs,
-  backgroundColor: vars.color.green[200],
+  backgroundColor: vars.color.green[100],
   color: vars.color.green[600],
-  paddingLeft: vars.space[2],
-  paddingRight: vars.space[2],
-  paddingTop: vars.space[1],
-  paddingBottom: vars.space[1],
+  padding: `0 ${vars.space[2]}`,
   borderRadius: vars.borderRadius.base,
 })

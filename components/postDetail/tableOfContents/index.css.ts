@@ -50,13 +50,13 @@ export const tocButton = style({
   transition: 'all 200ms',
   textDecoration: 'none',
   ':hover': {
-    color: vars.color.green[500],
+    color: vars.color.green[700],
   },
 })
 
 export const tocButtonVariants = styleVariants({
   active: {
-    color: vars.color.green[500],
+    color: vars.color.green[700],
   },
   inactive: {
     color: vars.color.green[400],

@@ -2,11 +2,13 @@ import { vars } from '@/lib/theme.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
-  marginBottom: vars.space[8],
+  display: 'flex',
+  flexDirection: 'column',
+  marginBottom: vars.space[6],
+  gap: vars.space[3],
 })
 
 export const title = style({
   fontSize: vars.fontSize['3xl'],
   fontWeight: vars.fontWeight.bold,
-  marginBottom: vars.space[2],
 })

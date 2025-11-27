@@ -139,13 +139,16 @@ globalStyle('.prose :where(pre):not(:where([class~="not-prose"] *))', {
 
 globalStyle('.prose :where(blockquote):not(:where([class~="not-prose"] *))', {
   fontWeight: 500,
-  fontStyle: 'italic',
-  borderLeftWidth: '0.25rem',
-  borderLeftColor: vars.color.gray[300],
+  backgroundColor: vars.color.green[50],
+  borderLeft: `4px solid ${vars.color.green[200]}`,
+  // borderRadius: vars.borderRadius.lg,
   quotes: '"\\201C""\\201D""\\2018""\\2019"',
-  marginTop: '1.6em',
-  marginBottom: '1.6em',
-  paddingLeft: '1em',
+  padding:'1em',
+  margin: 0,
+})
+
+globalStyle('.prose :where(blockquote):not(:where([class~="not-prose"] *)) > p', {
+  margin: 0,
 })
 
 globalStyle('.prose :where(img):not(:where([class~="not-prose"] *))', {
