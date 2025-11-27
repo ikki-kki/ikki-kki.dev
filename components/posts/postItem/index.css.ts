@@ -8,6 +8,12 @@ export const link = style({
   borderBottom: `1px solid ${vars.color.green[100]}`,
   transition: 'background-color 150ms, color 150ms',
   textDecoration: 'none',
+
+  selectors: {
+    '&:first-child': {
+      paddingTop: 0,
+    },
+  }
 })
 
 export const header = style({

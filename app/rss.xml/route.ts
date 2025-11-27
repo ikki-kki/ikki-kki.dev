@@ -40,7 +40,7 @@ export async function GET() {
     ${posts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .map((post) => {
-        const postUrl = `${siteUrl}/blog/${post.slug}`
+        const postUrl = `${siteUrl}/posts/${post.slug}`
         const pubDate = new Date(post.date).toUTCString()
 
         return `

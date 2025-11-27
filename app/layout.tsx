@@ -6,6 +6,7 @@ import Navbar from '@/components/shared/navbar'
 import Footer from '@/components/shared/footer'
 import { themeClass } from '@/lib/theme.css'
 import { Analytics } from '@vercel/analytics/next'
+import { generateWebsiteJsonLd } from '@/lib/structured-data'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
@@ -41,6 +42,22 @@ export const metadata: Metadata = {
     site: '@ikki-kki',
     creator: '@ikki-kki',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: 'https://ikki-kki.dev',
+    types: {
+      'application/rss+xml': [
+        { url: '/rss.xml', title: 'ikki-kki RSS Feed' },
+      ],
+    },
+  },
   metadataBase: new URL('https://ikki-kki.dev'),
 }
 
@@ -49,8 +66,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const websiteJsonLd = generateWebsiteJsonLd()
+
   return (
-    <html lang="en" suppressHydrationWarning className={themeClass}>
+    <html lang="ko" suppressHydrationWarning className={themeClass}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`}
       >

@@ -4,11 +4,6 @@ import { style } from '@vanilla-extract/css'
 export const container = style({
   marginTop: vars.space[16],
   paddingBottom: vars.space[6],
-  '@media': {
-    [media.md]: {
-      marginTop: vars.space[20],
-    },
-  },
 })
 
 export const content = style({
@@ -20,6 +15,12 @@ export const content = style({
 export const title = style({
   fontSize: vars.fontSize['3xl'],
   color: vars.color.green[900],
+
+  '@media': {
+    [media.md]: {
+  fontSize: vars.fontSize['2xl'],
+    },
+  },
 })
 
 export const postList = style({
