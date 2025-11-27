@@ -6,7 +6,7 @@ export const staticBackground = style({
   inset: 0,
   background: vars.color.background,
   opacity: 0,
-  transition: 'opacity 0.6s ease-in-out',
+  transition: 'opacity 0.4s ease-in-out',
   pointerEvents: 'none',
 })
 
@@ -18,7 +18,7 @@ export const animatedBackground = style({
   position: 'fixed',
   inset: 0,
   opacity: 1,
-  transition: 'opacity 0.6s ease-in-out',
+  transition: 'opacity 0.4s ease-in-out',
 })
 
 export const animatedBackgroundHidden = style({
