@@ -22,7 +22,7 @@ const Hero = () => {
           My name is Jeongmin Sung, a Frontend Engineer based in Seoul, Korea.
           <br />
           <br />
-          I'm at my best when collaborating with others, performing well in team
+          I&apos;m at my best when collaborating with others, performing well in team
           projects where I can share my skills and ideas.
           <br />I love creating beautiful, user-friendly designs and building
           smooth UX with React and TypeScript.
