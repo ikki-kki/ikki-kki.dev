@@ -1,5 +1,5 @@
 import './globals.css'
-import LightRay from '@/components/light-ray'
+import BackgroundWrapper from '@/components/background-wrapper'
 import Navbar from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
@@ -46,12 +46,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <div className="fixed inset-0 z-0">
-          <LightRay />
+        <div className="z-0">
+          <BackgroundWrapper />
         </div>
         <div className="container mx-auto font-mono px-6 relative z-10">
           <Navbar />

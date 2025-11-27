@@ -23,7 +23,7 @@ const Navbar = () => {
   const currentPathname = `/${usePathname().split('/')[1]}`
 
   return (
-    <nav className="mt-12 flex space-x-6 md:space-x-12">
+    <nav className="mt-12 max-w-[720px] mx-auto flex space-x-6 md:space-x-12">
       {links.map((link) => (
         <Link
           key={link.path}

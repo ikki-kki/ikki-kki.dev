@@ -1,30 +1,23 @@
 import { Post } from '@/lib/type'
-import { Tag } from 'lucide-react'
 import Link from 'next/link'
 
-const PostItem = ({ slug, title, description, date, tags }: Post) => {
+const PostItem = ({ slug, title, description, tags }: Post) => {
   return (
     <Link
       href={`/blog/${slug}`}
-      className="border block px-6 py-4 rounded-2xl bg-white/50 hover:bg-white/80 duration-150"
+      className="block py-6 border-b border-gray-200 hover:bg-gray-50/50 transition-colors duration-150"
     >
-      <h3 className="text-dark font-semibold">{title}</h3>
-      <p className="text-sm text-gray-500">{description}</p>
-      <div className="flex justify-between items-center mt-3">
-        <div className="flex items-center space-x-4">
-          <p className="text-xs">{date}</p>
-          <div className="flex space-x-2">
-            {tags?.map((tag, index) => (
-              <span
-                key={index}
-                className="text-xs bg-amber-100 px-1.5 py-0.5 rounded-lg flex items-center"
-              >
-                <Tag className="h-2.5 w-2.5 mr-1" />
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+      <h3 className="text-dark font-semibold text-lg mb-2">{title}</h3>
+      <p className="text-sm text-gray-600 mb-3">{description}</p>
+      <div className="flex space-x-2">
+        {tags?.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded"
+          >
+            {tag}
+          </span>
+        ))}
       </div>
     </Link>
   )
