@@ -1,7 +1,8 @@
+import * as styles from './page.css'
 import { posts } from './posts'
-import Post from '@/components/post'
+import PostItem from '@/components/posts/postItem'
 import { generateOgImageUrl } from '@/lib/utils'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog | ikki-kki',
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
 
 const Blog = () => {
   return (
-    <div className="mt-20 md:mt-32 pb-20">
-      <div className="max-w-[720px] mx-auto">
-        <h1 className="text-2xl text-dark">Blog</h1>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <h1 className={styles.title}>Blog</h1>
 
-        <div className="mt-12 space-y-6">
+        <div className={styles.postList}>
           {posts.map((post) => (
-            <Post key={post.slug} {...post} />
+            <PostItem key={post.slug} {...post} />
           ))}
         </div>
       </div>

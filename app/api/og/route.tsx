@@ -28,7 +28,6 @@ export async function GET(request: NextRequest) {
             letterSpacing: '-0.025em',
             fontStyle: 'normal',
             color: '#4F4F4F',
-            lineHeight: '110px',
             whiteSpace: 'pre-wrap',
           }}
         >

@@ -1,17 +1,15 @@
+import * as styles from './table.css'
 import { cn } from '@/lib/utils'
-import React from 'react'
+import type React from 'react'
 
 export function Table({
   className,
   ...props
 }: React.HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="relative w-full overflow-auto">
+    <div className={styles.tableWrapper}>
       <table
-        className={cn(
-          'w-full caption-bottom text-sm border-collapse border border-gray-200 rounded-lg',
-          className
-        )}
+        className={cn(styles.table, className)}
         {...props}
       />
     </div>
@@ -24,7 +22,7 @@ export function TableHeader({
 }: React.HTMLAttributes<HTMLTableSectionElement>) {
   return (
     <thead
-      className={cn('bg-gray-50/80 [&_tr]:border-b', className)}
+      className={cn(styles.thead, className)}
       {...props}
     />
   )
@@ -36,7 +34,7 @@ export function TableBody({
 }: React.HTMLAttributes<HTMLTableSectionElement>) {
   return (
     <tbody
-      className={cn('[&_tr:last-child]:border-0', className)}
+      className={cn(styles.tbody, className)}
       {...props}
     />
   )
@@ -48,10 +46,7 @@ export function TableRow({
 }: React.HTMLAttributes<HTMLTableRowElement>) {
   return (
     <tr
-      className={cn(
-        'border-b border-gray-200 transition-colors hover:bg-gray-50/50 data-[state=selected]:bg-gray-100',
-        className
-      )}
+      className={cn(styles.tr, className)}
       {...props}
     />
   )
@@ -63,10 +58,7 @@ export function TableHead({
 }: React.ThHTMLAttributes<HTMLTableCellElement>) {
   return (
     <th
-      className={cn(
-        'h-12 px-4 text-left align-middle font-semibold text-gray-900 [&:has([role=checkbox])]:pr-0',
-        className
-      )}
+      className={cn(styles.th, className)}
       {...props}
     />
   )
@@ -78,10 +70,7 @@ export function TableCell({
 }: React.TdHTMLAttributes<HTMLTableCellElement>) {
   return (
     <td
-      className={cn(
-        'p-4 align-middle text-gray-700 [&:has([role=checkbox])]:pr-0',
-        className
-      )}
+      className={cn(styles.td, className)}
       {...props}
     />
   )

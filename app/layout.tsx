@@ -1,6 +1,9 @@
-import './globals.css'
-import BackgroundWrapper from '@/components/background-wrapper'
-import Navbar from '@/components/navbar'
+import '@/app/globals.css.ts'
+import './prism-theme.css'
+import * as styles from './layout.css'
+import BackgroundWrapper from '@/components/shared/backgroundWrapper'
+import Navbar from '@/components/shared/navbar'
+import { themeClass } from '@/lib/theme.css'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -46,14 +49,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={themeClass}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`}
       >
-        <div className="z-0">
+        <div className={styles.backgroundLayer}>
           <BackgroundWrapper />
         </div>
-        <div className="container mx-auto font-mono px-6 relative z-10">
+        <div className={styles.container}>
           <Navbar />
           {children}
         </div>

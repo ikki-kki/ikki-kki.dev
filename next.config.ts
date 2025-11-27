@@ -1,6 +1,11 @@
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 import createMDX from '@next/mdx'
 import type { NextConfig } from 'next'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypePrismPlus from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
+
+const withVanillaExtract = createVanillaExtractPlugin()
 
 const nextConfig: NextConfig = {
   pageExtensions: ['ts', 'tsx', 'mdx'],
@@ -20,7 +25,8 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeCodeTitles, [rehypePrismPlus, { showLineNumbers: true }]],
   },
 })
 
-export default withMDX(nextConfig)
+export default withVanillaExtract(withMDX(nextConfig))

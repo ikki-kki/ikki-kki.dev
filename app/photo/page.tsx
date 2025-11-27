@@ -2,8 +2,9 @@ import images from './images.json'
 import GoogleMapUrl from '@/components/google-map-url'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { generateOgImageUrl } from '@/lib/utils'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import * as styles from './page.css'
 
 export const metadata: Metadata = {
   title: 'Photo | ikki-kki',
@@ -17,26 +18,26 @@ export const metadata: Metadata = {
 
 const PhotoPage = () => {
   return (
-    <div className="mt-20 md:mt-32 pb-20">
-      <h1 className="text-2xl text-dark">Photo</h1>
-      <h2 className="mt-1 text-gray-500 text-sm">
+    <div className={styles.container}>
+      <h1 className={styles.title}>Photo</h1>
+      <h2 className={styles.subtitle}>
         Some memories I want to cherish.
       </h2>
 
-      <div className="mt-12 md:mt-20 grid md:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
+      <div className={styles.grid}>
         {[...images].reverse().map((image, index) => (
-          <div key={index}>
+          <div key={index} className={styles.imageItem}>
             <AspectRatio ratio={3 / 4}>
               <Image
                 src={image.url}
                 alt={image.description}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                className="object-cover"
+                className={styles.imageWrapper}
                 priority={index < 8}
               />
             </AspectRatio>
-            <div className="flex justify-between text-xs text-gray-500 mt-1">
+            <div className={styles.imageInfo}>
               <p>{image.date}</p>
               {image.latitude && image.longitude && (
                 <GoogleMapUrl
