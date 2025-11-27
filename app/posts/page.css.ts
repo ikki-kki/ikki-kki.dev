@@ -2,8 +2,8 @@ import { vars, media } from '@/lib/theme.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
-  marginTop: vars.space[32],
-  paddingBottom: vars.space[20],
+  marginTop: vars.space[16],
+  paddingBottom: vars.space[6],
   '@media': {
     [media.md]: {
       marginTop: vars.space[20],
@@ -18,7 +18,7 @@ export const content = style({
 })
 
 export const title = style({
-  fontSize: vars.fontSize['2xl'],
+  fontSize: vars.fontSize['3xl'],
   color: vars.color.green[900],
 })
 

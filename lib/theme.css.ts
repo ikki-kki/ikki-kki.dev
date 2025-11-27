@@ -53,7 +53,9 @@ export const [themeClass, vars] = createTheme({
     20: '5rem', // 80px
     24: '6rem', // 96px
     28: '7rem', // 112px
+    30: '7.5rem', // 120px
     32: '8rem', // 128px
+    34: '8.5rem', // 136px
     40: '10rem', // 160px
     48: '12rem', // 192px
     56: '14rem', // 224px

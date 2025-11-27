@@ -1,5 +1,6 @@
 'use client'
 
+import Footer from '@/components/shared/footer'
 import GiscusComments from '../giscusComments'
 import * as styles from './index.css'
 
@@ -17,6 +18,7 @@ export default function PostFooter() {
         lang="ko"
         loading="lazy"
       />
+<Footer />
     </div>
   )
 }

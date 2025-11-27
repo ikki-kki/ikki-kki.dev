@@ -13,6 +13,7 @@ export const container = style({
   paddingRight: vars.space[6],
   position: 'relative',
   zIndex: 10,
+  height: '100vh',
 })
 
 export const backgroundLayer = style({

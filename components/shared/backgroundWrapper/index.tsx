@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 const BackgroundWrapper = () => {
   const pathname = usePathname()
   const isBlogDetail =
-    pathname.startsWith('/blog/') && pathname.split('/').length > 2
+    pathname.startsWith('/posts/') && pathname.split('/').length > 2
 
   return (
     <>

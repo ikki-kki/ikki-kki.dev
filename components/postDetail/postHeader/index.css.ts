@@ -8,6 +8,10 @@ export const container = style({
   gap: vars.space[3],
 })
 
+export const date = style({
+  color: vars.color.gray[600],
+})
+
 export const title = style({
   fontSize: vars.fontSize['3xl'],
   fontWeight: vars.fontWeight.bold,

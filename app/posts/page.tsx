@@ -1,24 +1,26 @@
 import * as styles from './page.css'
 import { posts } from './posts'
 import PostItem from '@/components/posts/postItem'
+import Footer from '@/components/shared/footer'
 import { generateOgImageUrl } from '@/lib/utils'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blog | ikki-kki',
-  description: 'Blog posts by ikki-kki.',
+  title: 'Posts | ikki-kki',
+  description: 'Posts posts by ikki-kki.',
   openGraph: {
-    title: 'Blog | ikki-kki',
-    description: 'Blog posts by ikki-kki.',
-    images: [{ url: generateOgImageUrl('Blog'), alt: 'ikki-kki.dev' }],
+    title: 'Posts | ikki-kki',
+    description: 'Posts by ikki-kki.',
+    images: [{ url: generateOgImageUrl('Posts'), alt: 'ikki-kki.dev' }],
   },
 }
 
-const Blog = () => {
+const Posts = () => {
   return (
+    <div>
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Blog</h1>
+        <h1 className={styles.title}>Posts</h1>
 
         <div className={styles.postList}>
           {posts.map((post) => (
@@ -27,7 +29,9 @@ const Blog = () => {
         </div>
       </div>
     </div>
+        <Footer/>
+          </div>
   )
 }
 
-export default Blog
+export default Posts

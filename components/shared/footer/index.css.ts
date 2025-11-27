@@ -2,9 +2,6 @@ import { vars, media } from '@/lib/theme.css'
 import { style } from '@vanilla-extract/css'
 
 export const footer = style({
-  position: 'fixed',
-  bottom: 0,
-  left: 0,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -13,9 +10,19 @@ export const footer = style({
   paddingBottom: vars.space[4],
   gap: vars.space[4],
   fontSize: vars.fontSize.base,
+  marginTop: 'auto',
   '@media': {
     [media.md]: {
       display: 'none',
+    },
+  },
+
+  selectors: {
+    '&[data-position-fixed="true"]': {
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      marginTop: 0,
     },
   },
 })

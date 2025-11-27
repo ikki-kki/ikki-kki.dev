@@ -1,4 +1,4 @@
-import { posts } from '../blog/posts'
+import { posts } from '../posts/posts'
 
 function escapeXml(unsafe: string): string {
   return unsafe.replace(/[<>&'"]/g, function (c) {

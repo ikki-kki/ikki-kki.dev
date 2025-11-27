@@ -11,4 +11,5 @@ export interface Post {
   description: string
   date: string
   tags?: string[]
+  readingTime?: number
 }

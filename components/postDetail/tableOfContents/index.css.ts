@@ -4,7 +4,7 @@ import { style, styleVariants, globalStyle } from '@vanilla-extract/css'
 export const sidebar = style({
   position: 'fixed',
   left: 'calc(50% + 370px)',
-  top: vars.space[32],
+  top: vars.space[34],
   width: '16rem',
   display: 'flex',
   flexDirection: 'column',

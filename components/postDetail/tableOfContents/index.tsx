@@ -15,7 +15,7 @@ export default function TableOfContents() {
   const [activeId, setActiveId] = useState<string>('')
 
   useEffect(() => {
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    const headings = document.querySelectorAll('h2, h3, h4, h5, h6')
     const tocItems: TocItem[] = []
 
     headings.forEach((heading, index) => {
@@ -107,7 +107,7 @@ export default function TableOfContents() {
               <li
                 key={item.id}
                 className={styles.tocItem}
-                style={{ paddingLeft: `${(item.level - 1) * 12}px` }}
+                style={{ paddingLeft: `${(item.level - 2) * 12}px` }}
               >
                 <a
                   href={`#${item.id}`}
