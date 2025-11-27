@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ikki-kki.dev/sitemap.xml
+Sitemap: https://ikki-kki-dev.vercel.app/sitemap.xml

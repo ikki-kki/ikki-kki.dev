@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     title: 'ikki-kki',
     description:
       'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
-    url: 'https://ikki-kki.dev',
+    url: 'https://ikki-kki-dev.vercel.app',
     siteName: 'ikki-kki',
     images: [
       {
-        url: 'https://ikki-kki.dev/api/og?title=ikki-kki.dev',
+        url: 'https://ikki-kki-dev.vercel.app/api/og?title=ikki-kki.dev',
         alt: 'ikki-kki.dev',
       },
     ],
@@ -50,12 +50,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ikki-kki.dev',
+    canonical: 'https://ikki-kki-dev.vercel.app',
     types: {
       'application/rss+xml': [{ url: '/rss.xml', title: 'ikki-kki RSS Feed' }],
     },
   },
-  metadataBase: new URL('https://ikki-kki.dev'),
+  metadataBase: new URL('https://ikki-kki-dev.vercel.app'),
 }
 
 export default function RootLayout({
