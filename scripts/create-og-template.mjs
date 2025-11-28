@@ -6,10 +6,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 /**
  * 새 포스트의 opengraph-image.tsx 템플릿 파일을 생성합니다.
- * 
+ *
  * 사용법:
  *   node scripts/create-og-template.mjs <post-slug> "<alt-text>"
- * 
+ *
  * 예시:
  *   node scripts/create-og-template.mjs my-new-post "My New Post Title"
  */
@@ -19,8 +19,12 @@ const altText = process.argv[3]
 
 if (!postSlug || !altText) {
   console.error('Error: Post slug and alt text are required')
-  console.error('Usage: node scripts/create-og-template.mjs <post-slug> "<alt-text>"')
-  console.error('Example: node scripts/create-og-template.mjs my-new-post "My New Post Title"')
+  console.error(
+    'Usage: node scripts/create-og-template.mjs <post-slug> "<alt-text>"',
+  )
+  console.error(
+    'Example: node scripts/create-og-template.mjs my-new-post "My New Post Title"',
+  )
   process.exit(1)
 }
 
@@ -47,18 +51,23 @@ export default async function Image() {
 `
 
 async function main() {
-  const outputPath = join(__dirname, `../app/posts/${postSlug}/opengraph-image.tsx`)
-  
+  const outputPath = join(
+    __dirname,
+    `../app/posts/${postSlug}/opengraph-image.tsx`,
+  )
+
   console.log(`Creating opengraph-image.tsx template for: ${postSlug}`)
   console.log(`Alt text: ${altText}`)
   console.log(`Output path: ${outputPath}\n`)
-  
+
   try {
     await writeFile(outputPath, template)
     console.log(`✓ Template created successfully!`)
     console.log(`\nNext steps:`)
     console.log(`1. Make sure your dev server is running: pnpm dev`)
-    console.log(`2. Generate the OG image: node scripts/generate-single-og.mjs ${postSlug}`)
+    console.log(
+      `2. Generate the OG image: node scripts/generate-single-og.mjs ${postSlug}`,
+    )
   } catch (error) {
     console.error(`✗ Failed to create template:`, error.message)
     throw error

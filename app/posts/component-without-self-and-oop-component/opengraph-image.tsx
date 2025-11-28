@@ -8,7 +8,10 @@ export const contentType = 'image/webp'
 
 export default async function Image() {
   const imageData = await fetch(
-    new URL('../../../public/images/og-component-without-self-and-oop-component.webp', import.meta.url),
+    new URL(
+      '../../../public/images/og-component-without-self-and-oop-component.webp',
+      import.meta.url,
+    ),
   ).then((res) => res.arrayBuffer())
 
   return new Response(imageData, {

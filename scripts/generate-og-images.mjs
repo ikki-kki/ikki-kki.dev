@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises'
 import { join, dirname } from 'path'
-import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -40,25 +40,25 @@ const posts = [
 
 async function generateOgImage(post) {
   const url = `http://localhost:3000/posts/${post.name}/opengraph-image`
-  
+
   console.log(`Generating OG image for: ${post.name}...`)
-  
+
   try {
     const response = await fetch(url)
-    
+
     if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`)
+      throw new Error(
+        `Failed to fetch: ${response.status} ${response.statusText}`,
+      )
     }
-    
+
     const arrayBuffer = await response.arrayBuffer()
     const buffer = Buffer.from(arrayBuffer)
-    
+
     // Convert to WebP for better compression
     const outputPath = join(__dirname, `../public/images/og-${post.name}.webp`)
-    await sharp(buffer)
-      .webp({ quality: 90, effort: 6 })
-      .toFile(outputPath)
-    
+    await sharp(buffer).webp({ quality: 90, effort: 6 }).toFile(outputPath)
+
     console.log(`✓ Generated: og-${post.name}.webp`)
   } catch (error) {
     console.error(`✗ Failed to generate ${post.name}:`, error.message)
@@ -69,11 +69,11 @@ async function generateOgImage(post) {
 async function main() {
   console.log('Starting OG image generation...')
   console.log('Make sure your dev server is running on http://localhost:3000\n')
-  
+
   for (const post of posts) {
     await generateOgImage(post)
   }
-  
+
   console.log('\n✓ All OG images generated successfully!')
 }
 
