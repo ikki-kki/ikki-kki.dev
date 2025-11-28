@@ -1,4 +1,3 @@
-import { generateOgImageUrl } from '@/lib/utils'
 import Image from 'next/image'
 
 export const metadata = {
@@ -7,15 +6,6 @@ export const metadata = {
   openGraph: {
     title: 'Nested Feature Branch Workflow 전략으로 브랜치 관리',
     description: '브랜치를 브랜치에 싸서 드셔보세요',
-    images: [
-      {
-        url: generateOgImageUrl(
-          'Nested Feature Branch Workflow 전략으로 브랜치 관리',
-          '브랜치를 브랜치에 싸서 드셔보세요',
-        ),
-        alt: '브랜치를 브랜치에 싸서 드셔보세요',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
