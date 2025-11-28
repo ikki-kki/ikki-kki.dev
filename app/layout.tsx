@@ -20,19 +20,21 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'ikki-kki',
+  title: '이끼끼 블로그',
   description:
-    'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
+    'WELCOME!',
   openGraph: {
-    title: 'ikki-kki',
+    title: '이끼끼 블로그',
     description:
-      'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
+      'WELCOME!',
     url: 'https://ikki-kki-dev.vercel.app',
-    siteName: 'ikki-kki',
+    siteName: '이끼끼 블로그',
     images: [
       {
-        url: 'https://ikki-kki-dev.vercel.app/api/og?title=ikki-kki.dev',
-        alt: 'ikki-kki.dev',
+        url: 'https://ikki-kki-dev.vercel.app/images/og-home.png',
+        width: 1200,
+        height: 630,
+        alt: '이끼끼 블로그',
       },
     ],
   },
@@ -80,7 +82,7 @@ export default function RootLayout({
           <BackgroundWrapper />
         </div>
         <div className={styles.container}>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </div>
         <Analytics />

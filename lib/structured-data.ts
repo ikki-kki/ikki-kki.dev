@@ -13,7 +13,7 @@ export function generateBlogPostJsonLd(post: BlogPost) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: `https://ikki-kki-dev.vercel.app/api/og?title=${encodeURIComponent(post.title)}`,
+    image: `https://ikki-kki-dev.vercel.app/posts/${post.slug}/opengraph-image`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -26,7 +26,7 @@ export function generateBlogPostJsonLd(post: BlogPost) {
       name: 'ikki-kki',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://ikki-kki-dev.vercel.app/api/og?title=ikki-kki.dev',
+        url: 'https://ikki-kki-dev.vercel.app/opengraph-image',
       },
     },
     mainEntityOfPage: {
@@ -42,13 +42,13 @@ export function generateWebsiteJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'ikki-kki',
+    name: '이끼끼 블로그',
     description:
-      'Full-stack developer from Taiwan with a passion for crafting seamless user experiences and building scalable systems.',
+      'WELCOME!',
     url: 'https://ikki-kki-dev.vercel.app',
     author: {
       '@type': 'Person',
-      name: 'ikki-kki',
+      name: '이끼끼',
       url: 'https://ikki-kki-dev.vercel.app',
     },
     potentialAction: {

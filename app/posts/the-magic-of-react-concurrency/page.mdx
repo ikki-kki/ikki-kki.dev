@@ -3,17 +3,26 @@ import { generateOgImageUrl } from '@/lib/utils'
 import Image from 'next/image'
 
 export const metadata = {
-  title: '코드 한 줄로 경험하는 React 동시성의 마법',
+  title: '코드 한 줄로 경험하는 React 동시성의 마법',
   description: '인간의 인지 방식을 관찰해 설계된 기술',
   openGraph: {
-    title: '코드 한 줄로 경험하는 React 동시성의 마법',
+    title: '코드 한 줄로 경험하는 React 동시성의 마법',
     description: '인간의 인지 방식을 관찰해 설계된 기술',
     images: [
       {
-        url: generateOgImageUrl('코드 한 줄로 경험하는 React 동시성의 마법'),
+        url: generateOgImageUrl(
+          '코드 한 줄로 경험하는 React 동시성의 마법',
+          '인간의 인지 방식을 관찰해 설계된 기술',
+          '2025-04-16',
+        ),
         alt: '인간의 인지 방식을 관찰해 설계된 기술',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '코드 한 줄로 경험하는 React 동시성의 마법',
+    description: '인간의 인지 방식을 관찰해 설계된 기술',
   },
 }
 

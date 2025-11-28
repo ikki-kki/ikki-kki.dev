@@ -1,0 +1,86 @@
+import { ImageResponse } from 'next/og'
+
+export const runtime = 'edge'
+export const alt = 'TanStack Form v1 출시 기념 둘러보기'
+export const size = {
+  width: 1200,
+  height: 630,
+}
+export const contentType = 'image/png'
+
+export default async function Image() {
+  const geistMonoRegular = fetch(
+    new URL('../../../public/fonts/GeistMono-Regular.ttf', import.meta.url)
+  ).then((res) => res.arrayBuffer())
+
+  const geistMonoBold = fetch(
+    new URL('../../../public/fonts/GeistMono-Bold.ttf', import.meta.url)
+  ).then((res) => res.arrayBuffer())
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          padding: '80px',
+          background: `radial-gradient(circle at center, #aedd66 0%, #f7fdec 70%)`,
+          fontFamily: 'GeistMono',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '50px',
+          }}
+        >
+          <div
+            style={{
+              fontSize: 80,
+              fontWeight: 700,
+              letterSpacing: '-0.025em',
+              color: '#1f3c1a',
+              maxWidth: '1000px',
+              lineHeight: 1.3,
+            }}
+          >
+            TanStack Form v1 출시 기념 둘러보기
+          </div>
+          <div
+            style={{
+              fontSize: 54,
+              fontWeight: 400,
+              color: '#336429',
+              lineHeight: 1.3,
+              maxWidth: '900px',
+            }}
+          >
+            이세계에서 폼 라이브러리로 전생했더니 너무 강했다
+          </div>
+        </div>
+      </div>
+    ),
+    {
+      ...size,
+      fonts: [
+        {
+          name: 'GeistMono',
+          data: await geistMonoRegular,
+          style: 'normal',
+          weight: 400,
+        },
+        {
+          name: 'GeistMono',
+          data: await geistMonoBold,
+          style: 'normal',
+          weight: 700,
+        },
+      ],
+    }
+  )
+}
