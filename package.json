@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev",
     "dev:turbo": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev --turbopack",
-    "build": "next build",
+    "build": "NODE_TLS_REJECT_UNAUTHORIZED=0 next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "og:generate-all": "node scripts/generate-og-images.mjs",
+    "og:generate": "node scripts/generate-single-og.mjs",
+    "og:template": "node scripts/create-og-template.mjs",
+    "og:convert-webp": "node scripts/convert-to-webp.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -46,6 +50,7 @@
     "eslint-config-next": "15.2.0",
     "postcss": "^8",
     "prettier": "3.4.2",
+    "sharp": "^0.34.5",
     "typescript": "^5"
   },
   "pnpm": {
