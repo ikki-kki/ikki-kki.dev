@@ -10,4 +10,10 @@ export const articleWrapper = style({
   marginBottom: vars.space[20],
   paddingLeft: 0,
   paddingRight: 0,
+  height: '100vh',
+  '@media': {
+    [media.md]: {
+      marginTop: vars.space[10],
+    },
+  },
 })

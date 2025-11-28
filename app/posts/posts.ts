@@ -3,11 +3,12 @@ import { Post } from '@/lib/type'
 const posts = [
   {
     slug: 'the-magic-of-react-concurrency',
-    title: '코드 한 줄로 경험하는 React 동시성의 마법',
+    title: '코드 한 줄로 경험하는 React 동시성의 마법',
     description: '인간의 인지 방식을 관찰해 설계된 기술',
     date: '2025-04-16',
     tags: ['React', 'Concurrency'],
     readingTime: 40,
+    nextSlug: 'tanstack-form-v1-release',
   },
   {
     slug: 'tanstack-form-v1-release',
@@ -16,6 +17,8 @@ const posts = [
     date: '2025-03-16',
     tags: ['TanStack Form'],
     readingTime: 22,
+    prevSlug: 'the-magic-of-react-concurrency',
+    nextSlug: 'eslint-how-it-works',
   },
   {
     slug: 'eslint-how-it-works',
@@ -24,6 +27,8 @@ const posts = [
     date: '2023-03-02',
     tags: ['eslint', 'AST'],
     readingTime: 13,
+    prevSlug: 'tanstack-form-v1-release',
+    nextSlug: 'nested-feature-branch-workflow',
   },
   {
     slug: 'nested-feature-branch-workflow',
@@ -32,6 +37,8 @@ const posts = [
     date: '2023-03-02',
     tags: ['git'],
     readingTime: 4,
+    prevSlug: 'eslint-how-it-works',
+    nextSlug: 'component-without-self-and-oop-component',
   },
   {
     slug: 'component-without-self-and-oop-component',
@@ -40,6 +47,8 @@ const posts = [
     date: '2023-03-02',
     tags: ['React', 'OOP', 'Component'],
     readingTime: 17,
+    prevSlug: 'nested-feature-branch-workflow',
+    nextSlug: 'open-graph-twitter-card',
   },
   {
     slug: 'open-graph-twitter-card',
@@ -48,6 +57,7 @@ const posts = [
     date: '2022-06-03',
     tags: ['Open Graph', 'Twitter Card'],
     readingTime: 13,
+    prevSlug: 'component-without-self-and-oop-component',
   },
 ] as Post[]
 

@@ -11,11 +11,6 @@ export const footer = style({
   gap: vars.space[4],
   fontSize: vars.fontSize.base,
   marginTop: 'auto',
-  '@media': {
-    [media.md]: {
-      display: 'none',
-    },
-  },
 
   selectors: {
     '&[data-position-fixed="true"]': {

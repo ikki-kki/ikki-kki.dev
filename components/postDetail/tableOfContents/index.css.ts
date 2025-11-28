@@ -62,28 +62,3 @@ export const tocButtonVariants = styleVariants({
     color: vars.color.green[400],
   },
 })
-
-export const actionButtons = style({
-  display: 'flex',
-  gap: vars.space[2],
-  paddingTop: vars.space[4],
-  paddingLeft: vars.space[6],
-  flexShrink: 0,
-})
-
-export const actionButton = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: vars.space[1],
-  color: vars.color.green[500],
-  backgroundColor: 'transparent',
-  border: 'none',
-  borderRadius: vars.borderRadius.md,
-  cursor: 'pointer',
-  transition: 'all 200ms',
-  ':hover': {
-    color: vars.color.green[800],
-    backgroundColor: vars.color.green[50],
-  },
-})

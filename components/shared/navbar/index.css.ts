@@ -2,7 +2,7 @@ import { vars, media } from '@/lib/theme.css'
 import { style } from '@vanilla-extract/css'
 
 export const nav = style({
-  marginTop: vars.space[12],
+  marginTop: vars.space[10],
   maxWidth: vars.maxWidth.content,
   marginLeft: 'auto',
   marginRight: 'auto',

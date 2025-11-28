@@ -12,4 +12,6 @@ export interface Post {
   date: string
   tags?: string[]
   readingTime?: number
+  prevSlug?: string
+  nextSlug?: string
 }

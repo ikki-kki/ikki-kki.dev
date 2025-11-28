@@ -82,7 +82,7 @@ globalStyle('.prose :where(p):not(:where([class~="not-prose"] *))', {
 })
 
 globalStyle('.prose :where(h1):not(:where([class~="not-prose"] *))', {
-  fontSize: '2.25em',
+  fontSize: '2em',
   marginTop: 0,
   marginBottom: '0.8888889em',
   lineHeight: 1.4,

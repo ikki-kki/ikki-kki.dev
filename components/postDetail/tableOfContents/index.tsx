@@ -1,7 +1,6 @@
 'use client'
 
 import * as styles from './index.css'
-import { ChevronUp, Share } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 interface TocItem {
@@ -61,34 +60,6 @@ export default function TableOfContents() {
     }
   }, [activeId])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const handleShare = async () => {
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : ''
-    const title = document.title
-    const isMobile = 'ontouchstart' in window
-
-    if (isMobile && navigator.share) {
-      try {
-        await navigator.share({
-          title: title,
-          url: currentUrl,
-        })
-      } catch (err) {
-        console.error('Error sharing:', err)
-      }
-    } else {
-      try {
-        await navigator.clipboard.writeText(currentUrl)
-        alert('링크가 복사되었습니다')
-      } catch (err) {
-        console.error('Failed to copy link:', err)
-      }
-    }
-  }
-
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -123,22 +94,6 @@ export default function TableOfContents() {
             ))}
           </ul>
         </nav>
-        <div className={styles.actionButtons}>
-          <button
-            onClick={scrollToTop}
-            className={styles.actionButton}
-            title="맨 위로"
-          >
-            <ChevronUp size={18} />
-          </button>
-          <button
-            onClick={handleShare}
-            className={styles.actionButton}
-            title="공유하기"
-          >
-            <Share size={18} />
-          </button>
-        </div>
       </div>
     </>
   )
