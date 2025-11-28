@@ -1,4 +1,4 @@
-import { vars, media } from '@/lib/theme.css'
+import { vars } from '@/lib/theme.css'
 import { style } from '@vanilla-extract/css'
 
 export const footer = style({
