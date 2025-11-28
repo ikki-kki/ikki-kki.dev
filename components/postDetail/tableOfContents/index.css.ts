@@ -19,7 +19,6 @@ export const sidebar = style({
 export const nav = style({
   paddingLeft: vars.space[4],
   maxHeight: 'calc(100vh - 20rem)',
-  overflowY: 'auto',
 })
 
 globalStyle(`${nav} ul`, {
