@@ -2,7 +2,6 @@ import * as styles from './page.css'
 import { posts } from './posts'
 import PostItem from '@/components/posts/postItem'
 import Footer from '@/components/shared/footer'
-import { generateOgImageUrl } from '@/lib/utils'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Posts | ikki-kki',
     description: 'Posts by ikki-kki.',
-    images: [{ url: generateOgImageUrl('Posts'), alt: 'ikki-kki.dev' }],
+    images: [{ url: '/images/og-posts.png', alt: 'ikki-kki.dev' }],
   },
 }
 

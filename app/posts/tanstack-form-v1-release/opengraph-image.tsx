@@ -10,11 +10,11 @@ export const contentType = 'image/png'
 
 export default async function Image() {
   const geistMonoRegular = fetch(
-    new URL('../../../public/fonts/GeistMono-Regular.ttf', import.meta.url)
+    new URL('../../../public/fonts/GeistMono-Regular.ttf', import.meta.url),
   ).then((res) => res.arrayBuffer())
 
   const geistMonoBold = fetch(
-    new URL('../../../public/fonts/GeistMono-Bold.ttf', import.meta.url)
+    new URL('../../../public/fonts/GeistMono-Bold.ttf', import.meta.url),
   ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(
@@ -81,6 +81,6 @@ export default async function Image() {
           weight: 700,
         },
       ],
-    }
+    },
   )
 }

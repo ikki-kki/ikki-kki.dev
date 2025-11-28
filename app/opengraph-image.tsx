@@ -1,5 +1,3 @@
-import { ImageResponse } from 'next/og'
-
 export const runtime = 'edge'
 export const alt = '이끼끼 블로그'
 export const size = {
@@ -9,9 +7,8 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-  // og-home.png 이미지를 base64로 인코딩해서 반환
   const imageData = await fetch(
-    new URL('../public/images/og-home.png', import.meta.url)
+    new URL('../public/images/og-home.png', import.meta.url),
   ).then((res) => res.arrayBuffer())
 
   return new Response(imageData, {

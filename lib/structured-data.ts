@@ -43,8 +43,7 @@ export function generateWebsiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: '이끼끼 블로그',
-    description:
-      'WELCOME!',
+    description: 'WELCOME!',
     url: 'https://ikki-kki-dev.vercel.app',
     author: {
       '@type': 'Person',
