@@ -20,9 +20,27 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: '이끼끼 블로그',
+  title: {
+    default: '이끼끼 블로그',
+    template: '%s | 이끼끼 블로그',
+  },
   description: 'WELCOME!',
+  keywords: [
+    'React',
+    'Next.js',
+    'TypeScript',
+    'JavaScript',
+    'Web Development',
+    'Frontend',
+    '프론트엔드',
+    '웹 개발',
+    '블로그',
+  ],
+  authors: [{ name: '이끼끼', url: 'https://ikki-kki-dev.vercel.app' }],
+  creator: '이끼끼',
   openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
     title: '이끼끼 블로그',
     description: 'WELCOME!',
     url: 'https://ikki-kki-dev.vercel.app',
@@ -50,12 +68,14 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ikki-kki-dev.vercel.app',
     types: {
       'application/rss+xml': [{ url: '/rss.xml', title: 'ikki-kki RSS Feed' }],
     },
   },
   metadataBase: new URL('https://ikki-kki-dev.vercel.app'),
+  verification: {
+    google: '82c6fbf1f3b5a902',
+  },
 }
 
 export default function RootLayout({

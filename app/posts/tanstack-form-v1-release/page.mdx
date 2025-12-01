@@ -4,9 +4,13 @@ import Image from 'next/image'
 export const metadata = {
   title: 'TanStack Form v1 출시 기념 둘러보기',
   description: '이세계에서 폼 라이브러리로 전생했더니 너무 강했다',
+  alternates: {
+    canonical: 'https://ikki-kki-dev.vercel.app/posts/tanstack-form-v1-release',
+  },
   openGraph: {
     title: 'TanStack Form v1 출시 기념 둘러보기',
     description: '이세계에서 폼 라이브러리로 전생했더니 너무 강했다',
+    url: 'https://ikki-kki-dev.vercel.app/posts/tanstack-form-v1-release',
   },
   twitter: {
     card: 'summary_large_image',
@@ -49,8 +53,8 @@ React Hook Form도 TypeScript를 지원하지만, TanStack Form은 이 3단계�
 다른 인기 있는 폼 라이브러리와 비교해보면 이런 차이가 더 명확해진다:
 
 | 기능                  | TanStack Form                   | Formik     | Redux Form | React Hook Form | Final Form                             |
-| :-------------------- | :------------------------------ | :--------- | :--------- | :-------------- | :------------------------------------- |
-| Github 저장소 / 별점  | ⭐ 4.7k                         | ⭐ 34k     | ⭐ 13k     | ⭐ 43k          | ⭐ 3k                                  |
+| :-------------------- | :------------------------------ | :--------- | :--------- | :-------------- | :------------------------------------- | --- |
+| Github 저장소 / 별점  | ⭐ 4.7k                         | ⭐ 34k     | ⭐ 13k     | ⭐ 43k          | ⭐ 3k                                  | `   |
 | 지원되는 프레임워크   | React, Vue, Angular, Solid, Lit | React      | React      | React           | React, Vue, Angular, Solid, Vanilla JS |
 | 번들 크기             | 📦 8.8 KB                       | 📦 13.2 KB | 📦 26.6 KB | 📦 10.5 KB      | 📦 5.6 KB                              |
 | 일급 TypeScript 지원  | ✅                              | ❓         | ❓         | ✅              | ✅                                     |

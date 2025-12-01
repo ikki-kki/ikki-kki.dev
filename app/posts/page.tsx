@@ -7,9 +7,13 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Posts | ikki-kki',
   description: 'Posts posts by ikki-kki.',
+  alternates: {
+    canonical: 'https://ikki-kki-dev.vercel.app/posts',
+  },
   openGraph: {
     title: 'Posts | ikki-kki',
     description: 'Posts by ikki-kki.',
+    url: 'https://ikki-kki-dev.vercel.app/posts',
     images: [{ url: '/images/og-posts.png', alt: 'ikki-kki.dev' }],
   },
 }
