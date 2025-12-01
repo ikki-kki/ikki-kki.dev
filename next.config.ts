@@ -20,6 +20,21 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'ikki-kki-dev.vercel.app',
+          },
+        ],
+        destination: 'https://ikki-kki.dev/:path*',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({

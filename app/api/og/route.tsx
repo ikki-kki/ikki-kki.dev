@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
           alignItems: 'flex-start',
           justifyContent: 'center',
           backgroundImage:
-            'url(https://ikki-kki-dev.vercel.app/assets/og-bg.png)',
+            'url(https://ikki-kki.dev/assets/og-bg.png)',
         }}
       >
         <div

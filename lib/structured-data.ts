@@ -13,25 +13,25 @@ export function generateBlogPostJsonLd(post: BlogPost) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: `https://ikki-kki-dev.vercel.app/posts/${post.slug}/opengraph-image`,
+    image: `https://ikki-kki.dev/posts/${post.slug}/opengraph-image`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
       '@type': 'Person',
       name: 'ikki-kki',
-      url: 'https://ikki-kki-dev.vercel.app',
+      url: 'https://ikki-kki.dev',
     },
     publisher: {
       '@type': 'Organization',
       name: 'ikki-kki',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://ikki-kki-dev.vercel.app/opengraph-image',
+        url: 'https://ikki-kki.dev/opengraph-image',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://ikki-kki-dev.vercel.app/posts/${post.slug}`,
+      '@id': `https://ikki-kki.dev/posts/${post.slug}`,
     },
     keywords: post.tags.join(', '),
     wordCount: Math.ceil(post.readingTime * 200), // 추정 단어 수
@@ -44,15 +44,15 @@ export function generateWebsiteJsonLd() {
     '@type': 'WebSite',
     name: '이끼끼 블로그',
     description: 'WELCOME!',
-    url: 'https://ikki-kki-dev.vercel.app',
+    url: 'https://ikki-kki.dev',
     author: {
       '@type': 'Person',
       name: '이끼끼',
-      url: 'https://ikki-kki-dev.vercel.app',
+      url: 'https://ikki-kki.dev',
     },
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://ikki-kki-dev.vercel.app/posts?q={search_term_string}',
+      target: 'https://ikki-kki.dev/posts?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }

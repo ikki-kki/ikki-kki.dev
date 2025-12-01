@@ -2,7 +2,7 @@ import { posts } from './posts/posts'
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ikki-kki-dev.vercel.app'
+  const baseUrl = 'https://ikki-kki.dev'
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

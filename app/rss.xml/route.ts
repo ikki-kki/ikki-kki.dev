@@ -19,7 +19,7 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const siteUrl = 'https://ikki-kki-dev.vercel.app'
+  const siteUrl = 'https://ikki-kki.dev'
   const blogTitle = 'ikki-kki Blog'
   const blogDescription = 'Blog posts by ikki-kki'
   const author = 'ikki-kki'

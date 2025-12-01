@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://ikki-kki-dev.vercel.app',
+    canonical: 'https://ikki-kki.dev',
   },
   openGraph: {
-    url: 'https://ikki-kki-dev.vercel.app',
+    url: 'https://ikki-kki.dev',
   },
 }
 

@@ -36,18 +36,18 @@ export const metadata: Metadata = {
     '웹 개발',
     '블로그',
   ],
-  authors: [{ name: '이끼끼', url: 'https://ikki-kki-dev.vercel.app' }],
+  authors: [{ name: '이끼끼', url: 'https://ikki-kki.dev' }],
   creator: '이끼끼',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
     title: '이끼끼 블로그',
     description: 'WELCOME!',
-    url: 'https://ikki-kki-dev.vercel.app',
+    url: 'https://ikki-kki.dev',
     siteName: '이끼끼 블로그',
     images: [
       {
-        url: 'https://ikki-kki-dev.vercel.app/images/og-home.png',
+        url: 'https://ikki-kki.dev/images/og-home.png',
         width: 1200,
         height: 630,
         alt: '이끼끼 블로그',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       'application/rss+xml': [{ url: '/rss.xml', title: 'ikki-kki RSS Feed' }],
     },
   },
-  metadataBase: new URL('https://ikki-kki-dev.vercel.app'),
+  metadataBase: new URL('https://ikki-kki.dev'),
   verification: {
     google: '82c6fbf1f3b5a902',
   },
