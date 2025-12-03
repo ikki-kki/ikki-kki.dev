@@ -39,7 +39,7 @@ globalStyle('.prose code:not([class*="language-"])', {
   background: `color-mix(in srgb, ${vars.color.green[200]} 50%, transparent)`,
   color: vars.color.green[500],
   fontWeight: 600,
-  padding: '0.2rem',
+  padding: '0.2rem 0.2rem 0.13rem 0.2rem',
   borderRadius: '0.3rem',
 })
 
@@ -77,8 +77,8 @@ globalStyle('.prose', {
 globalStyle('.prose :where(p):not(:where([class~="not-prose"] *))', {
   marginTop: '1.5em',
   marginBottom: '1.5em',
-  lineHeight: 1.8,
-  letterSpacing: '-0.01em',
+  fontFamily: 'var(--font-noto-sans-kr), sans-serif',
+  wordBreak: 'break-word',
 })
 
 globalStyle('.prose :where(h1):not(:where([class~="not-prose"] *))', {
@@ -124,6 +124,7 @@ globalStyle('.prose :where(li):not(:where([class~="not-prose"] *))', {
   marginTop: '0.5em',
   marginBottom: '0.5em',
   lineHeight: 1.7,
+  fontFamily: 'var(--font-noto-sans-kr), sans-serif',
 })
 
 globalStyle('.prose :where(pre):not(:where([class~="not-prose"] *))', {

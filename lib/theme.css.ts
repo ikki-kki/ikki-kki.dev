@@ -60,6 +60,7 @@ export const [themeClass, vars] = createTheme({
     48: '12rem', // 192px
     56: '14rem', // 224px
     64: '16rem', // 256px
+    80: '20rem', // 320px
   },
   fontSize: {
     xs: '0.75rem', // 12px

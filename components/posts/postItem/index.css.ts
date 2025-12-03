@@ -21,7 +21,6 @@ export const header = style({
   justifyContent: 'space-between',
   alignItems: 'baseline',
   gap: vars.space[4],
-  marginBottom: vars.space[2],
 })
 
 export const title = style({
@@ -40,7 +39,7 @@ export const date = style({
 export const description = style({
   fontSize: vars.fontSize.sm,
   color: vars.color.gray[600],
-  marginBottom: vars.space[3],
+  margin: `0 0 ${vars.space[5]} 0`,
 })
 
 export const tagContainer = style({

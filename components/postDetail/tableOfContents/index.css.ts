@@ -3,9 +3,9 @@ import { style, styleVariants, globalStyle } from '@vanilla-extract/css'
 
 export const sidebar = style({
   position: 'fixed',
-  left: 'calc(50% + 370px)',
+  left: 'calc(50% + 400px)',
   top: vars.space[34],
-  width: '16rem',
+  width: vars.space[80],
   display: 'flex',
   flexDirection: 'column',
   backgroundColor: 'transparent',
@@ -43,7 +43,7 @@ export const tocButton = style({
   alignItems: 'center',
   width: '100%',
   textAlign: 'left',
-  fontSize: vars.fontSize.xs,
+  fontSize: vars.fontSize.sm,
   paddingTop: vars.space[1],
   paddingBottom: vars.space[1],
   transition: 'all 200ms',
