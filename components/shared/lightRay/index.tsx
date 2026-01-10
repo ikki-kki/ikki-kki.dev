@@ -3,7 +3,11 @@
 import * as styles from './index.css'
 import { useEffect, useRef } from 'react'
 
-const LightRay = () => {
+interface LightRayProps {
+  onlyInteractive?: boolean
+}
+
+const LightRay = ({ onlyInteractive = false }: LightRayProps) => {
   const interactiveRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -65,11 +69,15 @@ const LightRay = () => {
           className={styles.filterContainer}
           style={{ filter: 'url(#goo) blur(40px)' }}
         >
-          <div className={styles.g1} />
-          <div className={styles.g2} />
-          <div className={styles.g3} />
-          <div className={styles.g4} />
-          <div className={styles.g5} />
+          {!onlyInteractive && (
+            <>
+              <div className={styles.g1} />
+              <div className={styles.g2} />
+              <div className={styles.g3} />
+              <div className={styles.g4} />
+              <div className={styles.g5} />
+            </>
+          )}
           <div ref={interactiveRef} className={styles.interactive} />
         </div>
       </div>

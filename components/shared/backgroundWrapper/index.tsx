@@ -9,6 +9,7 @@ const BackgroundWrapper = () => {
   const pathname = usePathname()
   const isBlogDetail =
     pathname.startsWith('/posts/') && pathname.split('/').length > 2
+  const isResume = pathname === '/resume'
 
   return (
     <>
@@ -18,7 +19,7 @@ const BackgroundWrapper = () => {
           isBlogDetail && styles.animatedBackgroundHidden,
         )}
       >
-        <LightRay />
+        <LightRay onlyInteractive={isResume} />
       </div>
       <div
         className={cn(
