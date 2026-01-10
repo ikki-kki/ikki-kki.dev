@@ -184,7 +184,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                1. 폴리레포 환경의 Config 파일 및 패키지 버전 일원화
+                1. 폴리레포 설정 파일 통합 관리
                 <span className={styles.workExperienceCompany}>리멤버앤컴퍼니 파운데이션크루</span>
               </h3>
 
@@ -253,7 +253,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                3. 디자인 시스템 재구축 및 자동화 파이프라인 구축
+                3. 디자인 시스템 재구축
                 <span className={styles.workExperienceCompany}>리멤버앤컴퍼니 코어크루</span>
               </h3>
 
@@ -291,7 +291,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                4. Datadog RUM 기반 사용자 경험 모니터링 체계 구축
+                4. 모니터링 체계 구축
                 <span className={styles.workExperienceCompany}>리멤버앤컴퍼니 파운데이션크루</span>
               </h3>
 
@@ -327,7 +327,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                5. Rust 기반 Oxc 도입으로 Lint 성능 15배 개선
+                5. Oxc 도입으로 Lint 성능 15배 개선
                 <span className={styles.workExperienceCompany}>리멤버앤컴퍼니 파운데이션크루</span>
               </h3>
 
@@ -364,7 +364,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                6. 테스트 코드 도입 및 CI 개선을 통한 코드 안정성 확보
+                6. 테스트 코드 도입
                 <span className={styles.workExperienceCompany}>리멤버앤컴퍼니 프로필크루</span>
               </h3>
 
@@ -426,7 +426,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                8. 비즈니스 목표 달성을 위한 핵심 기능 구현
+                8. 학원비 비대면 결제 시스템 구현
                 <span className={styles.workExperienceCompany}>주식회사퀘스처너스</span>
               </h3>
 
@@ -450,7 +450,7 @@ export default function Resume() {
 
             <div className={styles.workExperienceItem}>
               <h3 className={styles.workExperienceTitle}>
-                9. 함께 성장하는 개발 문화와 협업 프로세스 정착
+                9. 함께 성장하는 개발 문화
                 <span className={styles.workExperienceCompany}>리멤버앤컴퍼니 프론트엔드챕터</span>
               </h3>
 
