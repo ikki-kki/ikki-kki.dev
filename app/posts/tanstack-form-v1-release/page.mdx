@@ -26,7 +26,6 @@ export const metadata = {
   height={496}
 />
 
-
 # TanStack Form v1 출시 기념 둘러보기
 
 React에서 폼(Form)을 다루는 건 늘 숙제 같습니다. `React Hook Form`이 사실상 표준처럼 자리 잡으며 많은 부분이 편해지긴 했지만, 여전히 복잡한 요구사항 앞에서는 아쉬운 지점들이 있었거든요.
@@ -48,16 +47,16 @@ TypeScript 지원이라는 말은 흔하지만, 그 깊이가 다릅니다.
 
 다른 라이브러리들과 비교해보면 차이가 명확합니다.
 
-| 기능 | TanStack Form | Formik | React Hook Form |
-| :--- | :--- | :--- | :--- |
-| **일급 TypeScript 지원** | ✅ | ❓ | ✅ |
-| **완전 추론 TypeScript** | ✅ | ❓ | ✅ |
-| **헤드리스 UI** | ✅ | ❓ | ✅ |
-| **프레임워크 독립적** | ✅ | ❓ | 🔴 |
-| **세분화된 반응성** | ✅ | ❓ | ❓ |
-| **비동기 유효성 검사** | ✅ | ✅ | ✅ |
-| **비동기 검사 디바운스** | ✅ | ❓ | ❓ |
-| **SSR 통합** | ✅ | 🔴 | 🔴 |
+| 기능                     | TanStack Form | Formik | React Hook Form |
+| :----------------------- | :------------ | :----- | :-------------- |
+| **일급 TypeScript 지원** | ✅            | ❓     | ✅              |
+| **완전 추론 TypeScript** | ✅            | ❓     | ✅              |
+| **헤드리스 UI**          | ✅            | ❓     | ✅              |
+| **프레임워크 독립적**    | ✅            | ❓     | 🔴              |
+| **세분화된 반응성**      | ✅            | ❓     | ❓              |
+| **비동기 유효성 검사**   | ✅            | ✅     | ✅              |
+| **비동기 검사 디바운스** | ✅            | ❓     | ❓              |
+| **SSR 통합**             | ✅            | 🔴     | 🔴              |
 
 Github 스타 수는 아직 RHF가 압도적이지만, 기능 명세표를 보면 SSR 지원이나 비동기 검증 디바운스 등, 최근 개발자들이 가려워하는 부분을 정확히 짚고 있습니다.
 
@@ -148,7 +147,12 @@ const PeoplePage = () => {
   })
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); form.handleSubmit() }}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        form.handleSubmit()
+      }}
+    >
       {/* name 속성에 오타가 나면 바로 빨간 줄이 그어집니다 */}
       <form.AppField
         name="username"
@@ -173,7 +177,9 @@ const PeoplePage = () => {
 const PeoplePage = () => {
   const form = useForm({
     defaultValues: { username: '', age: 0 },
-    onSubmit: ({ value }) => { /* ... */ },
+    onSubmit: ({ value }) => {
+      /* ... */
+    },
   })
 
   return (
@@ -181,7 +187,8 @@ const PeoplePage = () => {
       name="age"
       validators={{
         // 함수형 검증도 직관적입니다
-        onChange: ({ value }) => value > 13 ? undefined : 'Must be 13 or older',
+        onChange: ({ value }) =>
+          value > 13 ? undefined : 'Must be 13 or older',
       }}
       children={(field) => (
         <>
@@ -204,7 +211,7 @@ const PeoplePage = () => {
 
 ## 6\. 놓치면 아쉬운 기능들
 
-### 6-1. 대규모 폼 관리 
+### 6-1. 대규모 폼 관리
 
 실무에서 필드가 수십 개 넘어가면 파일 하나가 너무 비대해집니다. TanStack Form은 `withForm` HOC를 제공해 폼을 논리적인 단위로 쪼개서 관리할 수 있게 해줍니다.
 
@@ -226,7 +233,9 @@ const ChildForm = withForm({
 
 // 메인 앱에서 사용
 function App() {
-  const form = useAppForm({ /* ... */ })
+  const form = useAppForm({
+    /* ... */
+  })
   // 부모 폼 인스턴스를 자식에게 전달
   return <ChildForm form={form} />
 }

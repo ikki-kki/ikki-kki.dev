@@ -6,7 +6,8 @@ export const container = style({
   paddingBottom: vars.space[16],
   paddingLeft: vars.space[4],
   paddingRight: vars.space[4],
-  fontFamily: '-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
+  fontFamily:
+    '-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
 })
 
 export const content = style({
@@ -20,7 +21,7 @@ export const header = style({
   justifyContent: 'space-between',
   marginBottom: vars.space[12],
   gap: vars.space[8],
-  
+
   '@media': {
     [media.md]: {
       flexDirection: 'column',
@@ -39,7 +40,7 @@ export const headerTitle = style({
   color: vars.color.green[900],
   lineHeight: 1.3,
   margin: 0,
-  
+
   '@media': {
     [media.md]: {
       fontSize: vars.fontSize['4xl'],
@@ -114,7 +115,7 @@ export const careerHeader = style({
   justifyContent: 'space-between',
   alignItems: 'baseline',
   gap: vars.space[2],
-  
+
   '@media': {
     [media.md]: {
       flexDirection: 'column',
@@ -126,9 +127,9 @@ export const careerHeader = style({
 export const careerTitle = style({
   fontSize: vars.fontSize.xl,
   fontWeight: vars.fontWeight.semibold,
-  color: vars.color.greenGray[900],  
-  marginTop:0,
-  marginBottom:vars.space[1],
+  color: vars.color.greenGray[900],
+  marginTop: 0,
+  marginBottom: vars.space[1],
 })
 
 export const careerPeriod = style({
@@ -162,7 +163,7 @@ export const educationItem = style({
   alignItems: 'baseline',
   marginBottom: vars.space[3],
   gap: vars.space[4],
-  
+
   '@media': {
     [media.md]: {
       flexDirection: 'column',
@@ -194,7 +195,7 @@ export const skillsGrid = style({
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
   gap: vars.space[4],
-  
+
   '@media': {
     [media.md]: {
       gridTemplateColumns: '1fr',
