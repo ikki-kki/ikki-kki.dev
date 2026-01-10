@@ -430,18 +430,15 @@ export default function Resume() {
                     <span className={styles.highlight}>
                       Radix 기반 Headless Compound Component 패턴
                     </span>{' '}
-                    도입으로 디자인 제약 없는 확장 가능한 시스템 구축
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    웹 접근성(a11y) 표준을 준수하면서도 완전한 커스터마이징이
-                    가능한 컴포넌트 아키텍처 설계
+                    도입으로 디자인 제약 없는 확장 가능한 시스템을 구축하고 웹
+                    접근성 표준을 준수하면서도 쉽게 커스터마이징이 가능한
+                    컴포넌트 아키텍처 설계
                   </li>
                   <li className={styles.workExperienceListItem}>
                     <span className={styles.highlight}>
                       svgr 기반 자동화 파이프라인
-                    </span>{' '}
-                    구축으로 SVG를 S, M, L 사이즈별 React 컴포넌트로 변환 및
-                    패키지화
+                    </span>
+                    구축으로 SVG를사이즈별 React 컴포넌트로 변환 및 패키지화
                   </li>
                   <li className={styles.workExperienceListItem}>
                     폰트 및 파비콘을 CDN으로 중앙 관리하여 브랜드 일관성 확보 및
@@ -450,10 +447,6 @@ export default function Resume() {
                   <li className={styles.workExperienceListItem}>
                     GitHub Actions 기반 Storybook 자동 배포로 PR 병합 시 최신 UI
                     스펙 즉시 반영
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    <span className={styles.highlight}>Changesets</span>으로
-                    SemVer 기반 버전 관리 및 변경 로그 작성 자동화
                   </li>
                 </ul>
               </div>
@@ -472,9 +465,6 @@ export default function Resume() {
                   </li>
                   <li className={styles.workExperienceListItem}>
                     디자이너-개발자 간 UI 싱크 자동화로 커뮤니케이션 비용 감소
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    자동화된 배포 프로세스로 신뢰성 향상 및 릴리즈 사이클 단축
                   </li>
                 </ul>
               </div>
