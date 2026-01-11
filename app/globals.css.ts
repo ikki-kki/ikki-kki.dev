@@ -24,7 +24,14 @@ globalStyle('*', {
   boxSizing: 'border-box',
 })
 
-// Prose styles for blog content
+globalStyle('::selection', {
+  backgroundColor: vars.color.green[100],
+})
+
+globalStyle('::-moz-selection', {
+  backgroundColor: vars.color.green[100],
+})
+
 globalStyle('.prose a', {
   color: vars.color.green[500],
   textDecorationColor: `color-mix(in srgb, ${vars.color.green[500]} 30%, transparent)`,
@@ -68,7 +75,6 @@ globalStyle('.line-clamp-2', {
   WebkitLineClamp: 2,
 })
 
-// Prose container base styles
 globalStyle('.prose', {
   maxWidth: '65ch',
   color: vars.color.green[900],
@@ -142,7 +148,6 @@ globalStyle('.prose :where(blockquote):not(:where([class~="not-prose"] *))', {
   fontWeight: 500,
   backgroundColor: vars.color.green[50],
   borderLeft: `4px solid ${vars.color.green[200]}`,
-  // borderRadius: vars.borderRadius.lg,
   quotes: '"\\201C""\\201D""\\2018""\\2019"',
   padding: '1em',
   margin: 0,
