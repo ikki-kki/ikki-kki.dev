@@ -2,6 +2,16 @@ import { Post } from '@/lib/type'
 
 const posts = [
   {
+    slug: 'toss-frontend-accelerator-review',
+    title: 'Toss Frontend Accelerator 5기를 수료하며',
+    description: '6주간의 Toss Frontend Accelerator 후기',
+    date: '2026-03-05',
+    tags: ['Toss', 'Frontend Accelerator', '회고'],
+    readingTime: 18,
+    prevSlug: 'tanstack-form-v1-release',
+    nextSlug: 'eslint-how-it-works',
+  },
+  {
     slug: 'the-magic-of-react-concurrency',
     title: '코드 한 줄로 경험하는 React 동시성의 마법',
     description: '인간의 인지 방식을 관찰해 설계된 기술',
@@ -19,16 +29,6 @@ const posts = [
     readingTime: 22,
     prevSlug: 'the-magic-of-react-concurrency',
     nextSlug: 'toss-frontend-accelerator-review',
-  },
-  {
-    slug: 'toss-frontend-accelerator-review',
-    title: 'Toss Frontend Accelerator 5기를 수료하며',
-    description: '6주간의 Toss Frontend Accelerator 후기',
-    date: '2025-03-05',
-    tags: ['Toss', 'Frontend Accelerator', '회고'],
-    readingTime: 18,
-    prevSlug: 'tanstack-form-v1-release',
-    nextSlug: 'eslint-how-it-works',
   },
   {
     slug: 'eslint-how-it-works',
