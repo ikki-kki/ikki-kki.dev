@@ -1,4 +1,5 @@
 import * as styles from './layout.css'
+import 'katex/dist/katex.min.css'
 import './prism-theme.css'
 import '@/app/globals.css.ts'
 import BackgroundWrapper from '@/components/shared/backgroundWrapper'
@@ -93,7 +94,7 @@ export default function RootLayout({
 
   return (
     <html lang="ko" suppressHydrationWarning className={themeClass}>
-      <head>
+      <head suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

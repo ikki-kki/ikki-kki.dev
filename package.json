@@ -35,9 +35,12 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-wrap-balancer": "^1.1.1",
+    "katex": "^0.16.11",
     "rehype-code-titles": "^1.2.0",
+    "rehype-katex": "^7.0.1",
     "rehype-prism-plus": "^2.0.1",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
