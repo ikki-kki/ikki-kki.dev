@@ -8,8 +8,7 @@ const posts = [
     date: '2026-03-05',
     tags: ['Toss', 'Frontend Accelerator', '회고'],
     readingTime: 18,
-    prevSlug: 'tanstack-form-v1-release',
-    nextSlug: 'eslint-how-it-works',
+    nextSlug: 'the-magic-of-react-concurrency',
   },
   {
     slug: 'the-magic-of-react-concurrency',
@@ -18,6 +17,7 @@ const posts = [
     date: '2025-04-16',
     tags: ['React', 'Concurrency'],
     readingTime: 40,
+    prevSlug: 'toss-frontend-accelerator-review',
     nextSlug: 'tanstack-form-v1-release',
   },
   {
@@ -28,7 +28,7 @@ const posts = [
     tags: ['TanStack Form'],
     readingTime: 22,
     prevSlug: 'the-magic-of-react-concurrency',
-    nextSlug: 'toss-frontend-accelerator-review',
+    nextSlug: 'eslint-how-it-works',
   },
   {
     slug: 'eslint-how-it-works',
@@ -37,7 +37,7 @@ const posts = [
     date: '2023-03-02',
     tags: ['eslint', 'AST'],
     readingTime: 13,
-    prevSlug: 'toss-frontend-accelerator-review',
+    prevSlug: 'tanstack-form-v1-release',
     nextSlug: 'nested-feature-branch-workflow',
   },
   {
