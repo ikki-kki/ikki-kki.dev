@@ -1,87 +1,36 @@
-import { dirname, join } from 'path'
-import sharp from 'sharp'
-import { fileURLToPath } from 'url'
+import { POSTS, generateOgImageForPost } from './og-utils.mjs'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+/**
+ * 모든 포스트의 OG 이미지를 한 번에 생성합니다.
+ *
+ * 각 포스트마다:
+ *   1. opengraph-image.tsx를 동적 템플릿(ImageResponse)으로 교체
+ *   2. Next.js 컴파일 완료 대기
+ *   3. 이미지 fetch → webp 저장
+ *   4. opengraph-image.tsx를 정적 서빙 템플릿으로 복원
+ *
+ * 사용법:
+ *   node scripts/generate-og-images.mjs [port]
+ *
+ * 예시:
+ *   node scripts/generate-og-images.mjs
+ *   node scripts/generate-og-images.mjs 3001
+ */
 
-const posts = [
-  {
-    name: 'open-graph-twitter-card',
-    title: '오픈그래프(Open Grape) 태그와 트위터 카드(Twitter Card)',
-    description: 'OG 이미지 그게 뭔데',
-  },
-  {
-    name: 'nested-feature-branch-workflow',
-    title: 'Nested Feature Branch Workflow 중첩 기능 브랜치 워크플로우',
-    description: '복잡한 작업을 효율적으로 관리하는 브랜치 전략',
-  },
-  {
-    name: 'eslint-how-it-works',
-    title: 'ESLint는 어떻게 동작할까',
-    description: 'ESLint의 내부 동작 원리 파헤치기',
-  },
-  {
-    name: 'component-without-self-and-oop-component',
-    title: 'self가 없는 컴포넌트와 OOP 컴포넌트',
-    description: '함수형 컴포넌트와 클래스 컴포넌트의 차이점',
-  },
-  {
-    name: 'tanstack-form-v1-release',
-    title: 'TanStack Form v1이 릴리즈 되었다',
-    description: 'React에서 form 잘 쓰는 법',
-  },
-  {
-    name: 'the-magic-of-react-concurrency',
-    title: 'React Concurrency의 마법',
-    description: '리액트 동시성 기능의 핵심 원리',
-  },
-  {
-    name: 'toss-frontend-accelerator-review',
-    title: 'Toss Frontend Accelerator 5기를 수료하며',
-    description: '6주간의 Toss Frontend Accelerator 후기',
-  },
-]
-
-async function generateOgImage(post) {
-  const url = `http://localhost:3000/posts/${post.name}/opengraph-image`
-
-  console.log(`Generating OG image for: ${post.name}...`)
-
-  try {
-    const response = await fetch(url)
-
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch: ${response.status} ${response.statusText}`,
-      )
-    }
-
-    const arrayBuffer = await response.arrayBuffer()
-    const buffer = Buffer.from(arrayBuffer)
-
-    // Convert to WebP for better compression
-    const outputPath = join(__dirname, `../public/images/og-${post.name}.webp`)
-    await sharp(buffer).webp({ quality: 90, effort: 6 }).toFile(outputPath)
-
-    console.log(`✓ Generated: og-${post.name}.webp`)
-  } catch (error) {
-    console.error(`✗ Failed to generate ${post.name}:`, error.message)
-    throw error
-  }
-}
+const port = process.argv[2] || 3000
 
 async function main() {
-  console.log('Starting OG image generation...')
-  console.log('Make sure your dev server is running on http://localhost:3000\n')
+  console.log('OG 이미지 일괄 생성을 시작합니다...')
+  console.log(`개발 서버가 http://localhost:${port} 에서 실행 중이어야 합니다.`)
 
-  for (const post of posts) {
-    await generateOgImage(post)
+  for (const post of POSTS) {
+    await generateOgImageForPost(post, port)
   }
 
-  console.log('\n✓ All OG images generated successfully!')
+  console.log('\n✓ 모든 OG 이미지가 성공적으로 생성되었습니다!')
 }
 
 main().catch((error) => {
-  console.error('\n✗ Generation failed:', error)
+  console.error('\n✗ 생성 실패:', error)
   process.exit(1)
 })

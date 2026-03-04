@@ -1,72 +1,54 @@
-import { writeFile } from 'fs/promises'
-import { join, dirname } from 'path'
-import sharp from 'sharp'
-import { fileURLToPath } from 'url'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
+import { POSTS, generateOgImageForPost } from './og-utils.mjs'
 
 /**
  * 단일 포스트의 OG 이미지를 생성합니다.
  *
+ * 각 포스트마다:
+ *   1. opengraph-image.tsx를 동적 템플릿(ImageResponse)으로 교체
+ *   2. Next.js 컴파일 완료 대기
+ *   3. 이미지 fetch → webp 저장
+ *   4. opengraph-image.tsx를 정적 서빙 템플릿으로 복원
+ *
  * 사용법:
- *   node scripts/generate-single-og.mjs post-slug-name
+ *   node scripts/generate-single-og.mjs <post-slug> [port]
  *
  * 예시:
- *   node scripts/generate-single-og.mjs my-new-post
+ *   node scripts/generate-single-og.mjs toss-frontend-accelerator-review
+ *   node scripts/generate-single-og.mjs my-new-post 3001
  */
 
 const postSlug = process.argv[2]
 const port = process.argv[3] || 3000
 
 if (!postSlug) {
-  console.error('Error: Post slug is required')
+  console.error('Error: Post slug이 필요합니다.')
   console.error('Usage: node scripts/generate-single-og.mjs <post-slug> [port]')
-  console.error('Example: node scripts/generate-single-og.mjs my-new-post 3000')
+  console.error(
+    'Example: node scripts/generate-single-og.mjs toss-frontend-accelerator-review',
+  )
   process.exit(1)
 }
 
-async function generateOgImage(slug, serverPort) {
-  const url = `http://localhost:${serverPort}/posts/${slug}/opengraph-image`
+const post = POSTS.find((p) => p.name === postSlug)
 
-  console.log(`Generating OG image for: ${slug}...`)
-  console.log(`Fetching from: ${url}`)
-
-  try {
-    const response = await fetch(url)
-
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch: ${response.status} ${response.statusText}`,
-      )
-    }
-
-    const arrayBuffer = await response.arrayBuffer()
-    const buffer = Buffer.from(arrayBuffer)
-
-    // Convert to WebP for better compression
-    const outputPath = join(__dirname, `../public/images/og-${slug}.webp`)
-    await sharp(buffer).webp({ quality: 90, effort: 6 }).toFile(outputPath)
-
-    console.log(`✓ Generated: og-${slug}.webp`)
-    console.log(`✓ Saved to: ${outputPath}`)
-  } catch (error) {
-    console.error(`✗ Failed to generate ${slug}:`, error.message)
-    throw error
-  }
+if (!post) {
+  console.error(`Error: '${postSlug}' 포스트를 찾을 수 없습니다.`)
+  console.error('scripts/og-utils.mjs의 POSTS 배열에 포스트를 추가해주세요.')
+  console.error('\n등록된 포스트 목록:')
+  POSTS.forEach((p) => console.error(`  - ${p.name}`))
+  process.exit(1)
 }
 
 async function main() {
-  console.log('Starting OG image generation for single post...')
-  console.log(
-    `Make sure your dev server is running on http://localhost:${port}\n`,
-  )
+  console.log(`OG 이미지 생성을 시작합니다: ${postSlug}`)
+  console.log(`개발 서버가 http://localhost:${port} 에서 실행 중이어야 합니다.`)
 
-  await generateOgImage(postSlug, port)
+  await generateOgImageForPost(post, port)
 
-  console.log('\n✓ OG image generated successfully!')
+  console.log('\n✓ OG 이미지가 성공적으로 생성되었습니다!')
 }
 
 main().catch((error) => {
-  console.error('\n✗ Generation failed:', error)
+  console.error('\n✗ 생성 실패:', error)
   process.exit(1)
 })

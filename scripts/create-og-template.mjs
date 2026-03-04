@@ -1,5 +1,5 @@
 import { writeFile } from 'fs/promises'
-import { join, dirname } from 'path'
+import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -64,9 +64,15 @@ async function main() {
     await writeFile(outputPath, template)
     console.log(`✓ Template created successfully!`)
     console.log(`\nNext steps:`)
-    console.log(`1. Make sure your dev server is running: pnpm dev`)
     console.log(
-      `2. Generate the OG image: node scripts/generate-single-og.mjs ${postSlug}`,
+      `1. scripts/og-utils.mjs 의 POSTS 배열에 다음 항목을 추가하세요:`,
+    )
+    console.log(
+      `   { name: '${postSlug}', title: '${altText}', description: '...' }`,
+    )
+    console.log(`2. 개발 서버를 실행하세요: pnpm dev`)
+    console.log(
+      `3. OG 이미지를 생성하세요: node scripts/generate-single-og.mjs ${postSlug}`,
     )
   } catch (error) {
     console.error(`✗ Failed to create template:`, error.message)
