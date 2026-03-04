@@ -9,11 +9,14 @@ import {
   TableHead,
   TableCell,
 } from './components/ui/table'
+import Image from './components/ui/imageLightbox'
 import * as styles from './mdx-components.css'
 import type { MDXComponents } from 'mdx/types'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    ...components,
+    Image,
     wrapper: ({ children }) => (
       <>
         <article className={`prose ${styles.articleWrapper}`}>
