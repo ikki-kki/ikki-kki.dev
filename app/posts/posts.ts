@@ -18,6 +18,16 @@ const posts = [
     tags: ['TanStack Form'],
     readingTime: 22,
     prevSlug: 'the-magic-of-react-concurrency',
+    nextSlug: 'toss-frontend-accelerator-review',
+  },
+  {
+    slug: 'toss-frontend-accelerator-review',
+    title: 'Toss Frontend Accelerator 5기를 수료하며',
+    description: '6주간의 Toss Frontend Accelerator 후기',
+    date: '2025-03-05',
+    tags: ['Toss', 'Frontend Accelerator', '회고'],
+    readingTime: 18,
+    prevSlug: 'tanstack-form-v1-release',
     nextSlug: 'eslint-how-it-works',
   },
   {
@@ -27,7 +37,7 @@ const posts = [
     date: '2023-03-02',
     tags: ['eslint', 'AST'],
     readingTime: 13,
-    prevSlug: 'tanstack-form-v1-release',
+    prevSlug: 'toss-frontend-accelerator-review',
     nextSlug: 'nested-feature-branch-workflow',
   },
   {

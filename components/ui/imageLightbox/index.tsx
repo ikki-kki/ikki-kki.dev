@@ -48,7 +48,7 @@ const Image = (props: ImageProps) => {
         onClick={() => setIsOpen(true)}
         aria-label="이미지 크게 보기"
       >
-        <NextImage {...props} />
+        <NextImage {...props} className={styles.thumbnailImage} />
       </button>
 
       {mounted &&

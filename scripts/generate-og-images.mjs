@@ -1,5 +1,4 @@
-import { writeFile } from 'fs/promises'
-import { join, dirname } from 'path'
+import { dirname, join } from 'path'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
@@ -35,6 +34,11 @@ const posts = [
     name: 'the-magic-of-react-concurrency',
     title: 'React Concurrency의 마법',
     description: '리액트 동시성 기능의 핵심 원리',
+  },
+  {
+    name: 'toss-frontend-accelerator-review',
+    title: 'Toss Frontend Accelerator 5기를 수료하며',
+    description: '6주간의 Toss Frontend Accelerator 후기',
   },
 ]
 

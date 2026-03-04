@@ -12,6 +12,11 @@ export const thumbnail = style({
   maxWidth: '100%',
 })
 
+export const thumbnailImage = style({
+  borderRadius: '0.75rem',
+  display: 'block',
+})
+
 export const backdrop = style({
   position: 'fixed',
   inset: 0,
@@ -48,5 +53,5 @@ export const lightboxImage = style({
   height: 'auto',
   objectFit: 'contain',
   display: 'block',
-
+  borderRadius: '0.75rem',
 })
