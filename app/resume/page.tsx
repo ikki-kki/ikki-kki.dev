@@ -148,6 +148,27 @@ export default function Resume() {
 
             <div className={styles.educationItem}>
               <div>
+                <span className={styles.educationName}>
+                  Toss Frontend Accelerator 5기
+                </span>
+                <br />
+                <span className={styles.educationDetail}>
+                  수료 | 전문가의 사고방식을 이식받는 토스 프론트엔드 6주 집중
+                  훈련{' '}
+                  <a
+                    href="https://ikki-kki.dev/posts/toss-frontend-accelerator-review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.contactLink}
+                  >
+                    [수료 후기]
+                  </a>
+                </span>
+              </div>
+              <span className={styles.educationPeriod}>2020.04 - 2020.07</span>
+            </div>
+            <div className={styles.educationItem}>
+              <div>
                 <span className={styles.educationName}>Wecode</span>
                 <span className={styles.educationDetail}>
                   수료 | 사설 교육 | Advanced

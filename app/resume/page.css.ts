@@ -1,4 +1,4 @@
-import { vars, media } from '@/lib/theme.css'
+import { media, vars } from '@/lib/theme.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
@@ -176,12 +176,12 @@ export const educationName = style({
   fontSize: vars.fontSize.lg,
   fontWeight: vars.fontWeight.medium,
   color: vars.color.greenGray[900],
+  marginRight: vars.space[2],
 })
 
 export const educationDetail = style({
   fontSize: vars.fontSize.base,
   color: vars.color.greenGray[600],
-  marginLeft: vars.space[2],
 })
 
 export const educationPeriod = style({
