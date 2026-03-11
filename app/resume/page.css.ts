@@ -51,7 +51,7 @@ export const headerTitle = style({
 export const headerRight = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.space[2],
+  gap: vars.space[1],
   fontSize: vars.fontSize.base,
   color: vars.color.green[500],
 })

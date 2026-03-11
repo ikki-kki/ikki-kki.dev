@@ -39,6 +39,17 @@ export default function Resume() {
                 </a>
               </div>
               <div className={styles.contactItem}>
+                <span className={styles.contactLabel}>Resume:</span>
+                <a
+                  href="https://ikki-kki.dev/resume"
+                  className={styles.contactLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ikki-kki.dev/resume
+                </a>
+              </div>
+              <div className={styles.contactItem}>
                 <span className={styles.contactLabel}>Github:</span>
                 <a
                   href="https://github.com/ikki-kki"
@@ -76,8 +87,9 @@ export default function Resume() {
               <br />
               <br />
               디자이너의 언어로 소통하고 엔지니어의 견고함으로 구현합니다.
-              주도적인 지식 공유와 투명한 소통을 통해 '나'를 넘어 '우리'가 함께
-              퍼포먼스를 내며 성장하는 문화를 만들어가고 있습니다.
+              주도적인 지식 공유와 투명한 소통을 통해 &apos;나&apos;를 넘어
+              &apos;우리&apos;가 함께 퍼포먼스를 내며 성장하는 문화를 만들어가고
+              있습니다.
             </p>
           </div>
 
