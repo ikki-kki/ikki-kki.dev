@@ -75,22 +75,16 @@ export default function Resume() {
               기술적 토대를 만드는 데 주력하고 있습니다.
               <br />
               <br />
-              디자이너의 언어로 소통하고 엔지니어의 견고함으로 구현하는 과정을
-              즐깁니다. 투명한 소통과 적극적인 지식 공유가 이루어질 때 팀은
-              최고의 퍼포먼스를 낸다고 믿으며, 나를 넘어 우리가 함께 성장하는
-              문화를 만들어가고 있습니다.
-              <br />
-              <br />
-              개인의 성장을 멈추지 않기 위해 끊임없이 학습합니다. 주도적으로
-              스터디를 조직해 다양한 배경의 동료들과 경험을 나누고 치열하게
-              토론하며, 지식의 경계를 넓혀가는 과정을 즐깁니다.
+              디자이너의 언어로 소통하고 엔지니어의 견고함으로 구현합니다.
+              주도적인 지식 공유와 투명한 소통을 통해 '나'를 넘어 '우리'가 함께
+              퍼포먼스를 내며 성장하는 문화를 만들어가고 있습니다.
             </p>
           </div>
 
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>Career</h2>
-              <span className={styles.sectionDuration}>5년 4개월</span>
+              <span className={styles.sectionDuration}>5년 8개월</span>
             </div>
 
             <div className={styles.careerItem}>
@@ -108,11 +102,13 @@ export default function Resume() {
                   디자인시스템 기여 및 공용 라이브러리 제작
                 </li>
                 <li className={styles.careerListItem}>
-                  성장통을 해결하기 위한 아키텍처 개선
+                  10개 이상의 폴리레포 환경 통합 및 아키텍처 개선
                 </li>
-                <li className={styles.careerListItem}>레거시 시스템 현대화</li>
                 <li className={styles.careerListItem}>
-                  함께 성장하는 개발 문화와 협업 프로세스 정착
+                  레거시 시스템 현대화 및 기술 부채 청산
+                </li>
+                <li className={styles.careerListItem}>
+                  함께 성장하는 개발 문화와 협업 프로세스 정착 주도
                 </li>
               </ul>
             </div>
@@ -143,126 +139,6 @@ export default function Resume() {
 
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Education</h2>
-            </div>
-
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>
-                  Toss Frontend Accelerator 5기
-                </span>
-                <br />
-                <span className={styles.educationDetail}>
-                  수료 | 전문가의 사고방식을 이식받는 토스 프론트엔드 6주 집중
-                  훈련{' '}
-                  <a
-                    href="https://ikki-kki.dev/posts/toss-frontend-accelerator-review"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.contactLink}
-                  >
-                    [수료 후기]
-                  </a>
-                </span>
-              </div>
-              <span className={styles.educationPeriod}>2020.04 - 2020.07</span>
-            </div>
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>Wecode</span>
-                <span className={styles.educationDetail}>
-                  수료 | 사설 교육 | Advanced
-                </span>
-              </div>
-              <span className={styles.educationPeriod}>2020.04 - 2020.07</span>
-            </div>
-
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>
-                  내일배움캠프 java 백엔드
-                </span>
-                <span className={styles.educationDetail}>
-                  수료 | 사설 교육 | Advanced
-                </span>
-              </div>
-              <span className={styles.educationPeriod}>2019.11 - 2020.03</span>
-            </div>
-
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>건국대학교</span>
-                <span className={styles.educationDetail}>
-                  졸업 | 대학교(학사) | 커뮤니케이션디자인
-                </span>
-              </div>
-              <span className={styles.educationPeriod}>2014.03 - 2019.02</span>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Activities</h2>
-            </div>
-
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>
-                  건국대학교 제 47대 총학생회 건대에 물들다
-                </span>
-                <span className={styles.educationDetail}>디자인 팀장</span>
-              </div>
-              <span className={styles.educationPeriod}>2017</span>
-            </div>
-
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>
-                  대학생 한글 타이포그래피 소모임 연합회 한울
-                </span>
-                <span className={styles.educationDetail}>부회장</span>
-              </div>
-              <span className={styles.educationPeriod}>2016</span>
-            </div>
-
-            <div className={styles.educationItem}>
-              <div>
-                <span className={styles.educationName}>
-                  건국대학교 커뮤니케이션디자인 타이포그래피 소모임
-                </span>
-                <span className={styles.educationDetail}>동아리장</span>
-              </div>
-              <span className={styles.educationPeriod}>2015 - 2016</span>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Skills</h2>
-            </div>
-
-            <div className={styles.skillsGrid}>
-              <ul className={styles.skillsList}>
-                <li className={styles.skillItem}>
-                  Javascript, Typescript, HTML, CSS
-                </li>
-                <li className={styles.skillItem}>React, Next.js, Vite</li>
-                <li className={styles.skillItem}>
-                  React-Query, Zustand, Tanstack Form, React Router
-                </li>
-              </ul>
-              <ul className={styles.skillsList}>
-                <li className={styles.skillItem}>yarn berry, pnpm</li>
-                <li className={styles.skillItem}>AWS, Github-Action</li>
-                <li className={styles.skillItem}>
-                  Git, Jira, Confluence, Slack, Notion
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <div className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>Work Experiences</h2>
             </div>
 
@@ -278,16 +154,8 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    10개의 폴리레포 환경에서 분산되고 중복 관리되는 설정 파일로
-                    인한 일관성 저하
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    Lint(oxc), 환경변수 생성 스크립트 등이 레포지토리 간
-                    동기화되지 않아 변경 시마다 반복 작업 발생
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    설정 파일 유지보수에 과도한 리소스 투입 및 휴먼 에러 위험
-                    증가
+                    10개의 폴리레포 환경에서 Lint, 환경변수 등 설정 파일이
+                    파편화되어 반복 작업 및 일관성 저하 발생
                   </li>
                 </ul>
               </div>
@@ -325,17 +193,11 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>RESULT</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    분산되어 있던 10+ 설정 파일을{' '}
+                    10개 제품의 개발 환경 및 의존성을 단일 저장소에서 자동
+                    동기화하여{' '}
                     <span className={styles.highlight}>
-                      단일 저장소에서 중앙 관리
+                      설정 drift 방지 및 유지보수 공수 대폭 감소
                     </span>
-                    하여 유지보수 공수 감소
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    <span className={styles.highlight}>
-                      10개 제품의 개발 환경 및 의존성을 자동으로 동기화
-                    </span>
-                    하여 일관성 보장 및 설정 drift 방지
                   </li>
                 </ul>
               </div>
@@ -353,15 +215,8 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    Ruby on Rails, AngularJS, React가 혼재된 레거시 로그인
-                    시스템으로 인한 기술 부채 누적
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    파편화된 기술 스택으로 인해 유지보수 및 신규 기능 추가에
-                    높은 리스크 발생
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    점진적 개선이 불가능한 구조로 인해 전면 재구축 필요성 대두
+                    Rails, AngularJS, React가 혼재된 레거시 시스템으로 인해
+                    유지보수 리스크가 높고 점진적 개선이 불가한 상태
                   </li>
                 </ul>
               </div>
@@ -388,10 +243,6 @@ export default function Resume() {
                     API 호출 레이어를 추상화하여 향후 신규 백엔드 서버로 교체
                     가능하도록 인터페이스 설계
                   </li>
-                  <li className={styles.workExperienceListItem}>
-                    점진적 마이그레이션이 가능한 아키텍처 구축으로 무중단 전환
-                    전략 수립
-                  </li>
                 </ul>
               </div>
 
@@ -399,10 +250,11 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>RESULT</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
+                    프론트엔드 독립 환경 구축으로{' '}
                     <span className={styles.highlight}>
-                      기술 부채 해소를 위한 전환 가능한 구조
+                      개발 생산성 향상 및 누적된 기술 부채 해소
                     </span>{' '}
-                    완성으로 향후 레거시 완전 제거 가능
+                    가능성 확보
                   </li>
                   <li className={styles.workExperienceListItem}>
                     프론트엔드 독립 환경 구축으로 개발 생산성 향상 및 배포
@@ -427,10 +279,6 @@ export default function Resume() {
               <div className={styles.workExperienceSection}>
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
-                  <li className={styles.workExperienceListItem}>
-                    기존 remember-ui 디자인 시스템이 특정 제품에 과도하게
-                    의존하여 범용성 부족
-                  </li>
                   <li className={styles.workExperienceListItem}>
                     Props 기반 설계로 유연성이 떨어져 단순한 컬러 변경조차
                     어려운 구조적 한계
@@ -482,10 +330,7 @@ export default function Resume() {
                     로 다양한 제품 요구사항에 빠르게 대응 가능
                   </li>
                   <li className={styles.workExperienceListItem}>
-                    아이콘 자산 중복 제거 및 중앙화로 유지보수 공수 절감
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    디자이너-개발자 간 UI 싱크 자동화로 커뮤니케이션 비용 감소
+                    아이콘 자산 중복 제거 및 중앙화로 중복 리소스 최소화
                   </li>
                 </ul>
               </div>
@@ -503,16 +348,8 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    사용자 경험 품질을 정량적으로 측정할 수 있는 지표 및
-                    모니터링 체계 부재
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    성능 저하나 에러 발생 시 사후 대응만 가능하여 서비스 안정성
-                    확보 어려움
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    주요 사용자 경로별 성능 현황 파악 불가로 개선 우선순위 설정
-                    곤란
+                    사용자 경험(UX) 품질을 측정할 정량적 지표가 부재하여, 성능
+                    저하 시 사후 대응에 그치고 개선 우선순위 설정이 어려움
                   </li>
                 </ul>
               </div>
@@ -564,10 +401,6 @@ export default function Resume() {
                     회원가입 퍼널 각 단계별 성능 모니터링으로 전환율 저하 요인
                     조기 발견 및 개선
                   </li>
-                  <li className={styles.workExperienceListItem}>
-                    비즈니스 가치 기반 14개 핵심 경로 집중 관리로 리소스 효율적
-                    배분 및 우선순위 명확히 보장
-                  </li>
                 </ul>
               </div>
             </div>
@@ -584,15 +417,8 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    JavaScript 기반 ESLint 실행 시간 26초로 개발 생산성 저하 및
-                    CI/CD 파이프라인 병목 발생
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    10개 폴리레포별 상이한 Lint 룰로 코드 컨벤션 불일치 및
-                    일관성 부재
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    성능 개선 및 분산된 Lint 설정 통합·표준화 필요
+                    10개 폴리레포별 상이한 룰로 인한 컨벤션 불일치 및 긴 Lint
+                    실행 시간(26초)으로 CI/CD 병목 발생
                   </li>
                 </ul>
               </div>
@@ -603,9 +429,9 @@ export default function Resume() {
                 </h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
+                    1차 마이그레이션 -{' '}
                     <span className={styles.highlight}>
-                      1차 마이그레이션 - 10개 폴리레포의 분산된 Lint 룰을 별도
-                      패키지로 통합
+                      10개 폴리레포의 분산된 Lint 룰을 별도 패키지로 통합
                     </span>
                     하여 조합형 ESLint 설정 구조 구축
                   </li>
@@ -614,7 +440,7 @@ export default function Resume() {
                     가능하도록 설계하여 컨벤션 표준화
                   </li>
                   <li className={styles.workExperienceListItem}>
-                    Rust 기반{' '}
+                    2차 마이그레이션 - Rust 기반{' '}
                     <span className={styles.highlight}>
                       Oxc(oxlint)와 Biome 비교 분석
                     </span>{' '}
@@ -625,10 +451,6 @@ export default function Resume() {
                       ESLint와 Oxc 병렬 처리 구조 설계
                     </span>
                     로 점진적 마이그레이션 환경 구축 및 과도기 안정성 확보
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    통합된 ESLint 룰을 Oxc 규칙으로 매핑하고 호환성 검증 작업
-                    수행
                   </li>
                   <li className={styles.workExperienceListItem}>
                     Oxc 사용 중 발견한 버그를 수정 오픈소스 기여{' '}
@@ -654,12 +476,8 @@ export default function Resume() {
                     (94% 성능 개선)
                   </li>
                   <li className={styles.workExperienceListItem}>
-                    CI/CD 파이프라인 전체 실행 시간 단축으로 배포 속도 및 개발자
+                    CI 파이프라인 전체 실행 시간 단축으로 배포 속도 및 개발자
                     생산성 향상
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    오픈소스 커뮤니티 버그 리포트 및 수정 기여로 Oxc 안정성
-                    개선에 기여
                   </li>
                 </ul>
               </div>
@@ -677,16 +495,8 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    제품 정책과 권한 로직이 비대해지면서, 기획서와 개발자의
-                    기억에만 의존하여 수정 사항을 검증하는 방식이 한계에 도달
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    다수의 개발자가 협업하는 환경에서 코드 변경 시 영향 범위를
-                    예측하기 어려워, 잦은 사이드 이펙트와 프로덕션 에러 발생
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    API 개발이 완료될 때까지 프론트엔드 작업이 블로킹되거나,
-                    테스트 케이스별 데이터 세팅이 어려워 개발 효율 저하
+                    비대한 권한 로직으로 인한 잦은 사이드 이펙트 발생 및 API
+                    개발 지연에 따른 프론트엔드 작업 병목
                   </li>
                 </ul>
               </div>
@@ -701,9 +511,7 @@ export default function Resume() {
                       Vitest를 도입하여 중요 비즈니스 로직에 대한 유닛 테스트를
                       작성
                     </span>
-                    하고, PR 생성 시 테스트 실패 시 상위 브랜치 머지를 원천
-                    차단하는 CI 파이프라인을 구축하여 코드 안정성을 시스템적으로
-                    강제
+                    테스트 실패 시 머지를 차단하는 CI 파이프라인 강제화
                   </li>
                   <li className={styles.workExperienceListItem}>
                     로그인부터 제품 랜딩까지의{' '}
@@ -715,12 +523,10 @@ export default function Resume() {
                     문화에 기여
                   </li>
                   <li className={styles.workExperienceListItem}>
-                    API가 준비되지 않은 상태에서도 개발이 가능하도록{' '}
                     <span className={styles.highlight}>
-                      MSW(Mock Service Worker)를 도입
+                      MSW(Mock Service Worker)
                     </span>
-                    하여, 백엔드와의 병렬 작업 환경을 구축하고 핸들러 기반의
-                    정교한 모킹 데이터 관리
+                    를 도입하여 백엔드 의존성 없이 병렬 개발이 가능한 환경 구축
                   </li>
                 </ul>
               </div>
@@ -729,20 +535,9 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>RESULT</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    코드 변경 시 발생할 수 있는 사이드 이펙트를 CI 단계에서 사전
-                    감지하여{' '}
-                    <span className={styles.highlight}>프로덕션 에러 감소</span>
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    핵심 기능에 대한 자동화된 검증 수단을 확보하여 배포 시
-                    개발자의 심리적 부담 완화 및 신뢰도 향상
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    백엔드 API 의존성을 제거하여{' '}
-                    <span className={styles.highlight}>
-                      병렬 개발을 통한 생산성 향상
-                    </span>{' '}
-                    및 대기 시간 단축
+                    CI 단계의 사전 에러 감지로{' '}
+                    <span className={styles.highlight}>프로덕션 에러 감소</span>{' '}
+                    및 API 대기 시간 단축을 통한 생산성 증대
                   </li>
                 </ul>
               </div>
@@ -760,13 +555,8 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    서버 데이터를 수동으로 타이핑하다 보니 타입의 역할 구분이
-                    모호해지고 정의가 비대해져, 실제 API 스펙과의 정합성을
-                    유지하기 어렵고 유지보수 비용이 지속적으로 증가
-                  </li>
-                  <li className={styles.workExperienceListItem}>
-                    API 변경 시마다 프론트엔드 코드를 일일이 수정해야 하는
-                    번거로움과 휴먼 에러 발생 위험 상존
+                    서버 데이터를 수동으로 타이핑하며 발생하는 휴먼 에러 및
+                    백엔드 명세와의 정합성 유지보수 비용 증가
                   </li>
                 </ul>
               </div>
@@ -777,22 +567,15 @@ export default function Resume() {
                 </h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
+                    Orval을 도입하여{' '}
                     <span className={styles.highlight}>
-                      OpenAPI(Swagger) 스키마를 기반으로 타입과 통신 로직을 자동
-                      생성
+                      OpenAPI 기반의 타입과 통신 로직을 자동 생성
                     </span>
-                    해주는 Orval을 3개 프로젝트에 도입하여, 수동 타이핑의
-                    비효율을 제거하고 코드 일관성 확보
+                    하도록 파이프라인 구축
                   </li>
                   <li className={styles.workExperienceListItem}>
-                    자동화의 전제 조건인 API Docs 품질 유지를 위해 서버 팀의
-                    공수가 늘어나는 이슈가 있었으나,{' '}
-                    <span className={styles.highlight}>
-                      명세의 정확성이 전체 제품 안정성에 미치는 영향을 기반으로
-                      설득
-                    </span>
-                    하여 문서 현행화의 R&R을 서버 개발자로 이관하고 협업 기준
-                    재정립
+                    제품 안정성을 근거로 서버 팀을 설득하여 API Docs 현행화의
+                    R&R을 재정립하고 협업 기준 마련
                   </li>
                 </ul>
               </div>
@@ -895,9 +678,9 @@ export default function Resume() {
                   </li>
                   <li className={styles.workExperienceListItem}>
                     <span className={styles.highlight}>
-                      4년간 회고 리더 역할을 자처
+                      4년간 회고 리더 역할
                     </span>
-                    하여 팀 내 사일로 현상 방지 및 서로의 업무 성향과 고민을
+                    로 팀 내 사일로 현상 방지 및 서로의 업무 성향과 고민을
                     투명하게 공유하는 심리적 안전감 높은 팀 문화를 구축함.
                     연차에 무관한 수평적 소통을 유도하고 팀의 안살림을 챙기는
                     중간 관리자 역할 수행
@@ -934,6 +717,31 @@ export default function Resume() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Skills</h2>
+            </div>
+
+            <div className={styles.skillsGrid}>
+              <ul className={styles.skillsList}>
+                <li className={styles.skillItem}>
+                  Javascript, Typescript, HTML, CSS
+                </li>
+                <li className={styles.skillItem}>React, Next.js, Vite, oxc</li>
+                <li className={styles.skillItem}>
+                  React-Query, Zustand, Tanstack Form, React Router
+                </li>
+              </ul>
+              <ul className={styles.skillsList}>
+                <li className={styles.skillItem}>yarn berry, pnpm</li>
+                <li className={styles.skillItem}>AWS, Github-Action</li>
+                <li className={styles.skillItem}>
+                  Git, Jira, Confluence, Slack, Notion
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -1050,6 +858,101 @@ export default function Resume() {
                   사내 발표 영상
                 </a>
               </div>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Education</h2>
+            </div>
+
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>
+                  Toss Frontend Accelerator 5기
+                </span>
+                <br />
+                <span className={styles.educationDetail}>
+                  수료 | 전문가의 사고방식을 이식받는 토스 프론트엔드 6주 집중
+                  훈련{' '}
+                  <a
+                    href="https://ikki-kki.dev/posts/toss-frontend-accelerator-review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.contactLink}
+                  >
+                    [수료 후기]
+                  </a>
+                </span>
+              </div>
+              <span className={styles.educationPeriod}>2020.04 - 2020.07</span>
+            </div>
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>Wecode</span>
+                <span className={styles.educationDetail}>
+                  수료 | 사설 교육 | Advanced
+                </span>
+              </div>
+              <span className={styles.educationPeriod}>2020.04 - 2020.07</span>
+            </div>
+
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>
+                  내일배움캠프 java 백엔드
+                </span>
+                <span className={styles.educationDetail}>
+                  수료 | 사설 교육 | Advanced
+                </span>
+              </div>
+              <span className={styles.educationPeriod}>2019.11 - 2020.03</span>
+            </div>
+
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>건국대학교</span>
+                <span className={styles.educationDetail}>
+                  졸업 | 대학교(학사) | 커뮤니케이션디자인
+                </span>
+              </div>
+              <span className={styles.educationPeriod}>2014.03 - 2019.02</span>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Activities</h2>
+            </div>
+
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>
+                  건국대학교 제 47대 총학생회 건대에 물들다
+                </span>
+                <span className={styles.educationDetail}>디자인 팀장</span>
+              </div>
+              <span className={styles.educationPeriod}>2017</span>
+            </div>
+
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>
+                  대학생 한글 타이포그래피 소모임 연합회 한울
+                </span>
+                <span className={styles.educationDetail}>부회장</span>
+              </div>
+              <span className={styles.educationPeriod}>2016</span>
+            </div>
+
+            <div className={styles.educationItem}>
+              <div>
+                <span className={styles.educationName}>
+                  건국대학교 커뮤니케이션디자인 타이포그래피 소모임
+                </span>
+                <span className={styles.educationDetail}>동아리장</span>
+              </div>
+              <span className={styles.educationPeriod}>2015 - 2016</span>
             </div>
           </section>
         </div>
