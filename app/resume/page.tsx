@@ -71,7 +71,7 @@ export default function Resume() {
               일하며, 비즈니스의 지속 가능성과 개발 생산성 사이의 균형을
               치열하게 고민해왔습니다. 맹목적인 완벽함보다는 당면한 문제를
               해결하는 데 가장 적합한 실용적인 기술을 추구합니다. 기술적 부채를
-              선제적으로 관리하고 자동화하여, 제품의 성장을 뒷받침하는 단단한
+              선제적으로 관리하고 자동화하여 제품의 성장을 뒷받침하는 단단한
               기술적 토대를 만드는 데 주력하고 있습니다.
               <br />
               <br />
@@ -348,7 +348,7 @@ export default function Resume() {
                 <h4 className={styles.workExperienceSectionTitle}>SITUATION</h4>
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
-                    사용자 경험(UX) 품질을 측정할 정량적 지표가 부재하여, 성능
+                    사용자 경험(UX) 품질을 측정할 정량적 지표가 부재하여 성능
                     저하 시 사후 대응에 그치고 개선 우선순위 설정이 어려움
                   </li>
                 </ul>
@@ -418,7 +418,7 @@ export default function Resume() {
                 <ul className={styles.workExperienceList}>
                   <li className={styles.workExperienceListItem}>
                     10개 폴리레포별 상이한 룰로 인한 컨벤션 불일치 및 긴 Lint
-                    실행 시간(26초)으로 CI/CD 병목 발생
+                    실행 시간(26초)으로 CI 병목 발생
                   </li>
                 </ul>
               </div>
