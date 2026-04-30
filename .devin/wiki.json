@@ -1,0 +1,232 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "High-level introduction to ikki-kki.dev — a personal blog and portfolio site built with Next.js 15, MDX, and Vanilla Extract. Covers the site's purpose, key features, tech stack, and links to child pages for deeper details.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Setup, installation, local development workflow, environment configuration, and tooling (ESLint, Prettier, VSCode settings, pnpm, TypeScript config).",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Project Structure",
+      "purpose": "Explains the top-level directory layout: app/, components/, lib/, scripts/, public/. Describes the Next.js App Router conventions used and how routes map to directories.",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Core Architecture",
+      "purpose": "Overview of the application's architectural layers: Next.js App Router, MDX content pipeline, Vanilla Extract styling system, and the global theme. Links to child pages for each subsystem.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Next.js Configuration & Build Pipeline",
+      "purpose": "Deep dive into next.config.ts: MDX plugin composition (withMDX + withVanillaExtract), remark/rehype plugin chain, pageExtensions, image remote patterns, View Transition API, and host-based redirects.",
+      "parent": "Core Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "MDX Content Pipeline",
+      "purpose": "How MDX files are processed: the remark/rehype plugin chain (GFM, math/KaTeX, Prism syntax highlighting, code titles), the mdx-components.tsx provider, and how markdown elements are mapped to custom React components.",
+      "parent": "Core Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Styling System (Vanilla Extract)",
+      "purpose": "Explains the zero-runtime CSS-in-TypeScript approach: the global theme (lib/theme.css.ts), design tokens (colors, spacing, typography, breakpoints), the sprinkles atomic CSS layer, and how .css.ts files are used across components.",
+      "parent": "Core Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Application Routes & Pages",
+      "purpose": "Overview of all Next.js App Router routes: home (about), posts list, post detail, resume, RSS feed, and the OG image API. Links to child pages for each major route area.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Home (About) Page",
+      "purpose": "The root route (/) rendered by app/page.tsx. Covers the Hero component, Ikkikki ASCII avatar, HelloBubble, social links, and the animated background system (BackgroundWrapper + LightRay).",
+      "parent": "Application Routes & Pagesd",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Posts List & Post Detail Pages",
+      "purpose": "The /posts route (app/posts/page.tsx) and individual post routes (app/posts/[slug]/page.mdx). Covers the posts data registry (posts.ts), PostItem component, post metadata structure, and how MDX pages are rendered.",
+      "parent": "Application Routes & Pages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Resume Page",
+      "purpose": "The /resume route (app/resume/page.tsx): professional portfolio content, Vanilla Extract styling patterns, SEO metadata (noindex), and the skillsGrid layout. Covers the page's semantic HTML structure and theme integration.",
+      "parent": "Application Routes & Pages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "RSS Feed & Sitemap",
+      "purpose": "The /rss.xml route (app/rss.xml/route.ts) that generates an RSS 2.0 feed, and app/sitemap.ts for dynamic sitemap generation. Covers the posts data source, URL construction, priority logic, and robots.txt.",
+      "parent": "Application Routes & Pages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Component Library",
+      "purpose": "Overview of the components/ directory organized into four groups: shared layout components, post-detail components, about-page components, and UI primitives. Links to child pages for each group.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Shared Layout Components",
+      "purpose": "Covers Navbar (route-aware active links), Footer (fixed/standard variants), BackgroundWrapper (animated vs. static background switching by route), and LightRay (WebGL-style interactive gradient animation).",
+      "parent": "Component Library",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Post Detail Components",
+      "purpose": "Components rendered inside every blog post: PostHeader (back button, date, title), PostFooter (share, scroll-to-top, navigation, Giscus comments), TableOfContents (scroll-spy sidebar), PostNavigation (prev/next links), ShareButton, and ScrollToTopButton.",
+      "parent": "Component Library",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "UI Primitives & About Components",
+      "purpose": "Covers reusable UI primitives: ImageLightbox (portal-based full-screen image viewer), Table (MDX table override), AspectRatio (Radix UI wrapper), UtcClock (live UTC+8 clock). Also covers About-page-specific components: Ikkikki ASCII avatar, HelloBubble, and SVG icon components.",
+      "parent": "Component Library",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "SEO & Metadata System",
+      "purpose": "Overview of the multi-layered SEO strategy: JSON-LD structured data, Open Graph/Twitter card metadata, sitemap, robots.txt, and Google Search Console verification. Links to child pages for structured data and OG image generation.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Structured Data & Sitemap",
+      "purpose": "Deep dive into lib/structured-data.ts: generateBlogPostJsonLd (BlogPosting schema), generateWebsiteJsonLd (WebSite + SearchAction), and app/sitemap.ts (dynamic sitemap with priority weights). Covers the StructuredData component and how JSON-LD is injected into pages.",
+      "parent": "SEO & Metadata System",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Open Graph Image System",
+      "purpose": "Covers the full OG image pipeline: the app/api/og/route.tsx dynamic API endpoint, per-post opengraph-image.tsx files, the scripts/ automation (generate-og-images.mjs, generate-single-og.mjs, create-og-template.mjs, og-utils.mjs), and the two-phase dynamic→static template swap workflow using sharp for WebP conversion.",
+      "parent": "SEO & Metadata System",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Blog Posts Content",
+      "purpose": "Overview of the seven published blog posts, their topics, and how they are structured as MDX routes. Each post lives at app/posts/[slug]/page.mdx with its own metadata and opengraph-image.tsx. Links to child pages grouping posts by theme.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "React & Frontend Engineering Posts",
+      "purpose": "Covers the technically deep React and frontend posts: 'The Magic of React Concurrency' (Lane model, useTransition, useDeferredValue), 'TanStack Form v1 Release' (headless forms, granular reactivity, SSR integration), and 'Component Without Self and OOP Component' (Headless UI, View/Controller pattern, polymorphism).",
+      "parent": "Blog Posts Content",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Tooling, Workflow & Career Posts",
+      "purpose": "Covers the tooling and workflow posts: 'ESLint How It Works' (AST-based linting internals), 'Nested Feature Branch Workflow' (hierarchical Git branching strategy), 'Open Graph & Twitter Card' (OG metadata implementation), and 'Toss Frontend Accelerator Review' (career retrospective, CTA methodology, engineering philosophy).",
+      "parent": "Blog Posts Content",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Definitions of codebase-specific terms, abbreviations, and domain concepts used throughout ikki-kki.dev. Each entry includes code pointers to help onboarding engineers navigate the codebase.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
